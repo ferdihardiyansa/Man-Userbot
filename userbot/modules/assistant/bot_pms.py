@@ -42,7 +42,7 @@ from userbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
-botusername = gvarstatus("BOT_USERNAME") or BOT_USERNAME
+botusername = BOT_USERNAME
 OWNER_ID = user.id
 OWNER = user.first_name
 
