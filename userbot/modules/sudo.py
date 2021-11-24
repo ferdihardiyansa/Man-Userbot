@@ -4,23 +4,15 @@ import heroku3
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import CMD_HANDLER as cmd
-from userbot import (
-    CMD_HELP,
-    HEROKU_API_KEY,
-    HEROKU_APP_NAME,
-    SUDO_HANDLER,
-    SUDO_USERS,
-    bot,
-)
-from userbot.events import man_cmd
-from userbot.utils import edit_delete, edit_or_reply, get_user_from_event
+from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_HANDLER, SUDO_USERS
+from userbot.utils import edit_delete, edit_or_reply, man_cmd
 
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS") or ""
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"sudo$"))
+@man_cmd(pattern="sudo$")
 async def sudo(event):
     sudo = "True" if SUDO_USERS else "False"
     users = sudousers
@@ -33,21 +25,24 @@ async def sudo(event):
         await edit_delete(event, "🔮 **Sudo:** `Disabled`")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"addsudo(?:\s|$)([\s\S]*)"))
+@man_cmd(pattern="addsudo(?:\s|$)([\s\S]*)")
 async def add(event):
     suu = event.text[9:]
-    reply = await event.get_reply_message()
-    user, reason = await get_user_from_event(event)
-    if not user and not reply:
+    if f"{cmd}add " in event.text:
         return
-    if user.id == (await event.client.get_me()).id:
-        return await edit_or_reply(
-            event, "**Ngapain ngesudo diri sendiri Goblok Kan lu yang punya bot 🐽**"
-        )
-    if user.id in SUDO_USERS:
-        return await edit_delete(event, "dia sudah ada di daftar sudo anda")
     xxnx = await edit_or_reply(event, "`Processing...`")
     var = "SUDO_USERS"
+    reply = await event.get_reply_message()
+    if not suu and not reply:
+        return await edit_delete(
+            xxnx,
+            "Balas ke pengguna atau berikan user id untuk menambahkannya ke daftar pengguna sudo anda.",
+            45,
+        )
+    if suu and not suu.isnumeric():
+        return await edit_delete(
+            xxnx, "Berikan User ID atau reply ke pesan penggunanya.", 45
+        )
     if HEROKU_APP_NAME is not None:
         app = Heroku.app(HEROKU_APP_NAME)
     else:
@@ -72,16 +67,21 @@ async def add(event):
     heroku_Config[var] = newsudo
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"delsudo(?:\s|$)([\s\S]*)"))
+@man_cmd(pattern="delsudo(?:\s|$)([\s\S]*)")
 async def _(event):
     suu = event.text[8:]
-    reply = await event.get_reply_message()
-    user, reason = await get_user_from_event(event)
-    if not user and not reply:
-        return
-    if user.id == (await event.client.get_me()).id:
-        return await edit_or_reply(event, "**Heuuu stess 🐽**")
     xxx = await edit_or_reply(event, "`Processing...`")
+    reply = await event.get_reply_message()
+    if not suu and not reply:
+        return await edit_delete(
+            xxx,
+            "Balas ke pengguna atau berikan user id untuk menghapusnya dari daftar pengguna sudo Anda.",
+            45,
+        )
+    if suu and not suu.isnumeric():
+        return await edit_delete(
+            xxx, "Berikan User ID atau reply ke pesan penggunanya.", 45
+        )
     if HEROKU_APP_NAME is not None:
         app = Heroku.app(HEROKU_APP_NAME)
     else:
