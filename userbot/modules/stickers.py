@@ -511,6 +511,26 @@ async def _(event):
     remove("sticker.png")
 
 
+@bot.on(man_cmd(outgoing=True, pattern=r"stoi$"))
+async def sticker_to_png(sticker):
+    if not sticker.is_reply:
+        await sticker.edit("**Harap balas ke stiker**")
+        return False
+    img = await sticker.get_reply_message()
+    if not img.document:
+        await sticker.edit("**Maaf , Ini Bukan Sticker**")
+        return False
+    await sticker.edit("`Berhasil Mengambil Sticker!`")
+    image = io.BytesIO()
+    await sticker.client.download_media(img, image)
+    image.name = "sticker.png"
+    image.seek(0)
+    await sticker.client.send_file(
+        sticker.chat_id, image, reply_to=img.id, force_document=True
+    )
+    await sticker.delete()
+
+
 CMD_HELP.update(
     {
         "stickers": f"**Plugin : **`stickers`\

@@ -46,6 +46,9 @@ from yt_dlp import YoutubeDL
 from userbot import LOGS, SUDO_USERS, bot
 from userbot.utils.format import md_to_text, paste_message
 
+from .FastTelethon import download_file as downloadable
+from .FastTelethon import upload_file as uploadable
+
 
 def deEmojify(inputString):
     return get_emoji_regexp().sub("", inputString)
@@ -77,6 +80,41 @@ def media_type(message):
     if message and message.document:
         return "Document"
     return None
+
+
+def mediainfo(media):
+    xx = str((str(media)).split("(", maxsplit=1)[0])
+    m = ""
+    if xx == "MessageMediaDocument":
+        mim = media.document.mime_type
+        if mim == "application/x-tgsticker":
+            m = "sticker animated"
+        elif "image" in mim:
+            if mim == "image/webp":
+                m = "sticker"
+            elif mim == "image/gif":
+                m = "gif as doc"
+            else:
+                m = "pic as doc"
+        elif "video" in mim:
+            if "DocumentAttributeAnimated" in str(media):
+                m = "gif"
+            elif "DocumentAttributeVideo" in str(media):
+                i = str(media.document.attributes[0])
+                if "supports_streaming=True" in i:
+                    m = "video"
+                m = "video as doc"
+            else:
+                m = "video"
+        elif "audio" in mim:
+            m = "audio"
+        else:
+            m = "document"
+    elif xx == "MessageMediaPhoto":
+        m = "pic"
+    elif xx == "MessageMediaWebPage":
+        m = "web"
+    return m
 
 
 def humanbytes(size: Union[int, float]) -> str:
@@ -149,6 +187,56 @@ def human_to_bytes(size: str) -> int:
         size = re.sub(r"([KMGT])", r" \1", size)
     number, unit = [string.strip() for string in size.split()]
     return int(float(number) * units[unit])
+
+
+async def bash(cmd):
+    process = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await process.communicate()
+    err = stderr.decode().strip()
+    out = stdout.decode().strip()
+    return out, err
+
+
+async def downloader(filename, file, event, taime, msg):
+    with open(filename, "wb") as fk:
+        result = await downloadable(
+            client=event.client,
+            location=file,
+            out=fk,
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d,
+                    t,
+                    event,
+                    taime,
+                    msg,
+                ),
+            ),
+        )
+    return result
+
+
+async def uploader(file, name, taime, event, msg):
+    with open(file, "rb") as f:
+        result = await uploadable(
+            client=event.client,
+            file=f,
+            filename=name,
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d,
+                    t,
+                    event,
+                    taime,
+                    msg,
+                ),
+            ),
+        )
+    return result
 
 
 async def is_admin(chat_id, user_id):

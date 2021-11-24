@@ -1,10 +1,12 @@
 # by:koala @mixiologist
 # Lord Userbot
 
+
 from telethon.events import ChatAction
 
 from userbot import ALIVE_NAME, DEVS, bot
 from userbot.events import man_cmd, register
+from userbot.modules.sql_helper.gmute_sql import get_all_gmute
 from userbot.utils import get_user_from_event
 
 # Ported For Lord-Userbot by liualvinas/Alvin
@@ -171,3 +173,20 @@ async def gunben(userbot):
         f"**User ID:** `{user.id}`\n"
         f"**Action:** `UnGBanned by {ALIVE_NAME}`"
     )
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"listgmute$"))
+async def gablist(event):
+    gmuted_users = get_all_gmute()
+    GMUTE_LIST = "**List Global Banned Saat Ini**\n"
+    if len(gmuted_users) > 0:
+        for a_user in gmuted_users:
+            if a_user.reason:
+                GMUTE_LIST += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) **Reason** `{a_user.reason}`\n"
+            else:
+                GMUTE_LIST += (
+                    f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) `No Reason`\n"
+                )
+    else:
+        GMUTE_LIST = "Belum ada Pengguna yang Di-Gmute"
+    await event.edit(GMUTE_LIST)

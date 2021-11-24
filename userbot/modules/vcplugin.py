@@ -14,6 +14,7 @@ from pytgcalls.types.input_stream.quality import (
     LowQualityVideo,
     MediumQualityVideo,
 )
+from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 from telethon.tl import types
 from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
@@ -157,7 +158,7 @@ async def vc_play(event):
                         AudioPiped(
                             ytlink,
                         ),
-                        stream_type=StreamType().pulse_stream,
+                        stream_type=StreamType().local_stream,
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                     await botman.edit(
@@ -168,9 +169,9 @@ async def vc_play(event):
                     await botman.edit(f"`{ep}`")
 
     else:
-        botman = await edit_or_reply(replied, "`Downloading`")
+        botman = await event.edit("`Downloading`")
         dl = await replied.download_media()
-        link = replied.link
+        link = f"{replied.message_link}"
         if replied.audio:
             songname = "Telegram Music Player..."
         elif replied.voice:
@@ -186,7 +187,7 @@ async def vc_play(event):
                 AudioPiped(
                     dl,
                 ),
-                stream_type=StreamType().pulse_stream,
+                stream_type=StreamType().local_stream,
             )
             add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await botman.edit(
@@ -237,7 +238,7 @@ async def vc_vplay(event):
                     await call_py.join_group_call(
                         chat_id,
                         AudioVideoPiped(ytlink, HighQualityAudio(), hmmm),
-                        stream_type=StreamType().pulse_stream,
+                        stream_type=StreamType().local_stream,
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
                     await xnxx.edit(
@@ -248,9 +249,9 @@ async def vc_vplay(event):
                     await xnxx.edit(f"`{ep}`")
 
     elif replied:
-        xnxx = await edit_or_reply(replied, "`Downloading`")
+        xnxx = await event.edit("`Downloading`")
         dl = await replied.download_media()
-        link = replied.link
+        link = f"{replied.message_link}"
         if len(event.text.split()) < 2:
             RESOLUSI = 720
         else:
@@ -273,7 +274,7 @@ async def vc_vplay(event):
             await call_py.join_group_call(
                 chat_id,
                 AudioVideoPiped(dl, HighQualityAudio(), hmmm),
-                stream_type=StreamType().pulse_stream,
+                stream_type=StreamType().local_stream,
             )
             add_to_queue(chat_id, songname, dl, link, "Video", RESOLUSI)
             await xnxx.edit(
@@ -305,7 +306,7 @@ async def vc_vplay(event):
                     await call_py.join_group_call(
                         chat_id,
                         AudioVideoPiped(ytlink, HighQualityAudio(), hmmm),
-                        stream_type=StreamType().pulse_stream,
+                        stream_type=StreamType().local_stream,
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
                     await xnxx.edit(
@@ -434,9 +435,10 @@ async def vc_playlist(event):
 
 @call_py.on_stream_end()
 async def stream_end_handler(_, u: Update):
-    chat_id = u.chat_id
-    print(chat_id)
-    await skip_current_song(chat_id)
+    if isinstance(u, StreamAudioEnded) or isinstance(u, StreamVideoEnded):
+        chat_id = u.chat_id
+        print(chat_id)
+        await skip_current_song(chat_id)
 
 
 @call_py.on_closed_voice_chat()

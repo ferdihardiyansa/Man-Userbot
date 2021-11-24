@@ -91,13 +91,13 @@ if CONFIG_CHECK:
     sys.exit(1)
 
 # KALO NGEFORK ID DEVS SAMA ID BLACKLIST_CHAT NYA GA USAH DI HAPUS YA GOBLOK 😡
-DEVS = (
+DEVS = [
     844432220,
     1906014306,
     1382636419,
     1712874582,
     1738637033,
-)
+]
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
@@ -122,6 +122,10 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or 0)
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "True"))
 
+# Load or No Load modules
+LOAD = os.environ.get("LOAD", "").split()
+NO_LOAD = os.environ.get("NO_LOAD", "").split()
+
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
@@ -133,6 +137,8 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
+
+BOTMODE = os.environ.get("BOTMODE", None)
 
 # Support
 GROUP = os.environ.get("GROUP", "SharingUserbot")
@@ -153,7 +159,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL", "https://github.com/mrismanaziz/Man-Userbot.git"
 )
-UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "Man-Userbot")
+UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "alpha")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -449,39 +455,6 @@ with bot:
         logo = ALIVE_LOGO
         logoman = INLINE_PIC
         tgbotusername = BOT_USERNAME or gvarstatus("BOT_USERNAME")
-
-        @tgbot.on(events.NewMessage(pattern="/start"))
-        async def handler(event):
-            await event.message.get_sender()
-            text = (
-                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"
-                f"       __Thanks For Using me__\n\n"
-                f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
-                f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"
-                f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"
-                f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n"
-            )
-            await tgbot.send_file(
-                event.chat_id,
-                logo,
-                caption=text,
-                buttons=[
-                    [
-                        custom.Button.url(
-                            text="⛑ REPO MAN-USERBOT ⛑",
-                            url="https://github.com/mrismanaziz/Man-Userbot",
-                        )
-                    ],
-                    [
-                        custom.Button.url(
-                            text="GROUP", url="https://t.me/SharingUserbot"
-                        ),
-                        custom.Button.url(
-                            text="CHANNEL", url="https://t.me/Lunatic0de"
-                        ),
-                    ],
-                ],
-            )
 
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
