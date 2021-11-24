@@ -32,7 +32,7 @@ from userbot.utils import _format, edit_delete, edit_or_reply, reply_id, time_fo
 from userbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
-botusername = gvarstatus("BOT_USERNAME") or BOT_USERNAME
+botusername = BOT_USERNAME
 OWNER_ID = uid
 
 
