@@ -394,6 +394,19 @@ except AttributeError:
     pass
 
 
+if not BOT_TOKEN is None:
+    tgbot = TelegramClient(
+        "TG_BOT_TOKEN",
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    ).start(bot_token=BOT_TOKEN)
+else:
+    tgbot = None
+
+
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 4
@@ -438,23 +451,13 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
-        from userbot.modules.sql_helper.globals import gvarstatus
-
-        tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=API_KEY,
-            api_hash=API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-        ).start(bot_token=BOT_TOKEN or gvarstatus("BOT_TOKEN"))
 
         dugmeler = CMD_HELP
         user = bot.get_me()
         uid = user.id
         logo = ALIVE_LOGO
         logoman = INLINE_PIC
-        tgbotusername = BOT_USERNAME or gvarstatus("BOT_USERNAME")
+        tgbotusername = BOT_USERNAME
 
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
@@ -509,7 +512,7 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
                 text = f"**✗ Man-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
@@ -531,7 +534,7 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(current_page_number + 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
@@ -543,7 +546,7 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in DEVS:
+            if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
                 openlagi = custom.Button.inline("• Re-Open Menu •", data="reopen")
                 await event.edit(
                     "⚜️ **Help Mode Button Ditutup!** ⚜️", buttons=openlagi
@@ -560,7 +563,7 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(current_page_number - 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
@@ -572,7 +575,7 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
