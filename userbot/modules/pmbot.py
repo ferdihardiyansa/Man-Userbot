@@ -408,7 +408,7 @@ async def bot_start(event):
 
 
 @man_cmd(pattern="(set|get|reset) pmbot(?: |$)(\w*)")
-async def setpmbot(event):
+async def setpmbot(cust_msg):
     try:
         import userbot.modules.sql_helper.globals as sql
     except AttributeError:
