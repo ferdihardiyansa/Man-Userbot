@@ -407,27 +407,49 @@ async def bot_start(event):
     await info_msg.edit(uinfo)
 
 
-@man_cmd(pattern="set (pmbot|pmblock)$")
+@man_cmd(pattern="(set|get|reset) pmbot(?: |$)(\w*)")
 async def setpmbot(event):
-    reply = await event.get_reply_message()
-    text = None
-    if reply:
-        text = reply.text
-    if text is None:
-        return await edit_delete(event, "**Mohon Reply Ke Pesan untuk di custom**")
-    input_str = event.pattern_match.group(1)
-    if input_str == "pmblock":
-        addgvar("pmblock", text)
-    if input_str == "pmbot":
-        addgvar("START_TEXT", text)
-    await edit_or_reply(event, f"**Berhasil Mengcustom** {input_str}")
-    if BOTLOG_CHATID:
-        await event.client.send_message(
-            BOTLOG_CHATID,
-            f"#SET_DATAVAR\
-                    \n**Start {input_str} diperbarui baru dalam database seperti di bawah ini**",
-        )
-        await event.client.send_message(BOTLOG_CHATID, text, silent=True)
+    try:
+        import userbot.modules.sql_helper.globals as sql
+    except AttributeError:
+        await cust_msg.edit("**Running on Non-SQL mode!**")
+        return
+    await cust_msg.edit("`Processing...`")
+    conf = cust_msg.pattern_match.group(1)
+    custom_message = sql.gvarstatus("START_TEXT")
+    if conf.lower() == "set":
+        message = await cust_msg.get_reply_message()
+        status = "Pesan"
+        if custom_message is not None:
+            sql.delgvar("START_TEXT")
+            status = "Pesan"
+        if not message:
+            return await cust_msg.edit("**Mohon Reply Ke Pesan**")
+        sql.addgvar("START_TEXT", msg)
+        await cust_msg.edit("**Berhasil Mengcustom Pesan Start BOT**")
+        if BOTLOG:
+            await cust_msg.client.send_message(
+                BOTLOG_CHATID,
+                f"**{status} PMBOT Yang Tersimpan:** \n\n{msg}",
+            )
+    if conf.lower() == "reset":
+        if custom_message is None:
+            await cust_msg.edit(
+                "**Menghapus Pesan Custom PMBOT menjadi Default**"
+            )
+        else:
+            sql.delgvar("START_TEXT")
+            await cust_msg.edit("**Pesan PMBOT Anda Sudah Default Sejak Awal**")
+    if conf.lower() == "get":
+        if custom_message is not None:
+            await cust_msg.edit(
+                "**Pesan PMBOT Yang Sekarang:**" f"\n\n{custom_message}"
+            )
+        else:
+            await cust_msg.edit(
+                "**Anda Belum Menyetel Pesan Costum PMBOT,**\n"
+                f"**Masih Menggunakan Pesan PM Default:**\n\n{start_msg}"
+            )
 
 
 CMD_HELP.update(
