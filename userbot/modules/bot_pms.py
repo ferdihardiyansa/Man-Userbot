@@ -3,40 +3,25 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-import re
 from collections import defaultdict
 from datetime import datetime
-from typing import Optional, Union
 
 from telethon import Button, events
 from telethon.errors import UserIsBlockedError
-from telethon.events import CallbackQuery, StopPropagation
 from telethon.utils import get_display_name
 
-from userbot import (
-    BOT_USERNAME,
-    BOTLOG,
-    BOTLOG_CHATID,
-    CHANNEL,
-    GROUP,
-    SUDO_USERS,
-    tgbot,
-    user,
-)
-from userbot.core import check_owner, pool
-from userbot.modules.botmanagers import ban_user_from_bot
+from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
 from userbot.modules.sql_helper.bot_pms_sql import (
     add_user_to_db,
     get_user_id,
-    get_user_logging,
     get_user_reply,
 )
 from userbot.modules.sql_helper.bot_starters import (
     add_starter_to_db,
     get_starter_details,
 )
-from userbot.modules.sql_helper.globals import delgvar, gvarstatus
+from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import _format, reply_id
 from userbot.utils.logger import logging
 
@@ -294,5 +279,3 @@ async def bot_start(event):
             \n**First Name:** {_format.mentionuser(user_name , user_id)}\
             \n**User ID:** `{user_id}`"
     await info_msg.edit(uinfo)
-
-
