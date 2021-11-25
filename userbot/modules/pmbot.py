@@ -425,6 +425,7 @@ async def setpmbot(cust_msg):
             status = "Pesan"
         if not message:
             return await cust_msg.edit("**Mohon Reply Ke Pesan**")
+        msg = message.message
         sql.addgvar("START_TEXT", msg)
         await cust_msg.edit("**Berhasil Mengcustom Pesan Start BOT**")
         if BOTLOG:
