@@ -27,7 +27,7 @@ from userbot.modules.sql_helper.bot_starters import (
     get_all_starters,
     get_starter_details,
 )
-from userbot.modules.sql_helper.globals import addgvar, delgvar, gvarstatus
+from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.utils import (
     _format,
     asst_cmd,
