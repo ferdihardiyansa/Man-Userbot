@@ -23,6 +23,7 @@ from userbot.modules.sql_helper.bot_pms_sql import get_user_id
 from userbot.modules.sql_helper.bot_starters import (
     del_starter_from_db,
     get_all_starters,
+    get_starter_details,
 )
 from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import (
