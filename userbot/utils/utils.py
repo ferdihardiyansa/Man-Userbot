@@ -108,64 +108,15 @@ async def autobot():
             await bot.send_message(
                 bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
             )
-        try:
             await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [username]))
-        except BaseException:
-            pass
-                await bot.send_message(
-                    BOTLOG_CHATID,
-                    f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
-                )
-                await bot.send_message(
-                    BOTLOG_CHATID,
-                    "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
-                )
-                heroku_var["BOT_TOKEN"] = token
-                heroku_var["BOT_USERNAME"] = f"@{username}"
-            else:
-                LOGS.info(
-                    "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
-                )
-                sys.exit(1)
-        elif isdone.startswith("Done!"):
-            token = isdone.split("`")[1]
-            await bot.send_message(bf, "/setinline")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{username}")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, "Search")
-            await asyncio.sleep(3)
-            await bot.send_message(bf, "/setuserpic")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{username}")
-            await asyncio.sleep(1)
-            await bot.send_file(bf, "userbot/resources/logo.jpg")
-            await asyncio.sleep(3)
-            await bot.send_message(bf, "/setabouttext")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{username}")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
-            await asyncio.sleep(3)
-            await bot.send_message(bf, "/setdescription")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{username}")
-            await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
+                BOTLOG_CHATID,
+                f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
             )
-        try:
-            await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [username]))
-        except BaseException:
-            pass
-                await bot.send_message(
-                    BOTLOG_CHATID,
-                    f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
-                )
-                await bot.send_message(
-                    BOTLOG_CHATID,
-                    "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
-                )
+            await bot.send_message(
+                BOTLOG_CHATID,
+                "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
+            )
             heroku_var["BOT_TOKEN"] = token
             heroku_var["BOT_USERNAME"] = f"@{username}"
         else:
@@ -173,6 +124,49 @@ async def autobot():
                 "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
             )
             sys.exit(1)
+    elif isdone.startswith("Done!"):
+        token = isdone.split("`")[1]
+        await bot.send_message(bf, "/setinline")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{username}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, "Search")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setuserpic")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{username}")
+        await asyncio.sleep(1)
+        await bot.send_file(bf, "userbot/resources/logo.jpg")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setabouttext")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{username}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setdescription")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{username}")
+        await asyncio.sleep(1)
+        await bot.send_message(
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
+        )
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [username]))
+        await bot.send_message(
+            BOTLOG_CHATID,
+            f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
+        )
+        await bot.send_message(
+            BOTLOG_CHATID,
+            "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
+        )
+        heroku_var["BOT_TOKEN"] = token
+        heroku_var["BOT_USERNAME"] = f"@{username}"
+    else:
+        LOGS.info(
+            "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
+        )
+        sys.exit(1)
 
 
 def load_module(shortname):
