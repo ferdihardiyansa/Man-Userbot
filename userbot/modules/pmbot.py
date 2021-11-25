@@ -47,7 +47,7 @@ OWNER = user.first_name
 FINISHED_PROGRESS_STR = "●"
 UNFINISHED_PROGRESS_STR = "○"
 
-DEFAULT_PMBOT = f"**👋 Hai** {mention}**!**\
+DEFAULT_PMBOT = "**👋 Hai** {mention}**!**\
      \n\n**Saya adalah {my_first}** \
      \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
      \n**Jangan Melakukan Spam Atau anda akan diBanned**\
