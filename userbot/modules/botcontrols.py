@@ -37,10 +37,10 @@ from userbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
-FINISHED_PROGRESS_STR = "●"
-UNFINISHED_PROGRESS_STR = "○"
 botusername = BOT_USERNAME
 OWNER_ID = uid
+FINISHED_PROGRESS_STR = "●"
+UNFINISHED_PROGRESS_STR = "○"
 
 
 async def get_user_and_reason(event):
@@ -85,7 +85,7 @@ async def ban_user_from_bot(user, reason, reply_to=None):
         add_user_to_bl(user.id, get_display_name(user), user.username, reason, date)
     except Exception as e:
         LOGS.error(str(e))
-    banned_msg = f"**Anda Telah Dibanned Selamanya.\nKarena:** `{reason}`"
+    banned_msg = f"**Anda Telah Dibanned dari Bot ini.\nKarena:** `{reason}`"
     await tgbot.send_message(user.id, banned_msg)
     info = f"**#Banned_Bot_PM_User**\
             \n**First Name:** {_format.mentionuser(get_display_name(user) , user.id)}\
@@ -104,7 +104,7 @@ async def unban_user_from_bot(user, reason, reply_to=None):
     banned_msg = "**Anda Telah diunbanned dari Bot ini.**"
 
     if reason is not None:
-        banned_msg += f"\n**Karena:** __{reason}__"
+        banned_msg += f"\n**Karena:** {reason}"
     await tgbot.send_message(user.id, banned_msg)
     info = f"**#Unbanned_Bot_PM_User**\
             \n**First Name:** {_format.mentionuser(get_display_name(user) , user.id)}\
