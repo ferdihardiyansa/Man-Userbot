@@ -32,15 +32,6 @@ OWNER_ID = user.id
 OWNER = user.first_name
 
 
-class FloodConfig:
-    BANNED_USERS = set()
-    USERS = defaultdict(list)
-    MESSAGES = 3
-    SECONDS = 5
-    ALERT = defaultdict(dict)
-    AUTOBAN = 7
-
-
 async def check_bot_started_users(user, event):
     if user.id == OWNER_ID:
         return
