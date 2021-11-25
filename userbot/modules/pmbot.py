@@ -409,13 +409,13 @@ async def bot_start(event):
 
 @man_cmd(pattern="set pmbot$")
 async def setpmbot(event):
+    input_str = event.pattern_match.group(1)
     reply = await event.get_reply_message()
     text = None
     if reply:
         text = reply.text
     if text is None:
         return await edit_delete(event, "**Mohon Reply Ke Pesan untuk di custom**")
-    input_str = event.pattern_match.group(1)
     if input_str == "pmbot":
         addgvar("START_TEXT", text)
     await edit_or_reply(event, f"**Berhasil Mengcustom** {input_str}")
