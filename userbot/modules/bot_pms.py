@@ -187,59 +187,6 @@ async def bot_pms(event):
                     )
 
 
-@tgbot.on(events.MessageEdited(outgoing=True))
-async def bot_pms_edit(event):
-    chat = await event.get_chat()
-    if check_is_black_list(chat.id):
-        return
-    if chat.id != OWNER_ID:
-        users = get_user_reply(event.id)
-        if users is None:
-            return
-        reply_msg = None
-        for user in users:
-            if user.chat_id == str(chat.id):
-                reply_msg = user.message_id
-                break
-        if reply_msg:
-            await event.client.send_message(
-                BOTLOG_CHATID,
-                f"⬆️ **Pesan ini Telah diedit oleh** {_format.mentionuser(get_display_name(chat) , chat.id)} **sebagai:**",
-                reply_to=reply_msg,
-            )
-            msg = await event.forward_to(BOTLOG_CHATID)
-            try:
-                add_user_to_db(msg.id, get_display_name(chat), chat.id, event.id, 0, 0)
-            except Exception as e:
-                LOGS.error(str(e))
-                if BOTLOG:
-                    await event.client.send_message(
-                        BOTLOG_CHATID,
-                        f"**ERROR:** Saat Menyimpan Detail pesan di Database\n`{e}`",
-                    )
-
-    else:
-        reply_to = await reply_id(event)
-        if reply_to is not None:
-            users = get_user_id(reply_to)
-            result_id = 0
-            if users is None:
-                return
-            for usr in users:
-                if event.id == usr.logger_id:
-                    user_id = int(usr.chat_id)
-                    reply_msg = usr.reply_id
-                    result_id = usr.result_id
-                    break
-            if result_id != 0:
-                try:
-                    await event.client.edit_message(
-                        user_id, result_id, event.text, file=event.media
-                    )
-                except Exception as e:
-                    LOGS.error(str(e))
-
-
 @tgbot.on(events.NewMessage(pattern="^/uinfo$", from_users=OWNER_ID))
 async def bot_start(event):
     reply_to = await reply_id(event)
