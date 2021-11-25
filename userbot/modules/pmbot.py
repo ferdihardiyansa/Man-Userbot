@@ -407,7 +407,7 @@ async def bot_start(event):
     await info_msg.edit(uinfo)
 
 
-@man_cmd(pattern="set pmbot$")
+@man_cmd(pattern="set pmbot(?: |$)(\w*)")
 async def setpmbot(event):
     input_str = event.pattern_match.group(1)
     reply = await event.get_reply_message()
