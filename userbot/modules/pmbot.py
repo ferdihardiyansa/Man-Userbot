@@ -47,12 +47,6 @@ OWNER = user.first_name
 FINISHED_PROGRESS_STR = "●"
 UNFINISHED_PROGRESS_STR = "○"
 
-DEFAULT_PMBOT = "**👋 Hai** {mention}**!**\
-     \n\n**Saya adalah {my_first}** \
-     \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
-     \n**Jangan Melakukan Spam Atau anda akan diBanned**\
-     \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
-
 
 async def get_user_and_reason(event):
     id_reason = event.pattern_match.group(1)
@@ -344,7 +338,11 @@ async def bot_start(event):
                 my_mention=my_mention,
             )
         else:
-            start_msg = f"{DEFAULT_PMBOT}"
+            start_msg = f"**👋 Hai** {mention}**!**\
+                        \n\n**Saya adalah {my_first}** \
+                        \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
+                        \n**Jangan Melakukan Spam Atau anda akan diBanned**\
+                        \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
         buttons = [
             (
                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
@@ -409,59 +407,51 @@ async def bot_start(event):
     await info_msg.edit(uinfo)
 
 
-@man_cmd(pattern="(set|get|reset) pmbot(?: |$)(\w*)")
-async def setpmbot(cust_msg):
+@man_cmd(pattern="(set|reset) pmbot(?: |$)(\w*)")
+async def setpmbot(event):
     try:
         import userbot.modules.sql_helper.globals as sql
     except AttributeError:
-        await cust_msg.edit("**Running on Non-SQL mode!**")
+        await event.edit("**Running on Non-SQL mode!**")
         return
-    await cust_msg.edit("`Processing...`")
-    conf = cust_msg.pattern_match.group(1)
+    xnxx = await edit_or_reply(event, "`Processing...`")
+    conf = event.pattern_match.group(1)
     custom_message = sql.gvarstatus("START_TEXT")
     if conf.lower() == "set":
-        message = await cust_msg.get_reply_message()
+        message = await event.get_reply_message()
         status = "Pesan"
         if custom_message is not None:
             sql.delgvar("START_TEXT")
             status = "Pesan"
         if not message:
-            return await cust_msg.edit("**Mohon Reply Ke Pesan**")
+            return await xnxx.edit("**Mohon Reply Ke Pesan**")
         msg = message.message
         sql.addgvar("START_TEXT", msg)
-        await cust_msg.edit("**Berhasil Mengcustom Pesan Start BOT**")
+        await xnxx.edit("**Berhasil Mengcustom Pesan Start BOT**")
         if BOTLOG:
-            await cust_msg.client.send_message(
+            await event.client.send_message(
                 BOTLOG_CHATID,
                 f"**{status} PMBOT Yang Tersimpan:** \n\n{msg}",
             )
     if conf.lower() == "reset":
         if custom_message is None:
-            await cust_msg.edit("**Menghapus Pesan Custom PMBOT menjadi Default**")
+            await edit_delete(event, "**Berhasil Menghapus Pesan Custom PMBOT**")
         else:
             sql.delgvar("START_TEXT")
-            await cust_msg.edit("**Pesan PMBOT Anda Sudah Default Sejak Awal**")
-    if conf.lower() == "get":
-        if custom_message is not None:
-            await cust_msg.edit(
-                "**Pesan PMBOT Yang Sekarang:**" f"\n\n{custom_message}"
-            )
-        else:
-            await cust_msg.edit(
-                "**Anda Belum Menyetel Pesan Costum PMBOT,**\n"
-                f"**Masih Menggunakan Pesan PM Default:**\n\n{DEFAULT_PMBOT}"
-            )
+            await edit_delete(event, "**Berhasil Menghapus Pesan Custom PMBOT**")
 
 
 CMD_HELP.update(
     {
         "pmbot": f"**Plugin : **`pmbot`\
         \n\n  •  **Syntax :** `{cmd}bblist`\
-        \n  •  **Function : **Untuk Melihat Daftar pengguna yang dibanned di bot Anda.\
+        \n  •  **Function : **Untuk Melihat Daftar pengguna yang dibanned di bot anda.\
         \n\n  •  **Syntax :** `{cmd}botuser`\
-        \n  •  **Function : **Untuk Melihat Daftar Pengguna yang Memulai Bot Anda.\
+        \n  •  **Function : **Untuk Melihat Daftar Pengguna yang Memulai Bot anda.\
         \n\n  •  **Syntax :** `{cmd}set pmbot` <balas ke pesan>\
         \n  •  **Function : **Mengcustom Pesan start pmbot.\
+        \n\n  •  **Syntax :** `{cmd}reset pmbot`\
+        \n  •  **Function : **Mengembalikan Custom Start PMBOT menjadi default.\
     "
     }
 )
