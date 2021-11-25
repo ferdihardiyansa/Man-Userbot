@@ -11,11 +11,7 @@ from telethon.utils import get_display_name
 
 from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-from userbot.modules.sql_helper.bot_pms_sql import (
-    add_user_to_db,
-    get_user_id,
-    get_user_reply,
-)
+from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
 from userbot.modules.sql_helper.bot_starters import (
     add_starter_to_db,
     get_starter_details,
