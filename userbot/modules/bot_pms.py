@@ -14,6 +14,7 @@ from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, GROUP, bot, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import (
+    add_starter_to_db,
     add_user_to_bl,
     check_is_black_list,
     get_all_bl_users,
