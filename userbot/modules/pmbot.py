@@ -435,10 +435,10 @@ async def setpmbot(event):
             )
     if conf.lower() == "reset":
         if custom_message is None:
-            await edit_delete(event, "**Berhasil Menghapus Pesan Custom PMBOT**")
+            await edit_delete(xnxx, "**Berhasil Menghapus Pesan Custom PMBOT**")
         else:
             sql.delgvar("START_TEXT")
-            await edit_delete(event, "**Berhasil Menghapus Pesan Custom PMBOT**")
+            await edit_delete(xnxx, "**Berhasil Menghapus Pesan Custom PMBOT**")
 
 
 CMD_HELP.update(
