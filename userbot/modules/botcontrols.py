@@ -12,7 +12,7 @@ from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot, tgbot, uid
-from userbot.events import man_cmd
+from userbot.utils import asst_cmd, man_cmd
 from userbot.modules.botmanagers import (
     ban_user_from_bot,
     get_user_and_reason,
@@ -36,26 +36,26 @@ botusername = BOT_USERNAME
 OWNER_ID = uid
 
 
-@tgbot.on(events.NewMessage(pattern=r"^/help$", from_users=OWNER_ID))
+@asst_cmd(pattern=r"^/help$", from_users=OWNER_ID)
 async def bot_help(event):
     await event.reply(
         f"""**Perintah di Bot ini adalah:**\n
 **NOTE: Perintah ini hanya berfungsi di {botusername}**\n
  • **Command : **/uinfo <reply ke pesan>
- • **Function : **__Untuk Mencari Info Pengirim Pesan.__\n
+ • **Function : **Untuk Mencari Info Pengirim Pesan.\n
  • **Command : **/ban <alasan> atau /ban <username/userid> <alasan>
- • **Function : **__Untuk Membanned Pengguna dari BOT.(Gunakan alasan saat ban)__\n
+ • **Function : **Untuk Membanned Pengguna dari BOT.(Gunakan alasan saat ban)\n
  • **Command : **/unban <alasan> atau /unban <username/userid>
- • **Function : **__Membuka Banned pengguna dari bot, agar bisa mengirim pesan lagi dibot.__
- • **NOTE : **__Untuk memeriksa daftar pengguna yang dibanned Ketik__ `.bblist`\n
+ • **Function : **Membuka Banned pengguna dari bot, agar bisa mengirim pesan lagi dibot.
+ • **NOTE : **Untuk memeriksa daftar pengguna yang dibanned Ketik `.bblist`\n
  • **Command : **/broadcast
- • **Function : **__Balas ke pesan untuk diBroadcast ke setiap pengguna yang memulai bot Anda. Untuk mendapatkan daftar pengguna Ketik__ `.botuser`\n
+ • **Function : **Balas ke pesan untuk diBroadcast ke setiap pengguna yang memulai bot Anda. Untuk mendapatkan daftar pengguna Ketik `.botuser`\n
  • **NOTE : ** Jika pengguna menghentikan/memblokir bot maka dia akan dihapus dari database Anda yaitu dia akan dihapus dari daftar bot_starters
 """
     )
 
 
-@tgbot.on(events.NewMessage(pattern="^/broadcast$", from_users=OWNER_ID))
+@asst_cmd(pattern="^/broadcast$", from_users=OWNER_ID)
 async def bot_broadcast(event):
     replied = await event.get_reply_message()
     if not replied:
@@ -112,7 +112,7 @@ async def bot_broadcast(event):
     await br_cast.edit(b_info, parse_mode="html")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"botuser$"))
+@man_cmd(pattern="botuser$")
 async def ban_starters(event):
     "To get list of users who started bot."
     ulist = get_all_starters()
@@ -124,7 +124,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@tgbot.on(events.NewMessage(pattern="^/ban\\s+([\\s\\S]*)", from_users=OWNER_ID))
+@asst_cmd(pattern="^/ban\\s+([\\s\\S]*)", from_users=OWNER_ID)
 async def ban_botpms(event):
     user_id, reason = await get_user_and_reason(event)
     reply_to = await reply_id(event)
@@ -160,7 +160,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@tgbot.on(events.NewMessage(pattern="^/unban(?:\\s|$)([\\s\\S]*)", from_users=OWNER_ID))
+@asst_cmd(pattern="^/unban(?:\\s|$)([\\s\\S]*)", from_users=OWNER_ID)
 async def ban_botpms(event):
     user_id, reason = await get_user_and_reason(event)
     reply_to = await reply_id(event)
@@ -186,7 +186,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"bblist$"))
+@man_cmd(pattern="bblist$")
 async def ban_starters(event):
     "To get list of users who are banned in bot."
     ulist = get_all_bl_users()
@@ -198,27 +198,9 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"botflood (on|off)$"))
-async def ban_antiflood(event):
-    "To enable or disable bot antiflood."
-    input_str = event.pattern_match.group(1)
-    if input_str == "on":
-        if gvarstatus("bot_flood") is not None:
-            return await edit_delete(event, "**Bot Antiflood sudah diaktifkan.**")
-        addgvar("bot_flood", True)
-        await edit_delete(event, "**Bot Antiflood Berhasil diaktifkan.**")
-    elif input_str == "off":
-        if gvarstatus("bot_flood") is None:
-            return await edit_delete(event, "**Bot Antiflood sudah dinonaktifkan.**")
-        delgvar("bot_flood")
-        await edit_delete(event, "**Bot Antiflood Berhasil dinonaktifkan.**")
-
-
 CMD_HELP.update(
     {
         "pmbot": f"**Plugin : **`pmbot`\
-        \n\n  •  **Syntax :** `{cmd}botflood` <on/off>\
-        \n  •  **Function : **Untuk mengaktfikan/mematikan anti flood di bot.\
         \n\n  •  **Syntax :** `{cmd}bblist`\
         \n  •  **Function : **Untuk Melihat Daftar pengguna yang dibanned di bot Anda.\
         \n\n  •  **Syntax :** `{cmd}botuser`\
