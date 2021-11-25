@@ -3,7 +3,6 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-from collections import defaultdict
 from datetime import datetime
 
 from telethon import Button, events
