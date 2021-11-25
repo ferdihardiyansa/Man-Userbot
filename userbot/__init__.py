@@ -25,10 +25,12 @@ from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from pytgcalls import PyTgCalls
 from requests import get
+from telethon.errors import UserIsBlockedError
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient, custom, events
 from telethon.tl.types import InputWebDocument
+from telethon.utils import get_display_name
 
 from .storage import Storage
 
@@ -451,6 +453,10 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
+        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
+        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from userbot.utils import reply_id
 
         dugmeler = CMD_HELP
         user = bot.get_me()
@@ -458,6 +464,62 @@ with bot:
         logo = ALIVE_LOGO
         logoman = INLINE_PIC
         tgbotusername = BOT_USERNAME
+
+        @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+        async def bot_pms(event):
+            chat = await event.get_chat()
+            if check_is_black_list(chat.id):
+                return
+            if chat.id != OWNER_ID:
+                msg = await event.forward_to(OWNER_ID)
+                try:
+                    add_user_to_db(msg.id, get_display_name(chat), chat.id, event.id, 0, 0)
+                except Exception as e:
+                    LOGS.error(str(e))
+                    if BOTLOG:
+                        await event.client.send_message(
+                            BOTLOG_CHATID,
+                            f"**ERROR:** Saat menyimpan detail pesan di database\n`{str(e)}`",
+                        )
+            else:
+                if event.text.startswith("/"):
+            return
+                reply_to = await reply_id(event)
+                if reply_to is None:
+                    return
+                users = get_user_id(reply_to)
+                if users is None:
+                    return
+                for usr in users:
+                    user_id = int(usr.chat_id)
+                    reply_msg = usr.reply_id
+                    user_name = usr.first_name
+                    break
+                if user_id is not None:
+                    try:
+                        if event.media:
+                            msg = await event.client.send_file(
+                                user_id, event.media, caption=event.text, reply_to=reply_msg
+                            )
+                        else:
+                            msg = await event.client.send_message(
+                                user_id, event.text, reply_to=reply_msg, link_preview=False
+                            )
+                    except UserIsBlockedError:
+                        return await event.reply("❌ 𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝘄𝗮𝘀 𝗯𝗹𝗼𝗰𝗸𝗲𝗱 𝗯𝘆 𝘁𝗵𝗲 𝘂𝘀𝗲𝗿.")
+                    except Exception as e:
+                        return await event.reply(f"**ERROR:** `{e}`")
+                    try:
+                        add_user_to_db(
+                            reply_to, user_name, user_id, reply_msg, event.id, msg.id
+                        )
+                    except Exception as e:
+                        LOGS.error(str(e))
+                        if BOTLOG:
+                            await event.client.send_message(
+                                BOTLOG_CHATID,
+                                f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
+                            )
 
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
