@@ -27,7 +27,7 @@ from userbot.modules.sql_helper.bot_starters import (
     get_all_starters,
     get_starter_details,
 )
-from userbot.modules.sql_helper.globals import addgvar, gvarstatus
+from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import (
     _format,
     asst_cmd,
@@ -434,9 +434,7 @@ async def setpmbot(event):
             )
     if conf.lower() == "reset":
         if custom_message is None:
-            await cust_msg.edit(
-                "**Menghapus Pesan Custom PMBOT menjadi Default**"
-            )
+            await cust_msg.edit("**Menghapus Pesan Custom PMBOT menjadi Default**")
         else:
             sql.delgvar("START_TEXT")
             await cust_msg.edit("**Pesan PMBOT Anda Sudah Default Sejak Awal**")
