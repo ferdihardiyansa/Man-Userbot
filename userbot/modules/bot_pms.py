@@ -17,7 +17,7 @@ from userbot.modules.sql_helper.bot_starters import (
     get_starter_details,
 )
 from userbot.modules.sql_helper.globals import gvarstatus
-from userbot.utils import _format, reply_id
+from userbot.utils import _format, asst_cmd, reply_id
 from userbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
@@ -49,11 +49,7 @@ async def check_bot_started_users(user, event):
         await event.client.send_message(BOTLOG_CHATID, notification)
 
 
-@tgbot.on(
-    events.NewMessage(
-        pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private
-    )
-)
+@asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
 async def bot_start(event):
     chat = await event.get_chat()
     user = await event.client.get_me()
@@ -126,7 +122,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@asst_cmd(incoming=True, func=lambda e: e.is_private)
 async def bot_pms(event):
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -183,7 +179,7 @@ async def bot_pms(event):
                     )
 
 
-@tgbot.on(events.NewMessage(pattern="^/uinfo$", from_users=OWNER_ID))
+@asst_cmd(pattern="^/uinfo$", from_users=OWNER_ID)
 async def bot_start(event):
     reply_to = await reply_id(event)
     if not reply_to:
