@@ -108,7 +108,10 @@ async def autobot():
             await bot.send_message(
                 bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
             )
+        try:
             await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [username]))
+        except BaseException:
+            pass
             await bot.send_message(
                 BOTLOG_CHATID,
                 f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
@@ -151,15 +154,18 @@ async def autobot():
         await bot.send_message(
             bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
         )
+    try:
         await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [username]))
-        await bot.send_message(
-            BOTLOG_CHATID,
-            f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
-        )
-        await bot.send_message(
-            BOTLOG_CHATID,
-            "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
-        )
+    except BaseException:
+        pass
+            await bot.send_message(
+                BOTLOG_CHATID,
+                f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
+            )
+            await bot.send_message(
+                BOTLOG_CHATID,
+                "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
+            )
         heroku_var["BOT_TOKEN"] = token
         heroku_var["BOT_USERNAME"] = f"@{username}"
     else:
