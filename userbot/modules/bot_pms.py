@@ -9,7 +9,7 @@ from telethon import Button
 from telethon.errors import UserIsBlockedError
 from telethon.utils import get_display_name
 
-from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, user
+from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, user, tgbot
 from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
 from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
 from userbot.modules.sql_helper.bot_starters import (
@@ -122,7 +122,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@asst_cmd(incoming=True)
+@tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def bot_pms(event):
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
