@@ -14,7 +14,6 @@ from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, GROUP, bot, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import (
-    add_starter_to_db,
     add_user_to_bl,
     check_is_black_list,
     get_all_bl_users,
@@ -22,6 +21,7 @@ from userbot.modules.sql_helper.bot_blacklists import (
 )
 from userbot.modules.sql_helper.bot_pms_sql import get_user_id
 from userbot.modules.sql_helper.bot_starters import (
+    add_starter_to_db,
     del_starter_from_db,
     get_all_starters,
     get_starter_details,
@@ -124,12 +124,12 @@ async def check_bot_started_users(user, event):
     check = get_starter_details(user.id)
     if check is None:
         start_date = str(datetime.now().strftime("%B %d, %Y"))
-        notification = f"👾 **#BOT_START**\n**First Name:** {_format.mentionuser(user.first_name , user.id)} \
+        notification = f"🔮 **#BOT_START**\n**First Name:** {_format.mentionuser(user.first_name , user.id)} \
                 \n**User ID: **`{user.id}`\
                 \n**Action: **Telah Memulai saya."
     else:
         start_date = check.date
-        notification = f"👾 **#BOT_START**\n**First Name:** {_format.mentionuser(user.first_name , user.id)}\
+        notification = f"🔮 **#BOT_RESTART**\n**First Name:** {_format.mentionuser(user.first_name , user.id)}\
                 \n**ID: **`{user.id}`\
                 \n**Action: **Telah Me-Restart saya"
     try:
