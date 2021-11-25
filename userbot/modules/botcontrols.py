@@ -6,13 +6,11 @@
 import asyncio
 from datetime import datetime
 
-from telethon import events
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 
 from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot, tgbot, uid
-from userbot.utils import asst_cmd, man_cmd
+from userbot import CMD_HELP, uid
 from userbot.modules.botmanagers import (
     ban_user_from_bot,
     get_user_and_reason,
@@ -27,8 +25,15 @@ from userbot.modules.sql_helper.bot_starters import (
     del_starter_from_db,
     get_all_starters,
 )
-from userbot.modules.sql_helper.globals import addgvar, delgvar, gvarstatus
-from userbot.utils import _format, edit_delete, edit_or_reply, reply_id, time_formatter
+from userbot.utils import (
+    _format,
+    asst_cmd,
+    edit_delete,
+    edit_or_reply,
+    man_cmd,
+    reply_id,
+    time_formatter,
+)
 from userbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
