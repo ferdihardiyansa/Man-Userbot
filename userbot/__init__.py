@@ -483,7 +483,7 @@ with bot:
                         )
             else:
                 if event.text.startswith("/"):
-            return
+                    return
                 reply_to = await reply_id(event)
                 if reply_to is None:
                     return
