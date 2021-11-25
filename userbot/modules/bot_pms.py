@@ -122,7 +122,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@asst_cmd(incoming=True, func=lambda e: e.is_private)
+@asst_cmd(incoming=True)
 async def bot_pms(event):
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
