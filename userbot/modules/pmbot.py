@@ -27,7 +27,7 @@ from userbot.modules.sql_helper.bot_starters import (
     get_all_starters,
     get_starter_details,
 )
-from userbot.modules.sql_helper.globals import gvarstatus
+from userbot.modules.sql_helper.globals import addgvar, delgvar, gvarstatus
 from userbot.utils import (
     _format,
     asst_cmd,
@@ -407,6 +407,26 @@ async def bot_start(event):
     await info_msg.edit(uinfo)
 
 
+@man_cmd(pattern="set pmbot$")
+async def setpmbot(event):
+    reply = await event.get_reply_message()
+    text = None
+    if reply:
+        text = reply.text
+    if text is None:
+        return await edit_delete(event, "**Mohon Reply Ke Pesan untuk di custom**")
+    input_str = event.pattern_match.group(1)
+    if input_str == "pmbot":
+        addgvar("START_TEXT", text)
+    await edit_or_reply(event, f"**Berhasil Mengcustom** {input_str}")
+    if BOTLOG_CHATID:
+        await event.client.send_message(
+            BOTLOG_CHATID,
+            f"#SET_DATAVAR\
+                    \n**Start {input_str} diperbarui baru dalam database seperti di bawah ini**",
+        )
+
+
 CMD_HELP.update(
     {
         "pmbot": f"**Plugin : **`pmbot`\
@@ -414,6 +434,8 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk Melihat Daftar pengguna yang dibanned di bot Anda.\
         \n\n  •  **Syntax :** `{cmd}botuser`\
         \n  •  **Function : **Untuk Melihat Daftar Pengguna yang Memulai Bot Anda.\
+        \n\n  •  **Syntax :** `{cmd}set pmbot` <balas ke pesan>\
+        \n  •  **Function : **Mengcustom Pesan start pmbot.\
     "
     }
 )
