@@ -463,6 +463,7 @@ with bot:
         logo = ALIVE_LOGO
         logoman = INLINE_PIC
         tgbotusername = BOT_USERNAME
+        OWNER_ID = uid
 
         @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
         async def bot_pms(event):
