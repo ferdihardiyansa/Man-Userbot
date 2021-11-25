@@ -5,7 +5,7 @@
 
 from datetime import datetime
 
-from telethon import Button
+from telethon import Button, events
 from telethon.errors import UserIsBlockedError
 from telethon.utils import get_display_name
 
