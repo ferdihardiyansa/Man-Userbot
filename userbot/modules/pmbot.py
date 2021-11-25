@@ -407,15 +407,14 @@ async def bot_start(event):
     await info_msg.edit(uinfo)
 
 
-@man_cmd(pattern="set pmbot(?: |$)(\w*)")
+@man_cmd(pattern="set (pmbot|pmblock)$")
 async def setpmbot(event):
-    input_str = event.pattern_match.group(1)
     reply = await event.get_reply_message()
-    text = None
-    if reply:
-        text = reply.text
     if text is None:
         return await edit_delete(event, "**Mohon Reply Ke Pesan untuk di custom**")
+    input_str = event.pattern_match.group(1)
+    if input_str == "pmblock":
+        addgvar("pmblock", text)
     if input_str == "pmbot":
         addgvar("START_TEXT", text)
     await edit_or_reply(event, f"**Berhasil Mengcustom** {input_str}")
@@ -425,6 +424,7 @@ async def setpmbot(event):
             f"#SET_DATAVAR\
                     \n**Start {input_str} diperbarui baru dalam database seperti di bawah ini**",
         )
+        await event.client.send_message(BOTLOG_CHATID, text, silent=True)
 
 
 CMD_HELP.update(
