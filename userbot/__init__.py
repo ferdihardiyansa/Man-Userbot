@@ -455,7 +455,6 @@ with bot:
     try:
         from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
         from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
         from userbot.utils import reply_id
 
         dugmeler = CMD_HELP
@@ -473,7 +472,9 @@ with bot:
             if chat.id != OWNER_ID:
                 msg = await event.forward_to(OWNER_ID)
                 try:
-                    add_user_to_db(msg.id, get_display_name(chat), chat.id, event.id, 0, 0)
+                    add_user_to_db(
+                        msg.id, get_display_name(chat), chat.id, event.id, 0, 0
+                    )
                 except Exception as e:
                     LOGS.error(str(e))
                     if BOTLOG:
@@ -499,11 +500,17 @@ with bot:
                     try:
                         if event.media:
                             msg = await event.client.send_file(
-                                user_id, event.media, caption=event.text, reply_to=reply_msg
+                                user_id,
+                                event.media,
+                                caption=event.text,
+                                reply_to=reply_msg,
                             )
                         else:
                             msg = await event.client.send_message(
-                                user_id, event.text, reply_to=reply_msg, link_preview=False
+                                user_id,
+                                event.text,
+                                reply_to=reply_msg,
+                                link_preview=False,
                             )
                     except UserIsBlockedError:
                         return await event.reply("❌ 𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝘄𝗮𝘀 𝗯𝗹𝗼𝗰𝗸𝗲𝗱 𝗯𝘆 𝘁𝗵𝗲 𝘂𝘀𝗲𝗿.")
