@@ -47,6 +47,13 @@ OWNER = user.first_name
 FINISHED_PROGRESS_STR = "●"
 UNFINISHED_PROGRESS_STR = "○"
 
+DEFAULT_PMBOT = (
+    f"**👋 Hai** {mention}**!**\
+     \n\n**Saya adalah {my_first}** \
+     \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
+     \n**Jangan Melakukan Spam Atau anda akan diBanned**\
+     \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
+)
 
 async def get_user_and_reason(event):
     id_reason = event.pattern_match.group(1)
@@ -338,11 +345,7 @@ async def bot_start(event):
                 my_mention=my_mention,
             )
         else:
-            start_msg = f"**👋 Hai** {mention}**!**\
-                        \n\n**Saya adalah {my_first}** \
-                        \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
-                        \n**Jangan Melakukan Spam Atau anda akan diBanned**\
-                        \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
+            start_msg = f"{DEFAULT_PMBOT}"
         buttons = [
             (
                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
@@ -447,7 +450,7 @@ async def setpmbot(cust_msg):
         else:
             await cust_msg.edit(
                 "**Anda Belum Menyetel Pesan Costum PMBOT,**\n"
-                f"**Masih Menggunakan Pesan PM Default:**\n\n{start_msg}"
+                f"**Masih Menggunakan Pesan PM Default:**\n\n{DEFAULT_PMBOT}"
             )
 
 
