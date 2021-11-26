@@ -236,7 +236,7 @@ async def bot_start(event):
         buttons = [
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                Button.inline("ᴜsᴇʀs", data="users"),
+                Button.inline("ᴛᴀɢ ᴀʟʟ", data="tagall"),
             ),
             (
                 Button.inline("ᴘɪɴɢ", data="pingbot"),
