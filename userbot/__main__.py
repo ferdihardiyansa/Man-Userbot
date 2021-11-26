@@ -17,7 +17,7 @@ from pytgcalls import idle
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 
-from userbot import ALIVE_NAME, BOT_VER, BOTLOG_CHATID, BOT_USERNAME
+from userbot import ALIVE_NAME, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import LOGS, UPSTREAM_REPO_BRANCH, bot, call_py
 from userbot.modules import ALL_MODULES
