@@ -156,7 +156,7 @@ async def botsettings(event):
             event.chat_id,
             message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**",
             buttons=[
-                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
+                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="alivebot"),),
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                     Button.inline("ᴜsᴇʀs", data="users"),
