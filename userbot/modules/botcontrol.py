@@ -149,13 +149,13 @@ async def bot_start(event):
                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
                 Button.url(
                     "ᴄʜᴀɴɴᴇʟ",
-                    f"https://t.me/{CHANNEL}",
+                    f"https://t.me/{CHANNEL}"
                 ),
             )
         ]
     else:
-        start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})\
-            \nApa ada yang bisa saya Bantu?**"
+        start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
+            \n**Apa ada yang bisa saya Bantu?**"
         buttons = [
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
