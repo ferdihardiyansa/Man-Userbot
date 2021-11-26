@@ -173,14 +173,136 @@ async def botsettings(event):
 @callback(data=re.compile(b"apiset"))
 async def apiset(event):
     await event.edit(
-        "**Silahkan Pilih API yang ingin anda Setting**",
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
+            [Button.inline("ALIVE", data="ocrapi")],
+            [
+                Button.inline("DEEP API", data="dapi"),
+                Button.inline("OCR API", data="ocrapi"),
+            ],
             [Button.inline("Remove.bg API", data="rmbgapi")],
-            [Button.inline("DEEP API", data="dapi")],
-            [Button.inline("OCR API", data="ocrapi")],
-            [Button.inline("« ʙᴀᴄᴋ", data="settings")],
+            [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
     )
+            
+
+
+@callback(data=re.compile(b"alivebot"))
+async def alivebot(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ALIVE EMOJI", data="alvmoji"),
+                Button.inline("ALIVE LOGO", data="alvlogo"),
+            ],
+            [
+                Button.inline("ALIVE NAME", data="alvname"),
+                Button.inline("ALIVE TEKS", data="alvteks"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="settings")],
+        ],
+    )
+
+
+@callback(data=re.compile(b"alvname"))
+async def alvname(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "ALIVE_NAME"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Nama Untuk var ALIVE_NAME anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"**ALIVE_NAME Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+                buttons=get_back_button("apiset"),
+            )
+
+
+@callback(data=re.compile(b"alvlogo"))
+async def alvlogo(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "ALIVE_LOGO"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Link Foto Untuk var ALIVE_LOGO anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"**ALIVE_LOGO Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+                buttons=get_back_button("apiset"),
+            )
+
+
+@callback(data=re.compile(b"alvmoji"))
+async def alvmoji(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "ALIVE_EMOJI"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Emoji Untuk var ALIVE_EMOJI anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"**ALIVE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+                buttons=get_back_button("apiset"),
+            )
+
+
+@callback(data=re.compile(b"alvteks"))
+async def alvteks(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "ALIVE_TEKS_CUSTOM"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Teks Untuk var ALIVE_TEKS_CUSTOM anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"**ALIVE_TEKS_CUSTOM Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+                buttons=get_back_button("apiset"),
+            )
 
 
 @callback(data=re.compile(b"rmbgapi"))
