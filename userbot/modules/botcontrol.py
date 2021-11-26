@@ -240,13 +240,13 @@ async def alvname(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
         else:
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**ALIVE_NAME Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
 
 
@@ -265,13 +265,13 @@ async def alvlogo(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
         else:
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**ALIVE_LOGO Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
 
 
@@ -290,13 +290,13 @@ async def alvmoji(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
         else:
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**ALIVE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
 
 
@@ -315,38 +315,13 @@ async def alvteks(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
         else:
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**ALIVE_TEKS_CUSTOM Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
-            )
-
-
-@callback(data=re.compile(b"inmoji"))
-async def inmoji(event):
-    await event.delete()
-    pru = event.sender_id
-    var = "INLINE_EMOJI"
-    async with event.client.conversation(pru) as conv:
-        await conv.send_message(
-            "**Silahkan Kirimkan Teks Untuk var INLINE_EMOJI anda**\n\nGunakan /cancel untuk membatalkan."
-        )
-        response = conv.wait_event(events.NewMessage(chats=pru))
-        response = await response
-        themssg = response.message.message
-        if themssg == "/cancel":
-            return await conv.send_message(
-                "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
-            )
-        else:
-            await setit(event, var, themssg)
-            await conv.send_message(
-                f"**INLINE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
 
 
@@ -365,13 +340,13 @@ async def alvch(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
         else:
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**ALIVE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
 
 
@@ -390,13 +365,38 @@ async def alvgc(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
             )
         else:
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**GROUP Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("alivemenu"),
+            )
+
+
+@callback(data=re.compile(b"inmoji"))
+async def inmoji(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "INLINE_EMOJI"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Teks Untuk var INLINE_EMOJI anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("inlinemenu"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"**INLINE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+                buttons=get_back_button("inlinemenu"),
             )
 
 
@@ -415,13 +415,13 @@ async def inpics(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("inlinemenu"),
             )
         else:
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**INLINE_PIC Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-                buttons=get_back_button("apiset"),
+                buttons=get_back_button("inlinemenu"),
             )
 
 
