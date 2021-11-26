@@ -11,7 +11,7 @@ from datetime import datetime
 from telethon import Button, custom
 from telethon.utils import get_display_name
 
-from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, tgbot, user
+from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, StartTime, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
 from userbot.modules.sql_helper.bot_starters import (
     add_starter_to_db,
@@ -19,7 +19,9 @@ from userbot.modules.sql_helper.bot_starters import (
     get_starter_details,
 )
 from userbot.modules.sql_helper.globals import gvarstatus
-from userbot.utils import _format, asst_cmd, callback, reply_id, time_formatter
+from userbot.utils import _format, asst_cmd, callback, reply_id
+
+from .ping import get_readable_time
 
 botusername = BOT_USERNAME
 OWNER = user.first_name
@@ -139,7 +141,7 @@ async def _(event):
 
 @callback(data=re.compile(b"uptimebot"))
 async def _(event):
-    uptime = time_formatter((time.time() - start_time) * 1000)
+    uptime = await get_readable_time((time.time() - StartTime))
     pin = f"💫 Uᴘᴛɪᴍᴇ = {uptime}"
     await event.answer(pin, cache_time=0, alert=True)
 
