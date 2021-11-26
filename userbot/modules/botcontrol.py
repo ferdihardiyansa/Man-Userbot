@@ -99,7 +99,7 @@ async def users(event):
                 force_document=True,
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
-                buttons = [
+                buttons=[
                     (
                         Button.inline("ʙᴀᴄᴋ", data="settings"),
                         Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
