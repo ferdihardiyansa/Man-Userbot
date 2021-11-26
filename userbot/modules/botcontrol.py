@@ -160,7 +160,8 @@ async def bot_start(event):
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                 Button.inline("ᴜsᴇʀs", data="users"),
-            )(
+            ),
+            (
                 Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
             )
         ]
