@@ -18,7 +18,7 @@ from userbot.modules.sql_helper.bot_starters import (
     get_starter_details,
 )
 from userbot.modules.sql_helper.globals import gvarstatus
-from userbot.utils import _format, asst_cmd, callback, reply_id
+from userbot.utils import _format, asst_cmd, callback, reply_id, time_formatter
 
 botusername = BOT_USERNAME
 OWNER = user.first_name
@@ -99,8 +99,11 @@ async def users(event):
                 force_document=True,
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
-                buttons=[
-                    (Button.inline("ʙᴀᴄᴋ", data="settings"),),
+                buttons = [
+                    (
+                        Button.inline("ʙᴀᴄᴋ", data="settings"),
+                        Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
+                    )
                 ],
             )
     else:
@@ -122,6 +125,22 @@ async def botsettings(event):
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
             ],
         )
+
+
+@callback(data=re.compile(b"pingbot"))
+async def _(event):
+    start = datetime.now()
+    end = datetime.now()
+    ms = (end - start).microseconds
+    pin = f"🏓 Pɪɴɢ = {ms} microseconds"
+    await event.answer(pin, cache_time=0, alert=True)
+
+
+@callback(data=re.compile(b"uptimebot"))
+async def _(event):
+    uptime = time_formatter((time.time() - start_time) * 1000)
+    pin = f"💫 Uᴘᴛɪᴍᴇ = {uptime}"
+    await event.answer(pin, cache_time=0, alert=True)
 
 
 @asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
@@ -177,6 +196,10 @@ async def bot_start(event):
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                 Button.inline("ᴜsᴇʀs", data="users"),
+            ),
+            (
+                Button.inline("ᴘɪɴɢ", data="pingbot"),
+                Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
             ),
             (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
         ]
