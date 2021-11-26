@@ -17,11 +17,13 @@ from userbot import (
     BOT_USERNAME,
     BOTLOG,
     BOTLOG_CHATID,
+    CMD_HANDLER,
     CHANNEL,
     GROUP,
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
     StartTime,
+    SUDO_HANDLER,
     tgbot,
     user,
 )
@@ -175,14 +177,17 @@ async def apiset(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
-            [Button.inline("ʀᴇᴍᴏᴠᴇ.ʙɢ ᴀᴘɪ", data="rmbgapi")],
-            [
-                Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
-                Button.inline("ᴏᴄʀ ᴀᴘɪ", data="ocrapi"),
-            ],
             [
                 Button.inline("ᴀʟɪᴠᴇ", data="alivemenu"),
                 Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
+            ],
+            [
+                Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
+                Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
+            ],
+            [
+                Button.inline("ᴏᴄʀ ᴀᴘɪ", data="ocrapi"),
+                Button.inline("ʀᴇᴍᴏᴠᴇ.ʙɢ ᴀᴘɪ", data="rmbgapi"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
@@ -219,6 +224,20 @@ async def inlinemenu(event):
             [
                 Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
                 Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
+        ],
+    )
+
+
+@callback(data=re.compile(b"hndlrmenu"))
+async def hndlrmenu(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ᴄᴍᴅ ʜᴀɴᴅʟᴇʀ", data="cmdhndlr"),
+                Button.inline("sᴜᴅᴏ ʜᴀɴᴅʟᴇʀ", data="sdhndlr"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="apiset")],
         ],
@@ -422,6 +441,78 @@ async def inpics(event):
             await conv.send_message(
                 f"**INLINE_PIC Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
                 buttons=get_back_button("inlinemenu"),
+            )
+
+
+@callback(data=re.compile(b"cmdhndlr"))
+async def cmdhndlr(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "CMD_HANDLER"
+    name = "Handler/ Trigger"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            f"**Kirim Simbol yang anda inginkan sebagai Handler/Pemicu untuk menggunakan bot\nPenangan Anda Saat Ini adalah** [ `{CMD_HANDLER}` ]\n\nGunakan /cancel untuk membatalkan.",
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif len(themssg) > 1:
+            await conv.send_message(
+                "Handler yang anda masukan salah harap gunakan simbol",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif themssg.startswith(("/", "#", "@")):
+            await conv.send_message(
+                "Simbol ini tidak dapat digunakan sebagai handler, Silahkan Gunakan Simbol lain",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"{name} **Berhasil diganti Menjadi** `{themssg}`",
+                buttons=get_back_button("hndlrmenu"),
+            )
+
+
+@callback(data=re.compile(b"sdhndlr"))
+async def sdhndlr(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "SUDO_HANDLER"
+    name = "Handler/ Trigger"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            f"**Kirim Simbol yang anda inginkan sebagai HANDLER untuk pengguna sudo bot anda\nSUDO_HANDLER anda Saat Ini adalah** [ `{SUDO_HANDLER}` ]\n\nGunakan /cancel untuk membatalkan.",
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif len(themssg) > 1:
+            await conv.send_message(
+                "Handler yang anda masukan salah harap gunakan simbol",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif themssg.startswith(("/", "#", "@")):
+            await conv.send_message(
+                "Simbol ini tidak dapat digunakan sebagai handler, Silahkan Gunakan Simbol lain",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"{name} **Berhasil diganti Menjadi** `{themssg}`",
+                buttons=get_back_button("hndlrmenu"),
             )
 
 
