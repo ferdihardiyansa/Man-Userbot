@@ -9,7 +9,7 @@ import time
 from datetime import datetime
 
 import heroku3
-from telethon import Button, custom
+from telethon import Button, custom, events
 from telethon.utils import get_display_name, pack_bot_file_id
 
 from userbot import (
@@ -175,9 +175,9 @@ async def apiset(event):
     await event.edit(
         "**Silahkan Pilih API yang ingin anda Setting**",
         buttons=[
-            [Button.inline("Remove.bg API", data="rmbg")],
+            [Button.inline("Remove.bg API", data="rmbgapi")],
             [Button.inline("DEEP API", data="dapi")],
-            [Button.inline("OCR API", data="oapi")],
+            [Button.inline("OCR API", data="ocrapi")],
             [Button.inline("« ʙᴀᴄᴋ", data="settings")],
         ],
     )
@@ -230,7 +230,7 @@ async def rmbgapi(event):
             )
 
 
-@callback(data=re.compile(b"oaspi"))
+@callback(data=re.compile(b"ocrapi"))
 async def rmbgapi(event):
     await event.delete()
     pru = event.sender_id
