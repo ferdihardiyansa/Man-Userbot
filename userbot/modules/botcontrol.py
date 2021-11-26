@@ -19,6 +19,7 @@ from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import _format, asst_cmd, callback, reply_id
 
 botusername = BOT_USERNAME
+OWNER = user.first_name
 OWNER_ID = user.id
 
 
