@@ -506,14 +506,14 @@ async def _(event):
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds
-    pin = f"🏓 Pɪɴɢ = {ms} microseconds"
+    pin = f"🏓 ᴘɪɴɢ = {ms} microseconds"
     await event.answer(pin, cache_time=0, alert=True)
 
 
 @callback(data=re.compile(b"uptimebot"))
 async def _(event):
     uptime = await get_readable_time((time.time() - StartTime))
-    pin = f"⏱ Uᴘᴛɪᴍᴇ = {uptime}"
+    pin = f"⏱ ᴜᴘᴛɪᴍᴇ = {uptime}"
     await event.answer(pin, cache_time=0, alert=True)
 
 
