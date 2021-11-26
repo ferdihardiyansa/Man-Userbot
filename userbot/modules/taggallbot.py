@@ -71,7 +71,7 @@ async def mentionall(event):
         pass
 
 
-@ass_cmd(pattern="^/cancel$")
+@asst_cmd(pattern="^/cancel$")
 async def cancel_spam(event):
     if event.chat_id not in spam_chats:
         return await event.reply("**Tidak ada proses Mention yang Sedang berjalan...**")
