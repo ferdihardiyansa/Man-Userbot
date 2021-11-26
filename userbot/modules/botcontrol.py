@@ -132,14 +132,13 @@ async def bot_start(event):
         ]
     else:
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})\
-            \nApa ada yang bisa saya Bantu?\
-            \nSilahkan Ketik /help Bila butuh Bantuan**"
-        buttons = (
-            [
-                [Button.inline("ᴘᴍʙᴏᴛ", data="pmbot")],
-                [Button.inline("ᴄʟᴏsᴇ", data="close")],
-            ],
-        )
+            \nApa ada yang bisa saya Bantu?"
+        buttons = [
+            (
+                Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
+                Button.inline("ᴄʟᴏsᴇ", data="close"),
+            )
+        ]
     try:
         await event.client.send_message(
             chat.id,
