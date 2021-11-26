@@ -5,6 +5,7 @@
 
 import io
 import re
+import time
 from datetime import datetime
 
 from telethon import Button, custom
