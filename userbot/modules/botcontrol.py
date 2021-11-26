@@ -210,6 +210,7 @@ async def bot_start(event):
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
             \n**Apa ada yang bisa saya Bantu?**"
         buttons = [
+            (Button.url("➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ ➕", f"t.me/{botusername}?startgroup=true"),),
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                 Button.inline("ᴜsᴇʀs", data="users"),
