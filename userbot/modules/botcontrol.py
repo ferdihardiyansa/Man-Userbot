@@ -170,7 +170,7 @@ async def botsettings(event):
         )
 
 
-@callback(data=compile(b"apiset"))
+@callback(data=re.compile(b"apiset"))
 async def apiset(event):
     await event.edit(
         "**Silahkan Pilih API yang ingin anda Setting**",
@@ -183,7 +183,7 @@ async def apiset(event):
     )
 
 
-@callback(data=compile(b"rmbgapi"))
+@callback(data=re.compile(b"rmbgapi"))
 async def rmbgapi(event):
     await event.delete()
     pru = event.sender_id
@@ -207,7 +207,7 @@ async def rmbgapi(event):
             )
 
 
-@callback(data=compile(b"dapi"))
+@callback(data=re.compile(b"dapi"))
 async def rmbgapi(event):
     await event.delete()
     pru = event.sender_id
@@ -230,7 +230,7 @@ async def rmbgapi(event):
             )
 
 
-@callback(data=compile(b"oaspi"))
+@callback(data=re.compile(b"oaspi"))
 async def rmbgapi(event):
     await event.delete()
     pru = event.sender_id
