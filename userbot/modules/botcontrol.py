@@ -175,12 +175,12 @@ async def apiset(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
-            [Button.inline("ALIVE", data="ocrapi")],
+            [Button.inline("ᴀʟɪᴠᴇ", data="ocrapi")],
             [
-                Button.inline("DEEP API", data="dapi"),
-                Button.inline("OCR API", data="ocrapi"),
+                Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
+                Button.inline("ᴏᴄʀ ᴀᴘɪ", data="ocrapi"),
             ],
-            [Button.inline("Remove.bg API", data="rmbgapi")],
+            [Button.inline("ʀᴇᴍᴏᴠᴇ.ʙɢ ᴀᴘɪ", data="rmbgapi")],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
     )
@@ -192,12 +192,12 @@ async def alivebot(event):
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
             [
-                Button.inline("ALIVE EMOJI", data="alvmoji"),
-                Button.inline("ALIVE LOGO", data="alvlogo"),
+                Button.inline("ᴀʟɪᴠᴇ ᴇᴍᴏᴊɪ", data="alvmoji"),
+                Button.inline("ᴀʟɪᴠᴇ ʟᴏɢᴏ", data="alvlogo"),
             ],
             [
-                Button.inline("ALIVE NAME", data="alvname"),
-                Button.inline("ALIVE TEKS", data="alvteks"),
+                Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
+                Button.inline("ᴀʟɪᴠᴇ ᴛᴇᴋs", data="alvteks"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
