@@ -1,4 +1,5 @@
-# Copyright (C) 2021 Catuserbot <https://github.com/sandy1709/catuserbot>
+# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
+# Copyright (C) 2021 TeamUltroid <https://github.com/TeamUltroid/Ultroid>
 # Recode by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
@@ -58,7 +59,7 @@ async def setit(event, name, value):
 
 
 def get_back_button(name):
-    button = [Button.inline("« ʙᴀᴄᴋ", data=f"{name}")]
+    button = [Button.inline("ʙᴀᴄᴋ", data=f"{name}")]
     return button
 
 
@@ -190,7 +191,7 @@ async def rmbgapi(event):
     var = "REM_BG_API_KEY"
     name = "Remove.bg API Key"
     async with event.client.conversation(pru) as conv:
-        await conv.send_message(get_string("ast_2"))
+        await conv.send_message("**Silahkan Kirimkan Remove.bg API key Anda dari remove.bg**\n\nGunakan /cancel untuk membatalkan.")
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
@@ -202,18 +203,18 @@ async def rmbgapi(event):
         else:
             await setit(event, var, themssg)
             await conv.send_message(
-                f"{name} changed to {themssg}",
+                f"{name} **Berhasil di Setting Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
                 buttons=get_back_button("apiset"),
             )
 
 
 @callback(data=re.compile(b"dapi"))
-async def rmbgapi(event):
+async def deepai(event):
     await event.delete()
     pru = event.sender_id
     var = "DEEP_AI"
     async with event.client.conversation(pru) as conv:
-        await conv.send_message("Get Your Deep Api from deepai.org and send here.")
+        await conv.send_message("**Silahkan Kirimkan API Deep AI Anda dari deepai.org**\n\nGunakan /cancel untuk membatalkan.")
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
@@ -225,18 +226,18 @@ async def rmbgapi(event):
         else:
             await setit(event, var, themssg)
             await conv.send_message(
-                f"{ALIVE_NAME} changed to {themssg}",
+                f"**API DEEP AI Berhasil di Setting Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
                 buttons=get_back_button("apiset"),
             )
 
 
 @callback(data=re.compile(b"ocrapi"))
-async def rmbgapi(event):
+async def ocrapi(event):
     await event.delete()
     pru = event.sender_id
     var = "OCR_SPACE_API_KEY"
     async with event.client.conversation(pru) as conv:
-        await conv.send_message("Get Your OCR api from ocr.space Send Send Here.")
+        await conv.send_message("**Silahkan Kirimkan OCR API Key anda dari ocr.space**\n\nGunakan /cancel untuk membatalkan.")
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
@@ -248,7 +249,7 @@ async def rmbgapi(event):
         else:
             await setit(event, var, themssg)
             await conv.send_message(
-                f"{ALIVE_NAME} changed to {themssg}",
+                f"**OCR API Key Berhasil di Setting Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
                 buttons=get_back_button("apiset"),
             )
 
