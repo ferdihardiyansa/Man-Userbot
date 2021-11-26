@@ -134,6 +134,10 @@ async def botsettings(event):
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                     Button.inline("ᴜsᴇʀs", data="users"),
                 ),
+                (
+                    Button.inline("ᴘɪɴɢ", data="pingbot"),
+                    Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
+                ),
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
             ],
         )
