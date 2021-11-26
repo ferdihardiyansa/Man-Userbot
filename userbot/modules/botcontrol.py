@@ -9,7 +9,7 @@ from datetime import datetime
 from telethon import Button, custom
 from telethon.utils import get_display_name
 
-from userbot import BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, tgbot, user
+from userbot import BOTLOG, BOTLOG_CHATID, BOT_USERNAME, CHANNEL, GROUP, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
 from userbot.modules.sql_helper.bot_starters import (
     add_starter_to_db,
