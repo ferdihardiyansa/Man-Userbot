@@ -9,7 +9,7 @@ import time
 from datetime import datetime
 
 from telethon import Button, custom
-from telethon.utils import get_display_name
+from telethon.utils import get_display_name, pack_bot_file_id
 
 from userbot import (
     BOT_USERNAME,
@@ -231,8 +231,34 @@ async def bot_start(event):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"**ERROR:** Saat Pengguna memulai Bot anda.\\\x1f                \n`{e}`",
+                f"**ERROR:** Saat Pengguna memulai Bot anda.\n`{e}`",
             )
 
     else:
         await check_bot_started_users(chat, event)
+
+
+@asst_cmd(pattern="^/id")
+async def _(event):
+    if event.reply_to_msg_id:
+        await event.get_input_chat()
+        r_msg = await event.get_reply_message()
+        if r_msg.media:
+            bot_api_file_id = pack_bot_file_id(r_msg.media)
+            await tgbot.send_message(
+                event.chat_id,
+                "**👥 Chat ID:** `{}`\n**🙋‍♂️ From User ID:** `{}`\n**💎 Bot API File ID:** `{}`".format(
+                    str(event.chat_id), str(r_msg.sender_id), bot_api_file_id
+                ),
+            )
+        else:
+            await tgbot.send_message(
+                event.chat_id,
+                "**👥 Chat ID:** `{}`\n**🙋‍♂️ From User ID:** `{}`".format(
+                    str(event.chat_id), str(r_msg.sender_id)
+                ),
+            )
+    else:
+        await tgbot.send_message(
+            event.chat_id, "**👥 Chat ID:** `{}`".format(str(event.chat_id))
+        )
