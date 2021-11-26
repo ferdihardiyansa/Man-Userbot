@@ -175,7 +175,7 @@ async def apiset(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
-            [Button.inline("ᴀʟɪᴠᴇ", data="ocrapi")],
+            [Button.inline("ᴀʟɪᴠᴇ", data="alivebot")],
             [
                 Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
                 Button.inline("ᴏᴄʀ ᴀᴘɪ", data="ocrapi"),
