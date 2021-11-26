@@ -94,6 +94,30 @@ async def pmbot(event):
             ],
         )
 
+@callback(data=re.compile(b"tagall"))
+async def bottagall(event):
+    await event.delete()
+    if event.query.user_id == OWNER_ID:
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"""**Perintah Untuk Tag ALL:**\n
+ × /all : Untuk mention/tag semua member dalam Group
+ × /cancel : Untuk Memberhentikan Mention all\n
+Cara Menggunakan:
+1. Tambahkan dulu bot ini ke Group anda
+2. Ketik /all <alasan>
+3. Bila ingin memberhentikan ketik /cancel
+""",
+            buttons=[
+                [
+                    custom.Button.inline(
+                        "ʙᴀᴄᴋ",
+                        data="settings",
+                    )
+                ],
+            ],
+        )
+
 
 @callback(data=re.compile(b"users"))
 async def users(event):
@@ -132,7 +156,7 @@ async def botsettings(event):
             buttons=[
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                    Button.inline("ᴜsᴇʀs", data="users"),
+                    Button.inline("ᴛᴀɢ ᴀʟʟ", data="tagall"),
                 ),
                 (
                     Button.inline("ᴘɪɴɢ", data="pingbot"),
