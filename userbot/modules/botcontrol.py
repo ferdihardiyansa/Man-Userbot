@@ -266,7 +266,7 @@ async def _(event):
 
 
 @asst_cmd(pattern="^/ping$")
-async def _(ping):
+async def _(event):
     uptime = await get_readable_time((time.time() - StartTime))
     await tgbot.send_message(
         event.chat_id,
