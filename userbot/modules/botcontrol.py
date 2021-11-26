@@ -129,7 +129,7 @@ async def botsettings(event):
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
-            message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya Bantu?**",
+            message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**",
             buttons=[
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
@@ -197,8 +197,8 @@ async def bot_start(event):
         else:
             start_msg = f"**👋 Hai** {mention}**!**\
                         \n\n**Saya adalah {my_first}** \
-                        \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
-                        \n**Jangan Melakukan Spam Atau anda akan diBanned**\
+                        \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
+                        \n**Jangan melakukan spam atau anda akan di Banned**\
                         \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
         buttons = [
             (
@@ -208,7 +208,7 @@ async def bot_start(event):
         ]
     else:
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
-            \n**Apa ada yang bisa saya Bantu?**"
+            \n**Apa ada yang bisa saya bantu?**"
         buttons = [
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
