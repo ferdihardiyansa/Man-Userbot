@@ -155,7 +155,7 @@ async def _(event):
 @callback(data=re.compile(b"uptimebot"))
 async def _(event):
     uptime = await get_readable_time((time.time() - StartTime))
-    pin = f"💫 Uᴘᴛɪᴍᴇ = {uptime}"
+    pin = f"⏱ Uᴘᴛɪᴍᴇ = {uptime}"
     await event.answer(pin, cache_time=0, alert=True)
 
 
