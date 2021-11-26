@@ -14,7 +14,6 @@ from telethon import Button, custom, events
 from telethon.utils import get_display_name, pack_bot_file_id
 
 from userbot import (
-    ALIVE_NAME,
     BOT_USERNAME,
     BOTLOG,
     BOTLOG_CHATID,
@@ -191,7 +190,9 @@ async def rmbgapi(event):
     var = "REM_BG_API_KEY"
     name = "Remove.bg API Key"
     async with event.client.conversation(pru) as conv:
-        await conv.send_message("**Silahkan Kirimkan Remove.bg API key Anda dari remove.bg**\n\nGunakan /cancel untuk membatalkan.")
+        await conv.send_message(
+            "**Silahkan Kirimkan Remove.bg API key Anda dari remove.bg**\n\nGunakan /cancel untuk membatalkan."
+        )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
@@ -214,7 +215,9 @@ async def deepai(event):
     pru = event.sender_id
     var = "DEEP_AI"
     async with event.client.conversation(pru) as conv:
-        await conv.send_message("**Silahkan Kirimkan API Deep AI Anda dari deepai.org**\n\nGunakan /cancel untuk membatalkan.")
+        await conv.send_message(
+            "**Silahkan Kirimkan API Deep AI Anda dari deepai.org**\n\nGunakan /cancel untuk membatalkan."
+        )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
@@ -237,7 +240,9 @@ async def ocrapi(event):
     pru = event.sender_id
     var = "OCR_SPACE_API_KEY"
     async with event.client.conversation(pru) as conv:
-        await conv.send_message("**Silahkan Kirimkan OCR API Key anda dari ocr.space**\n\nGunakan /cancel untuk membatalkan.")
+        await conv.send_message(
+            "**Silahkan Kirimkan OCR API Key anda dari ocr.space**\n\nGunakan /cancel untuk membatalkan."
+        )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
