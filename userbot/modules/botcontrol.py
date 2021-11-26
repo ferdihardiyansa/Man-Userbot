@@ -1,5 +1,5 @@
 # Copyright (C) 2021 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Ported by @mrismanaziz
+# Recode by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
@@ -107,7 +107,7 @@ async def users(event):
         pass
 
 
-@callback((data=re.compile(b"settings"))
+@callback(data=re.compile(b"settings"))
 async def botsettings(event):
     await event.delete()
     if event.query.user_id == OWNER_ID:
