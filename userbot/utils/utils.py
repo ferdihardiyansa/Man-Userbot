@@ -108,7 +108,6 @@ async def autobot():
             await bot.send_message(
                 bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
             )
-            await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [username]))
             await bot.send_message(
                 BOTLOG_CHATID,
                 f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
@@ -151,7 +150,6 @@ async def autobot():
         await bot.send_message(
             bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
         )
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [username]))
         await bot.send_message(
             BOTLOG_CHATID,
             f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
