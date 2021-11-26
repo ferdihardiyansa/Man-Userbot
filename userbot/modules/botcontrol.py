@@ -156,7 +156,7 @@ async def botsettings(event):
             event.chat_id,
             message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**",
             buttons=[
-                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="alivebot"),),
+                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                     Button.inline("ᴜsᴇʀs", data="users"),
@@ -175,18 +175,21 @@ async def apiset(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
-            [Button.inline("ᴀʟɪᴠᴇ", data="alivebot")],
+            [Button.inline("ʀᴇᴍᴏᴠᴇ.ʙɢ ᴀᴘɪ", data="rmbgapi")],
             [
                 Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
                 Button.inline("ᴏᴄʀ ᴀᴘɪ", data="ocrapi"),
             ],
-            [Button.inline("ʀᴇᴍᴏᴠᴇ.ʙɢ ᴀᴘɪ", data="rmbgapi")],
+            [
+                Button.inline("ᴀʟɪᴠᴇ", data="alivemenu"),
+                Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
+            ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
     )
 
 
-@callback(data=re.compile(b"alivebot"))
+@callback(data=re.compile(b"alivemenu"))
 async def alivebot(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
@@ -200,6 +203,19 @@ async def alivebot(event):
                 Button.inline("ᴀʟɪᴠᴇ ᴛᴇᴋs", data="alvteks"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
+        ],
+    )
+
+
+@callback(data=re.compile(b"inlinemenu"))
+async def inlinemenu(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
+                Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
+            ],
         ],
     )
 
@@ -236,7 +252,7 @@ async def alvlogo(event):
     var = "ALIVE_LOGO"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan Link Foto Untuk var ALIVE_LOGO anda**\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan Link Telegraph Untuk var ALIVE_LOGO anda**\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -300,6 +316,56 @@ async def alvteks(event):
             await setit(event, var, themssg)
             await conv.send_message(
                 f"**ALIVE_TEKS_CUSTOM Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+                buttons=get_back_button("apiset"),
+            )
+
+
+@callback(data=re.compile(b"inmoji"))
+async def inmoji(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "INLINE_EMOJI"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Teks Untuk var INLINE_EMOJI anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"**INLINE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+                buttons=get_back_button("apiset"),
+            )
+
+
+@callback(data=re.compile(b"inpics"))
+async def inpics(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "INLINE_PIC"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Link Telegraph Untuk var INLINE_PIC anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"**INLINE_PIC Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
                 buttons=get_back_button("apiset"),
             )
 
