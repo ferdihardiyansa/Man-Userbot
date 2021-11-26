@@ -12,11 +12,14 @@ from telethon import Button, custom
 from telethon.utils import get_display_name, pack_bot_file_id
 
 from userbot import (
+    ALIVE_NAME,
     BOT_USERNAME,
     BOTLOG,
     BOTLOG_CHATID,
     CHANNEL,
     GROUP,
+    HEROKU_API_KEY,
+    HEROKU_APP_NAME,
     StartTime,
     tgbot,
     user,
@@ -35,6 +38,27 @@ from .ping import get_readable_time
 botusername = BOT_USERNAME
 OWNER = user.first_name
 OWNER_ID = user.id
+
+
+heroku_api = "https://api.heroku.com"
+if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
+    Heroku = heroku3.from_key(HEROKU_API_KEY)
+    app = Heroku.app(HEROKU_APP_NAME)
+    heroku_var = app.config()
+else:
+    app = None
+
+
+async def setit(event, name, value):
+    try:
+        heroku_var[name] = value
+    except BaseException:
+        return await event.edit("**Maaf Gagal Menyimpan Karena ERROR**")
+
+
+def get_back_button(name):
+    button = [Button.inline("« ʙᴀᴄᴋ", data=f"{name}")]
+    return button
 
 
 async def check_bot_started_users(user, event):
@@ -131,6 +155,7 @@ async def botsettings(event):
             event.chat_id,
             message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**",
             buttons=[
+                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                     Button.inline("ᴜsᴇʀs", data="users"),
@@ -142,6 +167,89 @@ async def botsettings(event):
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
             ],
         )
+
+
+@callback(data=compile(b"apiset"))
+async def apiset(event):
+    await event.edit(
+        "**Silahkan Pilih API yang ingin anda Setting**",
+        buttons=[
+            [Button.inline("Remove.bg API", data="rmbg")],
+            [Button.inline("DEEP API", data="dapi")],
+            [Button.inline("OCR API", data="oapi")],
+            [Button.inline("« ʙᴀᴄᴋ", data="settings")],
+        ],
+    )
+
+
+@callback(data=compile(b"rmbgapi"))
+async def rmbgapi(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "REM_BG_API_KEY"
+    name = "Remove.bg API Key"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(get_string("ast_2"))
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"{name} changed to {themssg}",
+                buttons=get_back_button("apiset"),
+            )
+
+
+@callback(data=compile(b"dapi"))
+async def rmbgapi(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "DEEP_AI"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message("Get Your Deep Api from deepai.org and send here.")
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"{ALIVE_NAME} changed to {themssg}",
+                buttons=get_back_button("apiset"),
+            )
+
+
+@callback(data=compile(b"oaspi"))
+async def rmbgapi(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "OCR_SPACE_API_KEY"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message("Get Your OCR api from ocr.space Send Send Here.")
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Cancelled!!",
+                buttons=get_back_button("apiset"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"{ALIVE_NAME} changed to {themssg}",
+                buttons=get_back_button("apiset"),
+            )
 
 
 @callback(data=re.compile(b"pingbot"))
@@ -210,6 +318,7 @@ async def bot_start(event):
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
             \n**Apa ada yang bisa saya bantu?**"
         buttons = [
+            (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                 Button.inline("ᴜsᴇʀs", data="users"),
