@@ -3,6 +3,7 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
+import io
 import re
 from datetime import datetime
 
@@ -13,6 +14,7 @@ from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP, tgbot, 
 from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
 from userbot.modules.sql_helper.bot_starters import (
     add_starter_to_db,
+    get_all_starters,
     get_starter_details,
 )
 from userbot.modules.sql_helper.globals import gvarstatus
@@ -45,7 +47,7 @@ async def check_bot_started_users(user, event):
         await event.client.send_message(BOTLOG_CHATID, notification)
 
 
-@callback(data=re.compile(b"close"))
+@callback(data=re.compile(b"pmclose"))
 async def users(event):
     if event.query.user_id == OWNER_ID:
         await event.delete()
@@ -74,11 +76,32 @@ async def help(event):
                 [
                     custom.Button.inline(
                         "ᴄʟᴏsᴇ",
-                        data="close",
+                        data="pmclose",
                     )
                 ],
             ],
         )
+
+
+@callback(data=re.compile(b"users"))
+async def users(event):
+    if event.query.user_id == OWNER_ID:
+        await event.delete()
+        total_users = get_all_starters()
+        msg = "**Daftar Pengguna Di Bot** \n\n"
+        for user in total_users:
+            msg += f"• **First Name:** {_format.mentionuser(user.first_name , user.user_id)}\n**User ID:** `{user.user_id}`\n**Tanggal: **{user.date}\n\n"
+        with io.BytesIO(str.encode(msg)) as fileuser:
+            fileuser.name = "userlist.txt"
+            await tgbot.send_file(
+                event.chat_id,
+                fileuser,
+                force_document=True,
+                caption="**Total Pengguna Di Bot anda.**",
+                allow_cache=False,
+            )
+    else:
+        pass
 
 
 @asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
@@ -132,11 +155,14 @@ async def bot_start(event):
         ]
     else:
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})\
-            \nApa ada yang bisa saya Bantu?"
+            \nApa ada yang bisa saya Bantu?**"
         buttons = [
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                Button.inline("ᴄʟᴏsᴇ", data="close"),
+                Button.inline("ᴜsᴇʀs", data="users"),
+            )
+            (
+                Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
             )
         ]
     try:
