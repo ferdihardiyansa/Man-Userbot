@@ -147,10 +147,7 @@ async def bot_start(event):
         buttons = [
             (
                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
-                Button.url(
-                    "ᴄʜᴀɴɴᴇʟ",
-                    f"https://t.me/{CHANNEL}"
-                ),
+                Button.url("ᴄʜᴀɴɴᴇʟ", f"https://t.me/{CHANNEL}"),
             )
         ]
     else:
