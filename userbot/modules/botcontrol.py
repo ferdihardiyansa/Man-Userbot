@@ -48,13 +48,13 @@ async def check_bot_started_users(user, event):
 
 
 @callback(data=re.compile(b"pmclose"))
-async def users(event):
+async def pmclose(event):
     if event.query.user_id == OWNER_ID:
         await event.delete()
 
 
 @callback(data=re.compile(b"pmbot"))
-async def help(event):
+async def pmbot(event):
     await event.delete()
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
@@ -75,8 +75,8 @@ async def help(event):
             buttons=[
                 [
                     custom.Button.inline(
-                        "ᴄʟᴏsᴇ",
-                        data="pmclose",
+                        "ʙᴀᴄᴋ",
+                        data="settings",
                     )
                 ],
             ],
@@ -100,11 +100,28 @@ async def users(event):
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
-                    (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
+                    (Button.inline("ʙᴀᴄᴋ", data="settings"),),
                 ],
             )
     else:
         pass
+
+
+@callback((data=re.compile(b"settings"))
+async def botsettings(event):
+    await event.delete()
+    if event.query.user_id == OWNER_ID:
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya Bantu?**",
+            buttons = [
+                (
+                    Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
+                    Button.inline("ᴜsᴇʀs", data="users"),
+                ),
+                (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
+            ]
+        )
 
 
 @asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
