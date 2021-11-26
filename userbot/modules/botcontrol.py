@@ -202,7 +202,7 @@ async def alivebot(event):
                 Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
                 Button.inline("ᴀʟɪᴠᴇ ᴛᴇᴋs", data="alvteks"),
             ],
-            [Button.inline("ʙᴀᴄᴋ", data="settings")],
+            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
         ],
     )
 
@@ -216,6 +216,7 @@ async def inlinemenu(event):
                 Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
                 Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
             ],
+            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
         ],
     )
 
