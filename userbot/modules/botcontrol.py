@@ -184,7 +184,6 @@ async def apiset(event):
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
     )
-            
 
 
 @callback(data=re.compile(b"alivebot"))
