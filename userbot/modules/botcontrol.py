@@ -55,6 +55,7 @@ async def pmclose(event):
 
 @callback(data=re.compile(b"pmbot"))
 async def pmbot(event):
+    await event.delete()
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
@@ -84,6 +85,7 @@ async def pmbot(event):
 
 @callback(data=re.compile(b"users"))
 async def users(event):
+    await event.delete()
     if event.query.user_id == OWNER_ID:
         total_users = get_all_starters()
         msg = "**Daftar Pengguna Di Bot** \n\n"
@@ -107,6 +109,7 @@ async def users(event):
 
 @callback(data=re.compile(b"settings"))
 async def botsettings(event):
+    await event.delete()
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
