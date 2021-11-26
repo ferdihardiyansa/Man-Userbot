@@ -449,7 +449,7 @@ async def cmdhndlr(event):
     await event.delete()
     pru = event.sender_id
     var = "CMD_HANDLER"
-    name = "Handler/ Trigger"
+    name = "CMD Handler/ Trigger"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
             f"**Kirim Simbol yang anda inginkan sebagai Handler/Pemicu untuk menggunakan bot\nPenangan Anda Saat Ini adalah** [ `{CMD_HANDLER}` ]\n\nGunakan /cancel untuk membatalkan.",
@@ -485,7 +485,7 @@ async def sdhndlr(event):
     await event.delete()
     pru = event.sender_id
     var = "SUDO_HANDLER"
-    name = "Handler/ Trigger"
+    name = "SUDO Handler/ Trigger"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
             f"**Kirim Simbol yang anda inginkan sebagai HANDLER untuk pengguna sudo bot anda\nSUDO_HANDLER anda Saat Ini adalah** [ `{SUDO_HANDLER}` ]\n\nGunakan /cancel untuk membatalkan.",
