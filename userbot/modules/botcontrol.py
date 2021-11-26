@@ -114,13 +114,13 @@ async def botsettings(event):
         await tgbot.send_message(
             event.chat_id,
             message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya Bantu?**",
-            buttons = [
+            buttons=[
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                     Button.inline("ᴜsᴇʀs", data="users"),
                 ),
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
-            ]
+            ],
         )
 
 
