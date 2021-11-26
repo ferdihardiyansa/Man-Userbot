@@ -357,7 +357,7 @@ async def alvch(event):
     var = "CHANNEL"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan Username CHANNEL anda, Jangan Gunakan @**\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan Username CHANNEL anda, Jangan Pakai @**\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -382,7 +382,7 @@ async def alvgc(event):
     var = "GROUP"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan Username GROUP anda, Jangan Gunakan @**\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan Username GROUP anda, Jangan Pakai @**\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
