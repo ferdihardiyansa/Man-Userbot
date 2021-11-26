@@ -1,16 +1,11 @@
 import asyncio
-import os
-import random
-import re
-from telethon import Button
-from telethon import TelegramClient, events
-from telethon.tl.types import ChannelParticipantAdmin
-from telethon.tl.types import ChannelParticipantCreator
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.errors import UserNotParticipantError
 
-from userbot.utils import ass_cmd
+from telethon.errors import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
+
 from userbot import tgbot
+from userbot.utils import ass_cmd
 
 spam_chats = []
 
