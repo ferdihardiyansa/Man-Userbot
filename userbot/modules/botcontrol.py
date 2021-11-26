@@ -94,6 +94,7 @@ async def pmbot(event):
             ],
         )
 
+
 @callback(data=re.compile(b"tagall"))
 async def bottagall(event):
     await event.delete()
