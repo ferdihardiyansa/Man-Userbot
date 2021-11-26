@@ -5,12 +5,12 @@ from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
 from userbot import tgbot
-from userbot.utils import ass_cmd
+from userbot.utils import asst_cmd
 
 spam_chats = []
 
 
-@ass_cmd(pattern="^/tagall|/call|/tall|/all|/mentionall|#all|@all ?(.*)")
+@asst_cmd(pattern="^/tagall|/call|/tall|/all|/mentionall|#all|@all ?(.*)")
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
