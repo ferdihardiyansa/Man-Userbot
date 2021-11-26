@@ -4,6 +4,7 @@
 # t.me/SharingUserbot & t.me/Lunatic0de
 
 import io
+import heroku3
 import re
 import time
 from datetime import datetime
