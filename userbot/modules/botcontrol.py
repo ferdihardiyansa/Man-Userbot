@@ -95,45 +95,21 @@ async def pmbot(event):
         )
 
 
-@callback(data=re.compile(b"tagall"))
-async def bottagall(event):
-    await event.delete()
-    if event.query.user_id == OWNER_ID:
-        await tgbot.send_message(
-            event.chat_id,
-            message=f"""**Perintah Untuk Tag ALL:**\n
- × /all : Untuk mention/tag semua member dalam Group
- × /cancel : Untuk Memberhentikan Mention all\n
-Cara Menggunakan:
-1. Tambahkan dulu bot ini ke Group anda
-2. Ketik /all <alasan>
-3. Bila ingin memberhentikan ketik /cancel
-""",
-            buttons=[
-                [
-                    custom.Button.inline(
-                        "ʙᴀᴄᴋ",
-                        data="settings",
-                    )
-                ],
-            ],
-        )
-
-
 @callback(data=re.compile(b"users"))
 async def users(event):
     await event.delete()
     if event.query.user_id == OWNER_ID:
         total_users = get_all_starters()
-        msg = "**Daftar Pengguna Di Bot** \n\n"
+        msg = "Daftar Pengguna Di Bot \n\n"
         for user in total_users:
-            msg += f"• **First Name:** {_format.mentionuser(user.first_name , user.user_id)}\n**User ID:** `{user.user_id}`\n**Tanggal: **{user.date}\n\n"
+            msg += f"• First Name: {user.first_name}\nUser ID: {user.user_id}\nTanggal: {user.date}\n\n"
         with io.BytesIO(str.encode(msg)) as fileuser:
-            fileuser.name = "userlist.txt"
+            fileuser.name = "listusers.txt"
             await tgbot.send_file(
                 event.chat_id,
                 fileuser,
                 force_document=True,
+                thumb="userbot/resources/logo.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
@@ -157,7 +133,7 @@ async def botsettings(event):
             buttons=[
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                    Button.inline("ᴛᴀɢ ᴀʟʟ", data="tagall"),
+                    Button.inline("ᴜsᴇʀs", data="users"),
                 ),
                 (
                     Button.inline("ᴘɪɴɢ", data="pingbot"),
@@ -236,7 +212,7 @@ async def bot_start(event):
         buttons = [
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                Button.inline("ᴛᴀɢ ᴀʟʟ", data="tagall"),
+                Button.inline("ᴜsᴇʀs", data="users"),
             ),
             (
                 Button.inline("ᴘɪɴɢ", data="pingbot"),
@@ -287,3 +263,22 @@ async def _(event):
         await tgbot.send_message(
             event.chat_id, "**👥 Chat ID:** `{}`".format(str(event.chat_id))
         )
+
+
+@asst_cmd(pattern="^/ping$")
+async def _(ping):
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    xx = await edit_or_reply(ping, "**✣**")
+    await xx.edit("**✣✣**")
+    await xx.edit("**✣✣✣**")
+    await xx.edit("**✣✣✣✣**")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    user = await bot.get_me()
+    await xx.edit(
+        f"**PONG!!🏓**\n"
+        f"✣ **Pinger** - `%sms`\n"
+        f"✣ **Uptime -** `{uptime}` \n"
+        f"**✦҈͜͡Owner :** [{user.first_name}](tg://user?id={user.id})" % (duration)
+    )
