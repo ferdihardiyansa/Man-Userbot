@@ -8,12 +8,12 @@ from userbot.events import man_cmd
 
 @bot.on(man_cmd(outgoing=True, pattern="p(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Assalamualaikum umi**")
+    await event.edit("**Assalamualaikum ukhti**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"pe(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Assalamualaikum abi**")
+    await event.edit("**Assalamualaikum akhi**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern="P(?: |$)(.*)"))
