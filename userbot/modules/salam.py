@@ -25,23 +25,16 @@ async def _(event):
     await event.edit("**Assalamualaikum akhi**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern="P(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern="jawab(?: |$)(.*)"))
 async def _(event):
     await event.edit(f"**Haii Salken Saya {ALIVE_NAME}**")
     sleep(2)
-    await event.edit("**Assalamualaikum...**")
+    await event.edit("**wa'laikumsalam ukhti**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"l(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Wa'alaikumsalam**")
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"a(?: |$)(.*)"))
-async def _(event):
-    await event.edit(f"**Haii Salken Saya {ALIVE_NAME}**")
-    sleep(2)
-    await event.edit("**Assalamualaikum**")
+    await event.edit("**Wa'alaikumsalam **")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gombalan(?: |$)(.*)"))
