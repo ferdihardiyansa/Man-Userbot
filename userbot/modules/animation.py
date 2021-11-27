@@ -981,8 +981,6 @@ CMD_HELP.update(
     \n\n`{cmd}ceritacinta` ; `{cmd}canda`\
     \nUsage: liat sendiri\
     \n\n`{cmd}santet`\
-    \nUsage: Santet Online Buat Bercanda."\
-    \n\n`{cmd}buaya`\
-    \nUsage: gombalan buaya\ 
+    \nUsage: Santet Online Buat Bercanda."\ 
     }
 )
