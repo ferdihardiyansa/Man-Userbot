@@ -204,14 +204,14 @@ async def vc_vplay(event):
     ):
         return await edit_or_reply(event, "**Silahkan Masukan Judul Video**")
     if replied and not replied.video and not replied.document:
-        xnxx = await edit_or_reply(event, "`Searching...`")
+        xnxx = await edit_or_reply(event, "`Mencari...`")
         query = event.text.split(maxsplit=1)[1]
         search = ytsearch(query)
         RESOLUSI = 720
         hmmm = HighQualityVideo()
         if search == 0:
             await xnxx.edit(
-                "**Tidak Dapat Menemukan Video** Coba cari dengan Judul yang Lebih Spesifik"
+                "**Tidak Dapat Menemukan Video** Coba cari dengan Judul yang Lebih jelas dong beb"
             )
         else:
             songname = search[0]
@@ -368,7 +368,7 @@ async def vc_pause(event):
         except Exception as e:
             await edit_delete(event, f"**ERROR:** `{e}`", 15)
     else:
-        await edit_delete(event, "**Tidak Sedang Memutar Streaming**", 15)
+        await edit_delete(event, "**LAGI DI STOP BEB**", 15)
 
 
 @man_cmd(pattern="resume$")
