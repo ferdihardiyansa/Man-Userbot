@@ -37,16 +37,16 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"j(?: |$)(,*)"))
 async def _(event):
-    await event.edit("**IKAN HIU MELAYANG LAYANG **")
+    await event.edit("**IKAN HIU MELAYANG LAYANG**")
     sleep(3)
-    await event.edit("**I LOVE YOU SAYANG **")
+    await event.edit("**I LOVE YOU SAYANG**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"k(?: |$)(,*)"))
 async def _(event):
-    await event.edit(f"** Hallo beb saya {ALIVE_NAME}**")
+    await event.edit(f"** Hallo beb **")
     sleep(2)
-    await event.edit("** gimana kabarnya **")
+    await event.edit("**gimana kabarnya**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"ass(?: |$)(,*)"))
@@ -74,16 +74,14 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk Menjawab salam\
         \n\n  •  **Syntax :** `{cmd}ass`\
         \n  •  **Function : **Salam Bahas arab\
-        \n\n  •  **Syntax :** `{cmd}semangat`\
-        \n  •  **Function : **Memberikan Semangat.\
         \n\n  •  **Syntax :** `{cmd}ywc`\
         \n  •  **Function : **nMenampilkan sama sama syang\
-        \n\n  •  **Syntax :** `{cmd}sayang`\
-        \n  •  **Function : **Kata I Love You.\
+        \n\n  •  **Syntax :** `{cmd}love`\
+        \n  •  **Function : **kemu udah makan belum\
         \n\n  •  **Syntax :** `{cmd}k`\
-        \n  •  **Function : **LU SEMUA NGENTOT 🔥\
+        \n  •  **Function : **nanyain kabar\
         \n\n  •  **Syntax :** `{cmd}j`\
-        \n  •  **Function : **NIMBRUNG GOBLOKK!!!🔥\
+        \n  •  **Function : **untuk gombalan\
     "
     }
 )
