@@ -923,13 +923,20 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"buaya(?: |$)(.*)"))
 async def _(typew):
-    sleep(2)
+    sleep(3)
     await typew.edit("**KALAU HITUNGAN SATU SAMPAI SEPULUH**")
-    sleep(2)
+    sleep(3)
     await typew.edit("**AKU CUKUP DUA AJA**")
-    sleep(2)
+    sleep(3)
     await typew.edit("**YAITU DUALEM BANGET JIAKHHH**")
-                     
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"con(?: |$)(.*)"))
+async def _(typew):
+    sleep(4)
+    await typew.edit("**I HAVE CRUSH ON U**")
+    sleep(4)
+    await typew.edit("**EH TAPI BOONG JIAKKHHHH**")
                      
             
 CMD_HELP.update(
@@ -967,6 +974,9 @@ CMD_HELP.update(
     \n\n`{cmd}santet`\
     \nUsage: Santet Online Buat Bercanda.`\
     \n\n`{cmd}buaya`\
-    \nUsage:gombalan maut`"
+    \nUsage:gombalan maut`\
+    \nUsage: Santet Online Buat Bercanda.`\
+    \n\n`{cmd}con`\
+    \nUsage:confess tapi boong`\"
     }
 )
