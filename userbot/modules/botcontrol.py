@@ -721,5 +721,5 @@ async def _(event):
     duration = (end - start).microseconds / 1000
     await tgbot.send_message(
         event.chat_id,
-        f"🏓**Pong!**\n`%sms`" % (duration),
+        f"🏓**DOR!**\n`%sms`" % (duration),
     )
