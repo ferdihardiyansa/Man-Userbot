@@ -518,11 +518,11 @@ async def _(typew):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"tembak(?: |$)(.*)"))
 async def _(typew):
-    await typew.edit(
-        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Mau Jadi Pacarku Gak?!**"
-    )
+    await typew.edit("**Mau Jadi Pacarku Gak?**")
+    sleep(2) 
+    await typew.edit("**kalau sak mau saya maksa**")
 
-
+    
 @bot.on(man_cmd(outgoing=True, pattern=r"bundir(?: |$)(.*)"))
 async def _(typew):
     await typew.edit(
