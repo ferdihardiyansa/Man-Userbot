@@ -11,6 +11,15 @@ async def _(event):
     await event.edit("**Assalamualaikum ukhti**")
 
 
+@bot.on(man_cmd(outgoing=True, pattern="makan(?: |$)(.*)"))
+async def _(event):
+    await event.edit("**KAMU UDAH MAKAN BELUM**")
+    sleep(3)
+    await event.edit("**KALAU BELUM MATI AJA SEKALIAN**")
+    sleep(3)
+    await  event.edit("**BECANDA**")
+   
+
 @bot.on(man_cmd(outgoing=True, pattern=r"pe(?: |$)(.*)"))
 async def _(event):
     await event.edit("**Assalamualaikum akhi**")
@@ -68,7 +77,7 @@ CMD_HELP.update(
         \n  •  **Function : **Salam Bahas arab\
         \n\n  •  **Syntax :** `{cmd}ywc`\
         \n  •  **Function : **nMenampilkan sama sama syang\
-        \n\n  •  **Syntax :** `{cmd}love`\
+        \n\n  •  **Syntax :** `{cmd}makan`\
         \n  •  **Function : **kemu udah makan belum\
         \n\n  •  **Syntax :** `{cmd}k`\
         \n  •  **Function : **nanyain kabar\
