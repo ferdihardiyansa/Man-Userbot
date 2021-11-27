@@ -2,9 +2,9 @@
   "name": "Man-Userbot",
   "description": "[Man-Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
   "logo": "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg",
-  "keywords": ["telegram", "userbot", "man-userbot", "modular", "python"],
+  "keywords": ["telegram", "userbot", "ferdiubot", "modular", "python"],
   "repository": "https://github.com/ferdihardiyansa/ferdiubot",
-  "telegram": ["https://t.me/mrismanaziz", "https://t.me/tofik_dn"],
+  "telegram": ["https://t.me/ferdikoloay"],
   "success_url": "https://t.me/Lunatic0de",
   "stack": "container",
   "env": {
