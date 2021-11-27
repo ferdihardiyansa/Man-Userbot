@@ -34,7 +34,7 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"l(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Wa'alaikumsalam **")
+    await event.edit("**Wa'alaikumsalam**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gombalan(?: |$)(.*)"))
