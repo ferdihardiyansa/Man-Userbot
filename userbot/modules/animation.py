@@ -974,7 +974,6 @@ CMD_HELP.update(
     \n\n`{cmd}santet`\
     \nUsage: Santet Online Buat Bercanda.`\
     \n\n`{cmd}buaya`\
-    \nUsage: gombalan maut`\
-    
+    \nUsage: gombalan maut`"
     }
 )
