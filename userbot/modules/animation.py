@@ -6,7 +6,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import man_cmd
 
 
-@bot.on(man_cmd(pattern=r"(.*)", outgoing=True))
+@bot.on(man_cmd(pattern=r"(,*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -93,7 +93,7 @@ async def _(e):
     await e.edit("SAYANG KAMU💞")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"dino(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"dino(?: |$)(,*)"))
 async def _(typew):
     await typew.edit("`DIN DINNN.....`")
     sleep(1)
@@ -137,17 +137,17 @@ async def _(typew):
     await typew.edit("`🏃           🦖`")
     await typew.edit("`🏃          🦖`")
     await typew.edit("`🏃         🦖`")
-    await typew.edit("`DIA SEMAKIN MENDEKAT!!!`")
+    await typew.edit("`TOLONG SAYA!!!`")
     sleep(1)
     await typew.edit("`🏃       🦖`")
     await typew.edit("`🏃      🦖`")
     await typew.edit("`🏃     🦖`")
     await typew.edit("`🏃    🦖`")
-    await typew.edit("`Dahlah Pasrah Aja`")
+    await typew.edit("`DAHLAH`")
     sleep(1)
     await typew.edit("`🧎🦖`")
     sleep(2)
-    await typew.edit("`-TAMAT-`")
+    await typew.edit("`-CERITANYA TAMAT-`")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gabut$"))
@@ -406,7 +406,7 @@ async def _(e):
     await e.edit("`GABUT`")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"terkadang(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"terkadang(?: |$)(,*)"))
 async def _(typew):
     await typew.edit("`Terkadang`")
     sleep(1)
@@ -494,7 +494,7 @@ async def _(typew):
 # Create by myself @localheart
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"helikopter(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"helikopter(?: |$)(,*)"))
 async def _(typew):
     await typew.edit(
         "▬▬▬.◙.▬▬▬ \n"
@@ -516,14 +516,14 @@ async def _(typew):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"tembak(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"tembak(?: |$)(,*)"))
 async def _(typew):
     await typew.edit("**Mau Jadi Pacarku Gak?**")
     sleep(2) 
     await typew.edit("**kalau sak mau saya maksa**")
 
     
-@bot.on(man_cmd(outgoing=True, pattern=r"bundir(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"bundir(?: |$)(,*)"))
 async def _(typew):
     await typew.edit(
         "`Dadah Semuanya...`          \n　　　　　|"
@@ -543,7 +543,7 @@ async def _(typew):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"awk(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"awk(?: |$)(,*)"))
 async def _(typew):
     await typew.edit(
         "────██──────▀▀▀██\n"
@@ -554,7 +554,7 @@ async def _(typew):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"ular(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"ular(?: |$)(,*)"))
 async def _(typew):
     await typew.edit(
         "░░░░▓\n"
@@ -664,7 +664,7 @@ async def _(typew):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"tank(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"tank(?: |$)(,*)"))
 async def _(typew):
     await typew.edit(
         "█۞███████]▄▄▄▄▄▄▄▄▄▄▃ \n"
@@ -674,7 +674,7 @@ async def _(typew):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"babi(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"babi(?: |$)(,*)"))
 async def typewriter(typew):
     await typew.edit(
         "┈┈┏━╮╭━┓┈╭━━━━╮\n"
@@ -688,7 +688,7 @@ async def typewriter(typew):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"ajg(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"ajg(?: |$)(,*)"))
 async def _(typew):
     await typew.edit(
         "╥━━━━━━━━╭━━╮━━┳\n"
@@ -700,7 +700,7 @@ async def _(typew):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"bernyanyi(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"bernyanyi(?: |$)(,*)"))
 async def _(typew):
     await typew.edit("**Ganteng Doang Gak Bernyanyi (ง˙o˙)ว**")
     sleep(2)
@@ -769,7 +769,7 @@ async def _(e):
     await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"huh(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"huh(?: |$)(,*)"))
 async def _(typew):
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n />❤️ *Ini Buat Kamu`")
     sleep(3)
@@ -819,7 +819,7 @@ async def _(event):
             await event.edit(animation_chars[i % 103])
 
 
-@bot.on(man_cmd(pattern=r"(.*)", outgoing=True))
+@bot.on(man_cmd(pattern=r"(,*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -852,7 +852,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"santet(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"santet(?: |$)(,*)"))
 async def _(typew):
     await typew.edit("`Mengaktifkan Perintah Santet Online....`")
     sleep(2)
@@ -1174,7 +1174,7 @@ async def _(typew):
 # Alpinnnn Gans
 
 
-@bot.on(man_cmd(pattern=r"(.*)", outgoing=True))
+@bot.on(man_cmd(pattern=r"(,*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
