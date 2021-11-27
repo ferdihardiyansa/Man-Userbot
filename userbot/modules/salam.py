@@ -51,7 +51,7 @@ async def _(event):
     await event.edit("**I LOVE YOU SAYANG JIAKHHH**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"k(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"kabar(?: |$)(.*)"))
 async def _(event):
     await event.edit(f"** Hallo beb **")
     sleep(2)
@@ -78,7 +78,7 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}ywc`\
         \n  •  **Function : **nMenampilkan sama sama syang\
         \n\n  •  **Syntax :** `{cmd}makan`\
-        \n  •  **Function : **kemu udah makan belum\
+        \n  •  **Function : ** `nanyain kabar makan`\
         \n\n  •  **Syntax :** `{cmd}k`\
         \n  •  **Function : **nanyain kabar\
         \n\n  •  **Syntax :** `{cmd}gombalan`\
