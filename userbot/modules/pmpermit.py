@@ -24,11 +24,11 @@ DEF_UNAPPROVED_MSG = (
     "╔════════════════════╗\n"
     "     ⛑ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⛑\n"
     "╚════════════════════╝\n"
-    "• Saya belum menyetujui anda untuk PM.\n"
-    "• Tunggu sampai saya menyetujui PM anda.\n"
-    "• Jangan Spam Chat atau anda akan otomatis diblokir.\n"
+    "• tolong jangan di spam yah"
+    "• takutnya anda di blokir"
+    "• saya akan balas pesan anda kok"
     "╔════════════════════╗\n"
-    "    𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗕𝘆 -𝗨𝘀𝗲𝗿𝗕𝗼𝘁\n"
+    "    PESAN DARI BOT\n"
     "╚════════════════════╝\n"
 )
 # =================================================================
