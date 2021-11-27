@@ -131,7 +131,7 @@ async def _(typew):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gabut$"))
 async def _(e):
-    await e.edit("**SATU TITIK DUA KOMA")
+    await e.edit("**SATU TITIK DUA KOMA**")
     sleep(2)
     await e.edit("**KAMU CANTIK SIAPA YANG PUNYA**")
 
@@ -146,9 +146,9 @@ async def _(typew):
     sleep(1)
     await typew.edit("`Ketika Waktumu Habis`")
     sleep(1)
-    await typew.edit("`Tambah Aja 5000`")
+    await typew.edit("`Tambah Aja ceban`")
     sleep(1)
-    await typew.edit("`Bercanda`")
+    await typew.edit("`Bercanda xixixi`")
 
 
 # Create by myself @localheart
@@ -199,25 +199,9 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"g(?: |$)(,*)"))
 async def _(typew):
-    sleep(1)
-    await typew.edit("`Hai, I LOVE YOU 💞`")
-    sleep(1)
-    await typew.edit("`I LOVE YOU SO MUCH!`")
-    sleep(1)
-    await typew.edit("`I NEED YOU!`")
-    sleep(1)
-    await typew.edit("`I WANT TO BE YOUR BOYFRIEND!`")
-    sleep(1)
-    await typew.edit("`I LOVEE YOUUUU💕💗`")
-    sleep(1)
-    await typew.edit("`I LOVEE YOUUUU💗💞`")
-    sleep(1)
-    await typew.edit("`I LOVEE YOUUUU💝💗`")
-    sleep(1)
-    await typew.edit("`I LOVEE YOUUUU💟💖`")
-    sleep(1)
+    sleep(2)
     await typew.edit("`I LOVEE YOUUUU💘💓`")
-    sleep(1)
+    sleep(4)
     await typew.edit("`Tapi Bo'ong`")
 
 
@@ -897,7 +881,7 @@ async def _(typew):
 @bot.on(man_cmd(outgoing=True, pattern=".nah(?: |$)(.*)"))
 async def _(typew):
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *Ini Buat Kamu`")
-    sleep(2)
+    sleep(4)
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💖<\\  *Tapi Bo'ong`")
 
 
@@ -939,12 +923,12 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"buaya(?: |$)(.*)"))
 async def _(typew):
-    sleep(1)
-    await typew.edit("`KALAU HITUNGAN SATU SAMPAI SEPULUH`")
-    sleep(1)
-    await typew.edit("`AKU CUKUP DUA AJA`")
-    sleep(1)
-    await typew.edit("`YAITU DUALEM BANGET JIAKHHH`")
+    sleep(2)
+    await typew.edit("**KALAU HITUNGAN SATU SAMPAI SEPULUH**")
+    sleep(2)
+    await typew.edit("**AKU CUKUP DUA AJA**")
+    sleep(2)
+    await typew.edit("**YAITU DUALEM BANGET JIAKHHH**")
                      
                      
             
