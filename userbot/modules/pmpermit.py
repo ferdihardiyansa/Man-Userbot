@@ -113,7 +113,7 @@ async def permitpm(event):
                         + "](tg://user?id="
                         + str(event.chat_id)
                         + ")"
-                        + " **Telah Diblokir Karna Melakukan Spam Ke Room Chat**",
+                        + " **kan saya sudah bilang jangan di spam yaudah tunggu boss saya aja**",
                     )
 
 
