@@ -1174,7 +1174,7 @@ async def _(typew):
 # Alpinnnn Gans
 
 
-@bot.on(man_cmd(pattern=r"(,*)", outgoing=True))
+@bot.on(man_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -1207,6 +1207,17 @@ async def _(event):
             await event.edit(animation_chars[i % 6])
 
 
+@bot.on(man_cmd(outgoing=True, pattern=".buaya(?: |$)(.*)"))
+async def _(typew):
+    sleep(1)
+    await typew.edit("`KALAU HITUNGAN SATU SAMPAI SEPULUH`")
+    sleep(1)
+    await typew.edit("`AKU CUKUP DUA AJA`")
+    sleep(1)
+    await typew.edit("`YAITU DUALEM BANGET JIAKHHH)
+                     
+                     
+            
 CMD_HELP.update(
     {
         "animasi": f"`{cmd}gabut` ; `{cmd}dino`\
