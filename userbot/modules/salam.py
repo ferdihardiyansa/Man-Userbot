@@ -54,14 +54,6 @@ async def _(event):
     await event.edit("**Salam Dulu Biar Sopan**")
     sleep(2)
     await event.edit("**السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
-
-@bot.on(man_cmd(outgoing=True, pattern=r"love(?: |$)(,*)"))
-async def _(event):
-    await event.edit("**sayang**")
-    sleep(2)
-    await event.edit("**kamu udah makan belum**")
-    slepp(3)
-    await event.edit("** kalau belum sini aku suapin jiakhhh)
     
 CMD_HELP.update(
     {
