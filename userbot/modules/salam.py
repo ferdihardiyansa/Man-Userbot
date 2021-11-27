@@ -6,50 +6,50 @@ from userbot import CMD_HELP, bot
 from userbot.events import man_cmd
 
 
-@bot.on(man_cmd(outgoing=True, pattern="p(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern="p(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Assalamualaikum Dulu Biar Sopan**")
+    await event.edit("**Assalamualaikum umi**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"pe(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"pe(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Assalamualaikum Warahmatullahi Wabarakatuh**")
+    await event.edit("**Assalamualaikum abi**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern="P(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern="P(?: |$)(.*)"))
 async def _(event):
     await event.edit(f"**Haii Salken Saya {ALIVE_NAME}**")
     sleep(2)
     await event.edit("**Assalamualaikum...**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"l(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"l(?: |$)(.*)"))
 async def _(event):
     await event.edit("**Wa'alaikumsalam**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"a(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"a(?: |$)(.*)"))
 async def _(event):
     await event.edit(f"**Haii Salken Saya {ALIVE_NAME}**")
     sleep(2)
     await event.edit("**Assalamualaikum**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"j(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"gombalan(?: |$)(.*)"))
 async def _(event):
     await event.edit("**IKAN HIU MELAYANG LAYANG**")
-    sleep(3)
-    await event.edit("**I LOVE YOU SAYANG**")
+    sleep(2)
+    await event.edit("**I LOVE YOU SAYANG JIAKHHH**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"k(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"k(?: |$)(.*)"))
 async def _(event):
     await event.edit(f"** Hallo beb **")
     sleep(2)
     await event.edit("**gimana kabarnya**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"ass(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"ass(?: |$)(.*)"))
 async def _(event):
     await event.edit("**Salam Dulu Biar Sopan**")
     sleep(2)
@@ -72,7 +72,7 @@ CMD_HELP.update(
         \n  •  **Function : **kemu udah makan belum\
         \n\n  •  **Syntax :** `{cmd}k`\
         \n  •  **Function : **nanyain kabar\
-        \n\n  •  **Syntax :** `{cmd}j`\
+        \n\n  •  **Syntax :** `{cmd}gombalan`\
         \n  •  **Function : **untuk gombalan\
     "
     }
