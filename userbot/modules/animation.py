@@ -1207,7 +1207,7 @@ async def _(event):
             await event.edit(animation_chars[i % 6])
 
 
-@bot.on(man_cmd(outgoing=True, pattern=".buaya(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"buaya(?: |$)(.*)"))
 async def _(typew):
     sleep(1)
     await typew.edit("`KALAU HITUNGAN SATU SAMPAI SEPULUH`")
