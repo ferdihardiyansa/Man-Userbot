@@ -467,7 +467,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"gombal(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"g(?: |$)(,*)"))
 async def _(typew):
     sleep(1)
     await typew.edit("`Hai, I LOVE YOU 💞`")
