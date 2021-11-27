@@ -945,8 +945,8 @@ CMD_HELP.update(
     \nUsage: ntahlah gabut doang.\
     \n\n`{cmd}gabut`\
     \nUsage: buat bercanda\
-    \n\n`{cmd}cinta`\
-    \nUsage: mengirim cintamu ke seseorang.\
+    \n\n`{cmd}con`\
+    \nUsage: confess tapi boong.\
     \n\n`{cmd}sayang`\
     \nUsage: untuk jadi buaya.\
     \n\n`{cmd}terkadang`\
@@ -975,7 +975,6 @@ CMD_HELP.update(
     \nUsage: Santet Online Buat Bercanda.`\
     \n\n`{cmd}buaya`\
     \nUsage: gombalan maut`\
-    \n\n`{cmd}con`\
-    \nUsage: confess tapi boong`\"
+    
     }
 )
