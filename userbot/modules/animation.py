@@ -1214,7 +1214,7 @@ async def _(typew):
     sleep(1)
     await typew.edit("`AKU CUKUP DUA AJA`")
     sleep(1)
-    await typew.edit("`YAITU DUALEM BANGET JIAKHHH)
+    await typew.edit("`YAITU DUALEM BANGET JIAKHHH`")
                      
                      
             
