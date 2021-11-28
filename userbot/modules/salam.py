@@ -61,11 +61,11 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern=r"cukup(?: |$)(.*)"))
 async def _(event):
     await event.edit("**CUKUP KAU DI SAMPING KU**")
-    sleep(2)
+    sleep(3)
     await event.edit("**SEMPURNAHKAN LANGKAH KU TUk MENYUSURI WAKTU**")
-    sleep(2)
+    sleep(3)
     await event.edit("**CUKUP KAU DI SAMPING KU**")
-    sleep(2)
+    sleep(3)
     await event.edit("**BERJALAN BERSAMA KU PASTIKAN KAU BAHAGIA**")
     
     
