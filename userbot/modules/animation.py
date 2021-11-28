@@ -184,7 +184,7 @@ async def _(typew):
 async def _(typew):
     await typew.edit("**Mau Jadi Pacarku Gak?**")
     sleep(2) 
-    await typew.edit("**kalau gak saya maksa**")
+    await typew.edit("**kalau gak saya maksa😡**")
 
     
 @bot.on(man_cmd(outgoing=True, pattern=r"bundir(?: |$)(,*)"))
