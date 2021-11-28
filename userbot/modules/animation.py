@@ -147,7 +147,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"g(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"tapi(?: |$)(,*)"))
 async def _(typew):
     sleep(2)
     await typew.edit("`I LOVEE YOUUUU💘💓`")
@@ -900,7 +900,7 @@ CMD_HELP.update(
     \nUsage: untuk jadi buaya.\
     \n\n`{cmd}terkadang`\
     \nUsage: Auk dah iseng doang.\
-    \n\n`{cmd}helikopter` ; `{cmd}tank` ; `{cmd}tembak`\n`{cmd}bundir`\
+    \n\n`{cmd}helikopter` ; `{cmd}tapi` ; `{cmd}tembak`\n`{cmd}bundir`\
     \nUsage: liat sendiri\
     \n\n`{cmd}y`\
     \nUsage: jempol\
