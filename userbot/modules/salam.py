@@ -32,9 +32,9 @@ async def _(event):
     await event.edit("**wa'laikumsalam ukhti**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"l(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"sama(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Wa'alaikumsalam**")
+    await event.edit("**SAMA SAMA SAYANG**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gombalan(?: |$)(.*)"))
@@ -46,9 +46,9 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"kabar(?: |$)(.*)"))
 async def _(event):
-    await event.edit(f"** Hallo beb **")
+    await event.edit(f"** HALLO **")
     sleep(2)
-    await event.edit("**gimana kabarnya**")
+    await event.edit("**GIMANA KABARNYA?**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"ass(?: |$)(.*)"))
@@ -68,7 +68,7 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk Menjawab salam\
         \n\n  •  **Syntax :** `{cmd}ass`\
         \n  •  **Function : **Salam Bahas arab\
-        \n\n  •  **Syntax :** `{cmd}ywc`\
+        \n\n  •  **Syntax :** `{cmd}`\
         \n  •  **Function : **nMenampilkan sama sama syang\
         \n\n  •  **Syntax :** `{cmd}makan`\
         \n  •  **Function : ** `nanyain kabar makan`\
