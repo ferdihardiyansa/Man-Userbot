@@ -17,18 +17,13 @@ async def _(event):
 # Create by myself @localheart
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"punten(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"badut(?: |$)(.*)"))
 async def _(event):
-    await event.edit(
-        "`\n┻┳|―-∩`"
-        "`\n┳┻|     ヽ`"
-        "`\n┻┳|    ● |`"
-        "`\n┳┻|▼) _ノ`"
-        "`\n┻┳|￣  )`"
-        "`\n┳ﾐ(￣ ／`"
-        "`\n┻┳T￣|`"
-        "\n**Punten**"
-    )
+    await event.edit("**Tadi saya beli obat tidur**")
+    sleep(3)
+    await event.edit("**Pas dibawa pulang harus pelan-pelan**")
+    sleep(3)
+    await event.edit("**soalnya takut obatnya bangun jiakhhh**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"pantau(?: |$)(.*)"))
@@ -51,7 +46,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "punten": f"**Plugin : **`Animasi Punten`\
-        \n\n  •  **Syntax :** `{cmd}punten` ; `{cmd}pantau`\
+        \n\n  •  **Syntax :** `{cmd}punten` ; `{cmd}badut`\
         \n  •  **Function : **Arts Beruang kek lagi mantau.\
         \n\n  •  **Syntax :** `{cmd}sadboy`\
         \n  •  **Function : **ya sadboy coba aja.\
