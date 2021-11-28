@@ -72,62 +72,12 @@ async def _(typew):
     await typew.edit("**SAMA SAYA JUGA GAK TAU JIAKHH**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"dino(?: |$)(,*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"call(?: |$)(,*)"))
 async def _(typew):
-    await typew.edit("`DIN DINNN.....`")
-    sleep(1)
-    await typew.edit("`DINOOOOSAURUSSSSS!!`")
-    sleep(1)
-    await typew.edit("`🏃                        🦖`")
-    await typew.edit("`🏃                       🦖`")
-    await typew.edit("`🏃                      🦖`")
-    await typew.edit("`🏃                     🦖`")
-    await typew.edit("`🏃   `LARII`          🦖`")
-    await typew.edit("`🏃                   🦖`")
-    await typew.edit("`🏃                  🦖`")
-    await typew.edit("`🏃                 🦖`")
-    await typew.edit("`🏃                🦖`")
-    await typew.edit("`🏃               🦖`")
-    await typew.edit("`🏃              🦖`")
-    await typew.edit("`🏃             🦖`")
-    await typew.edit("`🏃            🦖`")
-    await typew.edit("`🏃           🦖`")
-    await typew.edit("`🏃WOARGH!   🦖`")
-    await typew.edit("`🏃           🦖`")
-    await typew.edit("`🏃            🦖`")
-    await typew.edit("`🏃             🦖`")
-    await typew.edit("`🏃              🦖`")
-    await typew.edit("`🏃               🦖`")
-    await typew.edit("`🏃                🦖`")
-    await typew.edit("`🏃                 🦖`")
-    await typew.edit("`🏃                  🦖`")
-    await typew.edit("`🏃                   🦖`")
-    await typew.edit("`🏃                    🦖`")
-    await typew.edit("`🏃                     🦖`")
-    await typew.edit("`🏃  Huh-Huh           🦖`")
-    await typew.edit("`🏃                   🦖`")
-    await typew.edit("`🏃                  🦖`")
-    await typew.edit("`🏃                 🦖`")
-    await typew.edit("`🏃                🦖`")
-    await typew.edit("`🏃               🦖`")
-    await typew.edit("`🏃              🦖`")
-    await typew.edit("`🏃             🦖`")
-    await typew.edit("`🏃            🦖`")
-    await typew.edit("`🏃           🦖`")
-    await typew.edit("`🏃          🦖`")
-    await typew.edit("`🏃         🦖`")
-    await typew.edit("`TOLONG SAYA!!!`")
-    sleep(1)
-    await typew.edit("`🏃       🦖`")
-    await typew.edit("`🏃      🦖`")
-    await typew.edit("`🏃     🦖`")
-    await typew.edit("`🏃    🦖`")
-    await typew.edit("`DAHLAH`")
-    sleep(1)
-    await typew.edit("`🧎🦖`")
+    await typew.edit("*SLEEP CALL YUK")
     sleep(2)
-    await typew.edit("`-CERITANYA TAMAT-`")
-
+    await typew.edit("**SAYA MAKSA😡**")
+    
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gabut$"))
 async def _(e):
@@ -933,7 +883,6 @@ async def _(typew):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"con(?: |$)(.*)"))
 async def _(typew):
-    sleep(4)
     await typew.edit("**I HAVE CRUSH ON U**")
     sleep(4)
     await typew.edit("**EH TAPI BOONG JIAKKHHHH**")
@@ -941,7 +890,7 @@ async def _(typew):
             
 CMD_HELP.update(
     {
-        "animasi": f"`{cmd}kamu` ; `{cmd}dino`\
+        "animasi": f"`{cmd}kamu` ; `{cmd}call`\
     \nUsage: ntahlah gabut doang.\
     \n\n`{cmd}gabut`\
     \nUsage: buat bercanda\
