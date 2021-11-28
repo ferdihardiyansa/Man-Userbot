@@ -62,7 +62,7 @@ async def _(event):
 async def _(event):
     await event.edit("**CUKUP KAU DI SAMPING KU**")
     sleep(3)
-    await event.edit("**SEMPURNAHKAN LANGKAH KU TUk MENYUSURI WAKTU**")
+    await event.edit("**SEMPURNAHKAN LANGKAH KU TUK MENYUSURI WAKTU**")
     sleep(3)
     await event.edit("**CUKUP KAU DI SAMPING KU**")
     sleep(3)
