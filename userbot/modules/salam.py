@@ -89,6 +89,6 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}gombalan`\
         \n  •  **Function : **untuk gombalan\
         \n\n  •  **Syntax :** `{cmd}cukup`\
-        \n  •  **Function : **nyanyi lagunya rizky febian\"
+        \n  •  **Function : **nyanyi lagunya rizky febian\
     }
 )
