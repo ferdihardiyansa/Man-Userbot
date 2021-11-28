@@ -14,7 +14,7 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern="makan(?: |$)(.*)"))
 async def _(event):
     await event.edit("**KAMU UDAH MAKAN BELUM**")
-    sleep(3)
+    sleep(2)
     await event.edit("**KALAU BELUM MATI AJA SEKALIAN**")
     sleep(3)
     await  event.edit("**BECANDA**")
@@ -57,6 +57,18 @@ async def _(event):
     sleep(2)
     await event.edit("**السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
     
+
+@bot.on(man_cmd(outgoing=True, pattern=r"cukup(?: |$)(.*)"))
+async def _(event):
+    await event.edit("**CUKUP KAU DI SAMPING KU**")
+    sleep(2)
+    await event.edit("**SEMPURNAHKAN LANGKAH KU TUk MENYUSURI WAKTU**")
+    sleep(2)
+    await event.edit("**CUKUP KAU DI SAMPING KU**")
+    sleep(2)
+    await event.edit("**BERJALAN BERSAMA KU PASTIKAN KAU BAHAGIA**")
+    
+    
 CMD_HELP.update(
     {
         "salam": f"**Plugin : **`salam`\
@@ -76,6 +88,7 @@ CMD_HELP.update(
         \n  •  **Function : **nanyain kabar\
         \n\n  •  **Syntax :** `{cmd}gombalan`\
         \n  •  **Function : **untuk gombalan\
-    "
+        \n\n   •  **Syntax :** `{cmd}cukup`\
+        \n  •  **Function : **nyanyi lagunya rizky febian\"
     }
 )
