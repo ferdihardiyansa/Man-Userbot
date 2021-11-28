@@ -90,5 +90,6 @@ CMD_HELP.update(
         \n  •  **Function : **untuk gombalan\
         \n\n  •  **Syntax :** `{cmd}cukup`\
         \n  •  **Function : **nyanyi lagunya rizky febian\
+     "
     }
 )
