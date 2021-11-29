@@ -30,7 +30,7 @@ async def _(event):
 async def _(event):
     await event.edit("**YAUDAH SAYA MINTA MAAF**")
     sleep(3)
-    await event.edir("**TAPI BOOONG**")
+    await event.edit("**TAPI BOOONG**")
     sleep(2)
     await event.edit("**BACANDA**")
     
