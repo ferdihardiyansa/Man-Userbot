@@ -33,7 +33,7 @@ async def _(event):
 async def _(event):
     await event.edit(f"**Haii Salken Saya {ALIVE_NAME}**")
     sleep(2)
-    await event.edit("**wa'laikumsalam ukhti**")
+    await event.edit("**wa'laikumsalam**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"sama(?: |$)(.*)"))
