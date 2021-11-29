@@ -26,19 +26,14 @@ async def _(event):
     await event.edit("**soalnya takut obatnya bangun jiakhhh**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"pantau(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"maaf(?: |$)(.*)"))
 async def _(event):
-    await event.edit(
-        "`\n┻┳|―-∩`"
-        "`\n┳┻|     ヽ`"
-        "`\n┻┳|    ● |`"
-        "`\n┳┻|▼) _ノ`"
-        "`\n┻┳|￣  )`"
-        "`\n┳ﾐ(￣ ／`"
-        "`\n┻┳T￣|`"
-        "\n**Masih Gua Pantau**"
-    )
-
+    await event.edit("**YAUDAH SAYA MINTA MAAF**")
+    sleep(3)
+    await event.edir("**TAPI BOONG**")
+    sleep(2)
+    await event.edit("**BACANDA**")
+    
 
 # Create by myself @localheart
 
