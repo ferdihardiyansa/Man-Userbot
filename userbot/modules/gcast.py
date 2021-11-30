@@ -29,7 +29,7 @@ GCAST_BLACKLIST = [
 ]
 
 
-@man_cmd(pattern="gcast(?: |$)(,*)")
+@man_cmd(pattern="gcast(?: |$)(.*)")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
