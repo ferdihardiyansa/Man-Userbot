@@ -74,7 +74,7 @@ async def _(typew):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"telpon(?: |$)(,*)"))
 async def _(typew):
-    await typew.edit("*SLEEP CALL YUK")
+    await typew.edit("**SLEEP CALL YUK**")
     sleep(2)
     await typew.edit("**SAYA MAKSA😡**")
     
