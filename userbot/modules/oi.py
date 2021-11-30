@@ -72,14 +72,11 @@ async def _(event):
     await event.edit("**tapi aku hanya ada untuk menghiburmu🤡**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"nb(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"ayam(?: |$)(.*)"))
 async def _(event):
-    if event.chat_id in BLACKLIST_CHAT:
-        return await event.edit("**Perintah ini Dilarang digunakan di Group ini**")
-    await event.client.send_message(
-        event.chat_id, "**MAEN BOT MULU ALAY NGENTOTT, KESANNYA NORAK GOBLOK!!!**"
-    )
-    await event.delete()
+    await event.edit("**AYAM BERKOKOK NAIK DI GENTENG**")
+    sleep(1.5)
+    await event.edit("**TAK MEROKOK TAK GANTENG**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"met(?: |$)(.*)"))
@@ -201,7 +198,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "war": f"**Plugin : **`war`\
+        "kabar": f"**Plugin : **`kabar`\
         \n\n  •  **Syntax :** `{cmd}pagi`\
         \n  •  **Function : **selamat pagi\
         \n\n  •  **Syntax :** `{cmd}siang`\
