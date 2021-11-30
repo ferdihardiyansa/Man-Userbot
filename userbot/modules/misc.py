@@ -119,7 +119,7 @@ async def repo_is_here(wannasee):
         f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
         f"✣ **Group Support :** [ignityparty](t.me/ignitionparty)\n"
         f"✣ **Channel Man :** [ignity channel](t.me/ignityparty)\n"
-        f"✣ **Owner Repo :** [Risman](t.me/ferdikoloay)\n"
+        f"✣ **Owner Repo :** [callmeferdi](t.me/ferdikoloay)\n"
         f"✣ **Repo :** [fer-Userbot](https://github.com/ferdihardiyansa/ferubot)\n"
     )
 
