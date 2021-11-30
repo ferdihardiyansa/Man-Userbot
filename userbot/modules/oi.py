@@ -42,32 +42,34 @@ async def _(event):
     sleep(2)
     await event.edit("**jangan lupa sarapan**")
     sleep(2)
-    await event.edit("**aku disini ada untukmu kok**")
+    await event.edit("**aku disini ada untukmu kok😃**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"pp(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"siang(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**PASANG PP DULU GOBLOK,BIAR ORANG-ORANG PADA TAU BETAPA HINA NYA MUKA LU 😆**",
-    )
-    await event.delete()
+    await event.edit("**selamat siang**")
+    sleep(2)
+    await event.edit("**Aku berdoa agar siang harimu dipenuhi dengan berkah dan cinta**")
+    sleep(2)
+    await event.edit("**tetap semangat😊**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"dp(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"malam(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id, "**MUKA LU HINA, GAUSAH SOK KERAS YA ANJENGG!!**"
-    )
-    await event.delete()
+    await event.edit("**selamat malam**")
+    sleep(2)
+    await event.edit("**jangan lupa bedoa**")
+    sleep(2)
+    await event.edit("**tidur nyenyak yah**")
+    sleep(2)
+    await event.edit("**GOOD NIGHT**")
+    
 
-
-@bot.on(man_cmd(outgoing=True, pattern=r"so(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"aku(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id, "**GAUSAH SOKAB SAMA GUA GOBLOK, LU BABU GA LEVEL!!**"
-    )
-    await event.delete()
+    await event.edit("**aku bukanlah untukmu**")
+    sleep(2)
+    await event.edit("**tapi aku hanya ada untuk menghiburmu🤡**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"nb(?: |$)(.*)"))
