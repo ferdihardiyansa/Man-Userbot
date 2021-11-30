@@ -202,14 +202,14 @@ async def _(event):
 CMD_HELP.update(
     {
         "war": f"**Plugin : **`war`\
-        \n\n  •  **Syntax :** `{cmd}jamet`\
-        \n  •  **Function : **Menghina Jamet telegram\
-        \n\n  •  **Syntax :** `{cmd}pp`\
-        \n  •  **Function : **Menghina Jamet telegram yang ga pake foto profil\
-        \n\n  •  **Syntax :** `{cmd}dp`\
-        \n  •  **Function : **Menghina Jamet muka hina!\
-        \n\n  •  **Syntax :** `{cmd}so`\
-        \n  •  **Function : **Ngeledek orang sokab\
+        \n\n  •  **Syntax :** `{cmd}pagi`\
+        \n  •  **Function : **selamat pagi\
+        \n\n  •  **Syntax :** `{cmd}siang`\
+        \n  •  **Function : **selamat siang\
+        \n\n  •  **Syntax :** `{cmd}malam`\
+        \n  •  **Function : **selamat malam\
+        \n\n  •  **Syntax :** `{cmd}aku`\
+        \n  •  **Function : **kata kata badut\
         \n\n  •  **Syntax :** `{cmd}nb`\
         \n  •  **Function : **Ngeledek orang norak baru pake bot\
         \n\n  •  **Syntax :** `{cmd}so`\
