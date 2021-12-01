@@ -79,7 +79,7 @@ async def _(event):
     await event.edit("**TAK MEROKOK TAK GANTENG**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"muter(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"gmbln(?: |$)(.*)"))
 async def _(event):
     await event.edit("**muter muter nyari matcha latte**")
     sleep(2)
@@ -205,7 +205,7 @@ CMD_HELP.update(
         \n  •  **Function : **kata kata badut\
         \n\n  •  **Syntax :** `{cmd}ayam`\
         \n  •  **Function : **pantun\
-        \n\n  •  **Syntax :** `{cmd}muter`\
+        \n\n  •  **Syntax :** `{cmd}gmbln`\
         \n  •  **Function : **kata kata menggombal\
         \n\n  •  **Syntax :** `{cmd}sdby`\
         \n  •  **Function : **gombalan versi 2\
