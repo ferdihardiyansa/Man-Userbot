@@ -214,8 +214,8 @@ CMD_HELP.update(
         \n  •  **Function : **sad\
         \n\n  •  **Syntax :** `{cmd}menua`\
         \n  •  **Function : **gmbln versi 3\
-        \n\n  •  **Syntax :** `{cmd}kismin`\
-        \n  •  **Function : **Ngeledek orang kismin so jagoan di tele\
+        \n\n  •  **Syntax :** `{cmd}sore`\
+        \n  •  **Function : **selamat sore\
         \n\n  •  **Syntax :** `{cmd}ded`\
         \n  •  **Function : **Nyuruh orang mati aja goblok wkwk\
         \n\n  •  **Syntax :** `{cmd}sokab`\
