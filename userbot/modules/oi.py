@@ -165,7 +165,7 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"gmbl(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"sdby(?: |$)(.*)"))
 async def _(event):
     await event.edit("**aku tidak pernah bisa mengatakan betapa aku menyukaimu dan betapa istimewanya kamu untukku**")
     sleep(3)
@@ -208,7 +208,7 @@ CMD_HELP.update(
         \n  •  **Function : **pantun\
         \n\n  •  **Syntax :** `{cmd}muter`\
         \n  •  **Function : **kata kata menggombal\
-        \n\n  •  **Syntax :** `{cmd}gmbl`\
+        \n\n  •  **Syntax :** `{cmd}sdby`\
         \n  •  **Function : **gombalan versi 2\
         \n\n  •  **Syntax :** `{cmd}jauh`\
         \n  •  **Function : **sad\
