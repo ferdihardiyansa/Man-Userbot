@@ -75,16 +75,16 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern=r"ayam(?: |$)(.*)"))
 async def _(event):
     await event.edit("**AYAM BERKOKOK NAIK DI GENTENG**")
-    sleep(1.5)
+    sleep(2)
     await event.edit("**TAK MEROKOK TAK GANTENG**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"met(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"muter(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id, "**NAMANYA JUGA JAMET CAPER SANA SINI BUAT CARI NAMA**"
-    )
-
+    await event.edit("**muter muter nyari matcha latte**")
+    sleep(2)
+    await event.edit("**eh nemunya matcha depan jiakhhhh**")
+    
 
 @bot.on(man_cmd(outgoing=True, pattern=r"war(?: |$)(.*)"))
 async def _(event):
@@ -207,10 +207,10 @@ CMD_HELP.update(
         \n  •  **Function : **selamat malam\
         \n\n  •  **Syntax :** `{cmd}aku`\
         \n  •  **Function : **kata kata badut\
-        \n\n  •  **Syntax :** `{cmd}nb`\
-        \n  •  **Function : **Ngeledek orang norak baru pake bot\
-        \n\n  •  **Syntax :** `{cmd}so`\
-        \n  •  **Function : **Ngeledek orang sokab\
+        \n\n  •  **Syntax :** `{cmd}ayam`\
+        \n  •  **Function : **pantun\
+        \n\n  •  **Syntax :** `{cmd}muter`\
+        \n  •  **Function : **kata kata menggombal\
         \n\n  •  **Syntax :** `{cmd}skb`\
         \n  •  **Function : **Ngeledek orang sokab versi 2\
         \n\n  •  **Syntax :** `{cmd}met`\
