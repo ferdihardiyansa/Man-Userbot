@@ -28,7 +28,7 @@ DEF_UNAPPROVED_MSG = (
     "• takutnya anda di blokir\n"
     "• saya akan balas pesan anda kok\n"
     "╔════════════════════╗\n"
-    "     PESAN DARI BOT\n"
+    "      PESAN DARI BOT\n"
     "╚════════════════════╝\n"
 )
 # =================================================================
@@ -86,7 +86,7 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > PM_LIMIT:
                 await event.respond(
-                    "**Maaf Anda Telah Di Blokir Karna Melakukan Spam Chat**"
+                    "**TUHKAN GUA UDAH BILANG JANGAN DI SPAM EK BLOCKK DEH TUNGGU YANG PUNYA AKUN AJA YANG BUKA BLOCK LU WATEPAK MEN**"
                 )
 
                 try:
