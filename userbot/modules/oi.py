@@ -215,8 +215,8 @@ CMD_HELP.update(
         \n  •  **Function : **gmbln versi 3\
         \n\n  •  **Syntax :** `{cmd}sore`\
         \n  •  **Function : **selamat sore\
-        \n\n  •  **Syntax :** `{cmd}ded`\
-        \n  •  **Function : **Nyuruh orang mati aja goblok wkwk\
+        \n\n  •  **Syntax :** `{cmd}jangan`\
+        \n  •  **Function : **perkataan katak bizer\
         \n\n  •  **Syntax :** `{cmd}sokab`\
         \n  •  **Function : **Ngeledek orang so kenal so dekat padahal kga kenal goblok\
         \n\n  •  **Syntax :** `{cmd}gembel`\
