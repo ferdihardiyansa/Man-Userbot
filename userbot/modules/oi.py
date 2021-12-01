@@ -100,6 +100,8 @@ async def _(event):
     await event.edit("**kamu mau tau cara putihin rambut secara permanen?**")
     sleep(4)
     await event.edit("**menualah bersamaku JIAKHHHH**")
+    sleep(4)
+    await event.edit("**JIAKHHHHHHHHHH**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"sore(?: |$)(.*)"))
