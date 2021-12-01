@@ -111,12 +111,11 @@ async def _(event):
     await event.edit("**Terlalu fokus dalam pekerjaan apapun yang kalian lakukan hanya akan membuatmu melewati waktu berharga ini**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"ded(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"jangan(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id, "**MATI AJA LU GOBLOK, GAGUNA LU HIDUP DI BUMI**"
-    )
-    await event.delete()
+    await event.edit("**LAIN KALI JANGAN BEGITU YAH EPERYBADY**")
+    sleep(1.5)
+    await event.edit("**WATEPAK MEN**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"sokab(?: |$)(.*)"))
