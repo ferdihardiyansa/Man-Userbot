@@ -97,8 +97,8 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"menua(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**kamu mau tau cara putihin rambut secaran permanen?**")
-    sleep(3)
+    await event.edit("**kamu mau tau cara putihin rambut secara permanen?**")
+    sleep(4)
     await event.edit("**menualah bersamaku JIAKHHHH**")
 
 
@@ -106,8 +106,8 @@ async def _(event):
 async def _(event):
     await event.edit("**selamat sore**")
     sleep(2)
-    await event.edit("**Lewati sore hari dengan duduk santai sambil memikirkan sesuatu yang indah**")
-    sleep(3)
+    await event.edit("**Lewati sore harimu dengan duduk santai sambil memikirkan sesuatu yang indah**")
+    sleep(4)
     await event.edit("**Terlalu fokus dalam pekerjaan apapun yang kalian lakukan hanya akan membuatmu melewati waktu berharga ini**")
 
 
