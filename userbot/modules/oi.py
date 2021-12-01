@@ -89,7 +89,7 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern=r"jauh(?: |$)(.*)"))
 async def _(event):
     await event.edit("**aku menjauh dulu yah**")
-    sleep(1.5)
+    sleep(2)
     await event.edit("**pengen perbaikin diri biar pantes sama kamu**")
     sleep(3)
     await event.edit("**tapi kalau kamu udah dapetin yg terbaik menurut kamu gpp aku ikut seneng kok😊**")
@@ -99,16 +99,16 @@ async def _(event):
 async def _(event):
     await event.edit("**kamu mau tau cara putihin rambut secaran permanen?**")
     sleep(3)
-    await evenet.edit("**menualah bersamaku JIAKHHHH**")
+    await event.edit("**menualah bersamaku JIAKHHHH**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"kismin(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"sore(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**CUIHHHH, MAKAN AJA MASIH NGEMIS LO GOBLOK, JANGAN SO NINGGI YA KONTOL GA KEREN LU KEK GITU GOBLOK!!**",
-    )
-    await event.delete()
+    await event.edit("**selamat sore**")
+    sleep(2)
+    await event.edit("**Lewati sore hari dengan duduk santai sambil memikirkan sesuatu yang indah**")
+    sleep(3)
+    await event.edit("**Terlalu fokus dalam pekerjaan apapun yang kalian lakukan hanya akan membuatmu melewati waktu berharga ini**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"ded(?: |$)(.*)"))
