@@ -167,12 +167,11 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"skb(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"gmbl(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id, "**EMANG KITA KENAL? KAGA GOBLOK SOKAB BANGET LU GOBLOK**"
-    )
-    await event.delete()
+    await event.edit("**aku tidak pernah bisa mengatakan betapa aku menyukaimu dan betapa istimewanya kamu untukku**")
+    sleep(3)
+    await event.edit("**tapi aku bisa mengatakan bahwa duniaku tersenyum setiap bersamamu**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"virtual(?: |$)(.*)"))
@@ -211,8 +210,8 @@ CMD_HELP.update(
         \n  •  **Function : **pantun\
         \n\n  •  **Syntax :** `{cmd}muter`\
         \n  •  **Function : **kata kata menggombal\
-        \n\n  •  **Syntax :** `{cmd}skb`\
-        \n  •  **Function : **Ngeledek orang sokab versi 2\
+        \n\n  •  **Syntax :** `{cmd}gmbl`\
+        \n  •  **Function : **coba aja sendiri\
         \n\n  •  **Syntax :** `{cmd}met`\
         \n  •  **Function : **Ngeledek si jamet caper\
         \n\n  •  **Syntax :** `{cmd}war`\
