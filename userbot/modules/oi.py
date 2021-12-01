@@ -95,13 +95,11 @@ async def _(event):
     await event.edit("**tapi kalau kamu udah dapetin yg terbaik menurut kamu gpp aku ikut seneng kok😊**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"wartai(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"menua(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**WAR WAR TAI ANJING, KETRIGGER MINTA SHARELOK LU KIRA MAU COD-AN GOBLOK, BACOTAN LU AJA KGA ADA KERAS KERASNYA GOBLOK**",
-    )
-    await event.delete()
+    await event.edit("**kamu mau tau cara putihin rambut secaran permanen?**")
+    sleep(3)
+    await evenet.edit("**menualah bersamaku JIAKHHHH**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"kismin(?: |$)(.*)"))
@@ -211,11 +209,11 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}muter`\
         \n  •  **Function : **kata kata menggombal\
         \n\n  •  **Syntax :** `{cmd}gmbl`\
-        \n  •  **Function : **coba aja sendiri\
+        \n  •  **Function : **gombalan versi 2\
         \n\n  •  **Syntax :** `{cmd}jauh`\
         \n  •  **Function : **sad\
-        \n\n  •  **Syntax :** `{cmd}wartai`\
-        \n  •  **Function : **Ngeledek orang so ketrigger ngajak cod minta sharelok\
+        \n\n  •  **Syntax :** `{cmd}menua`\
+        \n  •  **Function : **gmbln versi 3\
         \n\n  •  **Syntax :** `{cmd}kismin`\
         \n  •  **Function : **Ngeledek orang kismin so jagoan di tele\
         \n\n  •  **Syntax :** `{cmd}ded`\
