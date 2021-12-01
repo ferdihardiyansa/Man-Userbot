@@ -116,7 +116,7 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern=r"jangan(?: |$)(.*)"))
 async def _(event):
     await event.edit("**LAIN KALI JANGAN BEGITU YAH EPERYBADY**")
-    sleep(1.5)
+    sleep(2)
     await event.edit("**WATEPAK MEN**")
 
 
