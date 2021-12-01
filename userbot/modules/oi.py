@@ -86,13 +86,13 @@ async def _(event):
     await event.edit("**eh nemunya matcha depan jiakhhhh**")
     
 
-@bot.on(man_cmd(outgoing=True, pattern=r"war(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"jauh(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**WAR WAR PALAK BAPAK KAU WAR, SOK KERAS BANGET GOBLOK, DI TONGKRONGAN JADI BABU, DI TELE SOK JAGOAN...**",
-    )
-    await event.delete()
+    await event.edit("**aku menjauh dulu yah**")
+    sleep(1.5)
+    await event.edit("**pengen perbaikin diri biar pantes sama kamu**")
+    sleep(3)
+    await event.edit("**tapi kalau kamu udah dapetin yg terbaik menurut kamu gpp aku ikut seneng kok😊**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"wartai(?: |$)(.*)"))
@@ -212,10 +212,8 @@ CMD_HELP.update(
         \n  •  **Function : **kata kata menggombal\
         \n\n  •  **Syntax :** `{cmd}gmbl`\
         \n  •  **Function : **coba aja sendiri\
-        \n\n  •  **Syntax :** `{cmd}met`\
-        \n  •  **Function : **Ngeledek si jamet caper\
-        \n\n  •  **Syntax :** `{cmd}war`\
-        \n  •  **Function : **Ngeledek orang so keras ngajak war\
+        \n\n  •  **Syntax :** `{cmd}jauh`\
+        \n  •  **Function : **sad\
         \n\n  •  **Syntax :** `{cmd}wartai`\
         \n  •  **Function : **Ngeledek orang so ketrigger ngajak cod minta sharelok\
         \n\n  •  **Syntax :** `{cmd}kismin`\
