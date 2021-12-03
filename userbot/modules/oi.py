@@ -124,7 +124,7 @@ async def _(event):
 async def _(event):
     await event.edit("**cape cape nyari cuka di dapur**")
     sleep(2)
-    await event.edit("**eh cuka sama kamu**")
+    await event.edit("**eh taunya cuka sama kamu**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gembel(?: |$)(.*)"))
