@@ -41,11 +41,11 @@ async def start_voice(c):
     creator = chat.creator
 
     if not admin and not creator:
-        await edit_delete(c, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        await edit_delete(c, f"**Maaf {ALIVE_NAME} sadar diri napa lu bukan admin**")
         return
     try:
         await c.client(startvc(c.chat_id))
-        await edit_or_reply(c, "`Voice Chat Started...`")
+        await edit_or_reply(c, "`os nya udah nyala yah tod`")
     except Exception as ex:
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
@@ -57,11 +57,11 @@ async def stop_voice(c):
     creator = chat.creator
 
     if not admin and not creator:
-        await edit_delete(c, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        await edit_delete(c, f"**sadar diri  {ALIVE_NAME} bodoh lu bukan admin bego 👮**")
         return
     try:
         await c.client(stopvc(await get_call(c)))
-        await edit_or_reply(c, "`Voice Chat Stopped...`")
+        await edit_or_reply(c, "`os nya saya matikan`")
     except Exception as ex:
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
@@ -92,14 +92,14 @@ async def change_title(e):
     creator = chat.creator
 
     if not title:
-        return await edit_delete(e, "**Silahkan Masukan Title Obrolan Suara Grup**")
+        return await edit_delete(e, "**masukin judul osnya apa**")
 
     if not admin and not creator:
-        await edit_delete(e, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        await edit_delete(e, f"**sadar diri {ALIVE_NAME} bego lu bukan admin**")
         return
     try:
         await e.client(settitle(call=await get_call(e), title=title.strip()))
-        await edit_or_reply(e, f"**Berhasil Mengubah Judul VCG Menjadi** `{title}`")
+        await edit_or_reply(e, f"**udah berhasil yah ngen** `{title}`")
     except Exception as ex:
         await edit_delete(e, f"**ERROR:** `{ex}`")
 
