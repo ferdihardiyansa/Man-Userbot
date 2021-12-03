@@ -120,13 +120,11 @@ async def _(event):
     await event.edit("**WATEPAK MEN**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"sokab(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"cuka(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**SOKAB BET LU GOBLOK, KAGA ADA ISTILAH NYA BAWAHAN TEMENAN AMA BOS!!**",
-    )
-    await event.delete()
+    await event.edit("**cape cape nyari cuka di dapur**")
+    sleep(2)
+    await event.edit("**eh cuka sama kamu**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gembel(?: |$)(.*)"))
