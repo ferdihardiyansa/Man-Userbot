@@ -6,7 +6,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import man_cmd
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"gembel(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"buah(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(
         event.chat_id,
