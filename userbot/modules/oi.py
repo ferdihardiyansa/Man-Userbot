@@ -58,10 +58,12 @@ async def _(event):
 async def _(event):
     await event.edit("**selamat malam**")
     sleep(2)
-    await event.edit("**jangan lupa bedoa**")
+    await event.edit("**jangan lupa berdoa**")
     sleep(2)
     await event.edit("**tidur nyenyak yah**")
     sleep(2)
+    await event.edit("**mimpi indah yah**")
+    sleep(3)
     await event.edit("**GOOD NIGHT**")
     
 
