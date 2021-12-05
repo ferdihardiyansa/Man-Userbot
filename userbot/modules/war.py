@@ -15,7 +15,7 @@ async def _(event):
     await event.delete()
     
     
-@bot.on(man_cmd(outgoing=True, pattern=r"buah(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"bocah(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(
         event.chat_id,
