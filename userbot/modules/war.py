@@ -15,3 +15,13 @@ async def _(event):
     await event.delete()
     
     
+@bot.on(man_cmd(outgoing=True, pattern=r"buah(?: |$)(.*)"))
+async def _(event):
+    await event.client.send_message(
+        event.chat_id,
+        "**BOCAH LAKNAT DUNIA AKHIRAT ORANG TOLOL GAK PUNYA BAKAY DATENG KESINI SALAH ALAMAT MUKANYA KAYAK LINTAH DARAT SUKANYA JILAT JILAT PANTAT ORANG DASAR ORANG CACAT GIGI KUNING BERKARAT HIDUP MASIH MELARAT MEMANG DASAR SILUMAN BABI PERILAKU MISKIN MENJADI JADIORANG TUA LU MATI MALAH MENARI GOYANG DUA JARI**",
+    )
+    await event.delete()
+    
+    
+    
