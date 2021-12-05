@@ -1,4 +1,4 @@
-# Man-Userbot Telegram
+# fer-user bot
 
 Man-Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan database sqlalchemy.
 
