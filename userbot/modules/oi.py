@@ -146,13 +146,13 @@ async def _(event):
     sleep(2)
     await event.edit("**YOU LOVE ME TO GA?**")
 
-@bot.on(man_cmd(outgoing=True, pattern=r"dih(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"samyang(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**DIHHH NAJISS ANAK HARAM LO GOBLOK, JANGAN BELAGU DIMARI KAGA KEREN LU KEK BGITU TOLOL!**",
-    )
-    await event.delete()
+    await event.edit("**tadikan aku beli samyang di indomaret**")
+    sleep(2)
+    await event.edit("**pas di cari gak ada**")
+    sleep(2)
+    await event.edit("**eh ternyata samyang sama kamu JIAKHHH**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gcs(?: |$)(.*)"))
@@ -220,14 +220,14 @@ CMD_HELP.update(
         \n  •  **Function : **perkataan katak bizer\
         \n\n  •  **Syntax :** `{cmd}sokab`\
         \n  •  **Function : **Ngeledek orang so kenal so dekat padahal kga kenal goblok\
-        \n\n  •  **Syntax :** `{cmd}gembel`\
-        \n  •  **Function : **Ngeledek bapaknya si jamet\
-        \n\n  •  **Syntax :** `{cmd}cuih`\
-        \n  •  **Function : **Ngeludahin keluarganya satu satu wkwk\
-        \n\n  •  **Syntax :** `{cmd}dih`\
-        \n  •  **Function : **Ngeledek anak haram\
+        \n\n  •  **Syntax :** `{cmd}terlalu`\
+        \n  •  **Function : **ngegomabl cewe\
+        \n\n  •  **Syntax :** `{cmd}tahu`\
+        \n  •  **Function : **ngegombal juga\
+        \n\n  •  **Syntax :** `{cmd}samyang`\
+        \n  •  **Function : **ngegombal tentang samyang\
         \n\n  •  **Syntax :** `{cmd}gcs`\
-        \n  •  **Function : **Ngeledek gc sampah\
+        \n  •  **Function : **gc\
         \n\n  •  **Syntax :** `{cmd}virtual`\
         \n  •  **Function : **Ngeledek orang pacaran virtual\
         \n\n**Klo mau Req, kosa kata dari lu Bisa pake Module costum. Ketik** `{cmd}help costum`\
