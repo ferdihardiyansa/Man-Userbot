@@ -219,8 +219,8 @@ async def vc_vplay(event):
         else:
             songname = search[0]
             url = search[1]
-            duration = [2]
-            thumbnail = [3]
+            duration = search[2]
+            thumbnail = search[3]
             format = "best[height<=?720][width<=?1280]"
             hm, ytlink = await ytdl(format, url)
             if hm == 0:
