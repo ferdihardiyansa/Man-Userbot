@@ -129,7 +129,7 @@ async def _(event):
     await event.edit("**eh taunya cuka sama kamu**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"telalu(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"terlalu(?: |$)(.*)"))
 async def _(event):
     await event.edit("**KAMU TERLALU CANTIK**")
     sleep(2)
@@ -140,7 +140,7 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"tahu(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**tukang tahu makan ikahn hiu**")
+    await event.edit("**tukang tahu makan ikan hiu**")
     sleep(2)
     await event.edit("**GAK TAU POKOKNYA MAH I LOPE YOU**")
     sleep(2)
