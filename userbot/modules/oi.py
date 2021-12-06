@@ -129,23 +129,22 @@ async def _(event):
     await event.edit("**eh taunya cuka sama kamu**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"gembel(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"telalu(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**MUKA BAPAK LU KEK KELAPA SAWIT ANJING, GA USAH NGATAIN ORANG, MUKA LU AJA KEK GEMBEL TEXAS GOBLOK!!**",
-    )
-    await event.delete()
+    await event.edit("**KAMU TERLALU CANTIK**")
+    sleep(2)
+    await event.edit("**WAH INI TIDAK ADIL**")
+    sleep(3)
+    await event.edit("**MANA MUNGKIN AKU TIDAK TERTARIK**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"cuih(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"tahu(?: |$)(.*)"))
 async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**GAK KEREN LO KEK BEGITU GOBLOK, KELUARGA LU BAWA SINI GUA LUDAHIN SATU-SATU. CUIHH!!!**",
-    )
-    await event.delete()
-
+    await event.edit("**tukang tahu makan ikahn hiu**")
+    sleep(2)
+    await event.edit("**GAK TAU POKOKNYA MAH I LOPE YOU**")
+    sleep(2)
+    await event.edit("**YOU LOVE ME TO GA?**")
 
 @bot.on(man_cmd(outgoing=True, pattern=r"dih(?: |$)(.*)"))
 async def _(event):
