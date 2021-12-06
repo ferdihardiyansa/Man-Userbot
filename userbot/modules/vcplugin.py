@@ -239,7 +239,7 @@ async def vc_vplay(event):
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
                     await xnxx.edit(
-                        f"**🏷 Judul:** [{songname}]({url})\n**durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar Video`\n🎧 **Atas permintaan:** {from_user}",
+                        f"**🏷 Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar Video`\n🎧 **Atas permintaan:** {from_user}",
                         link_preview=False,
                     )
                 except Exception as ep:
@@ -247,7 +247,7 @@ async def vc_vplay(event):
                     await xnxx.edit(f"`{ep}`")
 
     elif replied:
-        xnxx = await event.edit(replied, "`Downloading`")
+        xnxx = await event.edit("`Downloading`")
         dl = await replied.download_media()
         link = replied.link
         if len(event.text.split()) < 2:
@@ -301,7 +301,7 @@ async def vc_vplay(event):
                 await xnxx.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
-               caption = f"💡 **Video Ditambahkan Ke antrian »** `#{pos}`\n\n🏷 **Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n🎧 **Atas permintaan:** {from_user}"
+                caption = f"💡 **Video Ditambahkan Ke antrian »** `#{pos}`\n\n🏷 **Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n🎧 **Atas permintaan:** {from_user}"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, thumbnail, caption=caption)
             else:
@@ -373,7 +373,7 @@ async def vc_pause(event):
         except Exception as e:
             await edit_delete(event, f"**ERROR:** `{e}`")
     else:
-        await edit_delete(event, "**LAGI DI STOP BEB**")
+        await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
 @man_cmd(pattern="resume$")
@@ -433,7 +433,7 @@ async def vc_playlist(event):
                 PLAYLIST = PLAYLIST + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`"
             await edit_or_reply(event, PLAYLIST, link_preview=False)
     else:
-        await edit_delete(event, "**Tidak Sedang Memutar Streaming**",)
+        await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
 @call_py.on_stream_end()
