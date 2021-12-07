@@ -155,14 +155,11 @@ async def _(event):
     await event.edit("**eh ternyata samyang sama kamu JIAKHHH**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"gcs(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"minggu(?: |$)(.*)"))
 async def _(event):
-    if event.chat_id in BLACKLIST_CHAT:
-        return await event.edit("**Perintah ini Dilarang digunakan di Group ini**")
-    await event.client.send_message(
-        event.chat_id, "**GC SAMPAH KAYA GINI, BUBARIN AJA GOBLOK!!**"
-    )
-    await event.delete()
+    await event.edit("**Hari Minggu itu weekend**")
+    sleep(2)
+    await event.edit("**tapi kalau cinta aku ke kamu tuh will never end**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"sdby(?: |$)(.*)"))
@@ -226,8 +223,8 @@ CMD_HELP.update(
         \n  •  **Function : **ngegombal juga\
         \n\n  •  **Syntax :** `{cmd}samyang`\
         \n  •  **Function : **ngegombal tentang samyang\
-        \n\n  •  **Syntax :** `{cmd}gcs`\
-        \n  •  **Function : **gc\
+        \n\n  •  **Syntax :** `{cmd}minggu`\
+        \n  •  **Function : **gombalan heri minggu\
         \n\n  •  **Syntax :** `{cmd}virtual`\
         \n  •  **Function : **Ngeledek orang pacaran virtual\
         \n\n**Klo mau Req, kosa kata dari lu Bisa pake Module costum. Ketik** `{cmd}help costum`\
