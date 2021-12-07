@@ -31,11 +31,13 @@ async def _(event):
     await event.edit("**bener ga?**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern="jawab(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern="setan(?: |$)(.*)"))
 async def _(event):
-    await event.edit(f"**Haii Salken Saya {ALIVE_NAME}**")
+    await event.edit(f"**Entah mengapa di saat aku menyebut setan, mereka mengatakan bahwa itu kasar**")
     sleep(2)
-    await event.edit("**wa'laikumsalam**")
+    await event.edit("**padahal setan kan makhluk halus.**")
+    sleep(2)
+    await event.edit("**benerkan?**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"sama(?: |$)(.*)"))
@@ -106,15 +108,15 @@ async def _(event):
     
 CMD_HELP.update(
     {
-        "lucu": f"**Plugin : **`lucu`\
+        "lawak": f"**Plugin : **`lawak`\
         \n\n  •  **Syntax :** `{cmd}anda`\
         \n  •  **Function : **mencurigakan\
         \n\n  •  **Syntax :** `{cmd}motor`\
         \n  •  **Function : **gombalan motor\
         \n\n  •  **Syntax :** `{cmd}pcr`\
         \n  •  **Function : **untuk lucuan pacar kita juga\
-        \n\n  •  **Syntax :** `{cmd}ass`\
-        \n  •  **Function : **Salam Bahas arab\
+        \n\n  •  **Syntax :** `{cmd}setan`\
+        \n  •  **Function : **lawakan tentang setan\
         \n\n  •  **Syntax :** `{cmd}`\
         \n  •  **Function : **nMenampilkan sama sama syang\
         \n\n  •  **Syntax :** `{cmd}makan`\
