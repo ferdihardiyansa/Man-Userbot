@@ -109,15 +109,11 @@ CMD_HELP.update(
         \n  •  **Function : **Assalamualaikum Dulu Biar Sopan..\
         \n\n  •  **Syntax :** `{cmd}pe`\
         \n  •  **Function : **salam Kenal dan salam\
-        \n\n  •  **Syntax :** `{cmd}l`\
-        \n  •  **Function : **Untuk Menjawab salam\
-        \n\n  •  **Syntax :** `{cmd}ass`\
-        \n  •  **Function : **Salam Bahas arab\
-        \n\n  •  **Syntax :** `{cmd}`\
+        \n\n  •  **Syntax :** `{cmd}sama`\
         \n  •  **Function : **nMenampilkan sama sama syang\
         \n\n  •  **Syntax :** `{cmd}makan`\
         \n  •  **Function : ** `nanyain kabar makan`\
-        \n\n  •  **Syntax :** `{cmd}k`\
+        \n\n  •  **Syntax :** `{cmd}kabar`\
         \n  •  **Function : **nanyain kabar\
         \n\n  •  **Syntax :** `{cmd}gombalan`\
         \n  •  **Function : **untuk gombalan\
