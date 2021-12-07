@@ -50,7 +50,7 @@ async def _(event):
 
 @bot.on(man_cmd(outgoing=True, pattern=r"kabar(?: |$)(.*)"))
 async def _(event):
-    await event.edit(f"** HALLO **")
+    await event.edit("**HALLO**")
     sleep(2)
     await event.edit("**GIMANA KABARNYA?**")
 
