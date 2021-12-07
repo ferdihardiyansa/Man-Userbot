@@ -215,8 +215,6 @@ CMD_HELP.update(
         \n  •  **Function : **selamat sore\
         \n\n  •  **Syntax :** `{cmd}jangan`\
         \n  •  **Function : **perkataan katak bizer\
-        \n\n  •  **Syntax :** `{cmd}sokab`\
-        \n  •  **Function : **Ngeledek orang so kenal so dekat padahal kga kenal goblok\
         \n\n  •  **Syntax :** `{cmd}terlalu`\
         \n  •  **Function : **ngegomabl cewe\
         \n\n  •  **Syntax :** `{cmd}tahu`\
