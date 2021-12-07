@@ -32,7 +32,7 @@ async def _(event):
     sleep(3)
     await event.edit("**TAPI BOOONG**")
     sleep(2)
-    await event.edit("**BACANDA**")
+    await event.edit("**BERCANDA XIXIXIXI**")
     
 
 # Create by myself @localheart
