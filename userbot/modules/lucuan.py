@@ -16,7 +16,7 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern="motor(?: |$)(.*)"))
 async def _(event):
     await event.edit("**Kalo naik motor sama kamu pasti ditilang polisi deh**")
-    sleep(2)
+    sleep(3)
     await event.edit("**Soalnya kita selalu bertiga**")
     sleep(2)
     await event.edit("**aku, kamu, dan cinta**")
@@ -34,9 +34,9 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern="setan(?: |$)(.*)"))
 async def _(event):
     await event.edit(f"**Entah mengapa di saat aku menyebut setan, mereka mengatakan bahwa itu kasar**")
-    sleep(2)
+    sleep(3)
     await event.edit("**padahal setan kan makhluk halus.**")
-    sleep(2)
+    sleep(2.5)
     await event.edit("**benerkan?**")
 
 
@@ -64,9 +64,9 @@ async def _(event):
 @bot.on(man_cmd(outgoing=True, pattern=r"pocong(?: |$)(.*)"))
 async def _(event):
     await event.edit("**Kalo nanti malam ada pocong ngintip di jendela**")
-    sleep(0.5)
+    sleep(3)
     await event.edit("** jangan takut yah**")
-    sleep(0.5)
+    sleep(2)
     await event.edit("**dia memang sengaja aku suruh untuk jagain kamu bobo**")
     
     
