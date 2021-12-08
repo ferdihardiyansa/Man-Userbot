@@ -115,8 +115,8 @@ CMD_HELP.update(
         \n  •  **Function : ** `nanyain kabar makan`\
         \n\n  •  **Syntax :** `{cmd}kabar`\
         \n  •  **Function : **nanyain kabar\
-        \n\n  •  **Syntax :** `{cmd}gombalan`\
-        \n  •  **Function : **untuk gombalan\
+        \n\n  •  **Syntax :** `{cmd}wala`\
+        \n  •  **Function : **waalaikumsalam\
         \n\n  •  **Syntax :** `{cmd}cukup`\
         \n  •  **Function : **nyanyi lagunya rizky febian\
      "
