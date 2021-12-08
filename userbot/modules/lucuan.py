@@ -40,75 +40,47 @@ async def _(event):
     await event.edit("**benerkan?**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"sama(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"pinjem(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**SAMA SAMA SAYANG**")
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"gombalan(?: |$)(.*)"))
-async def _(event):
-    await event.edit("**IKAN HIU MELAYANG LAYANG**")
+    await event.edit("**Eh pinjem flashdisk dong**")
     sleep(2)
-    await event.edit("**I LOVE YOU SAYANG JIAKHHH**")
+    await event.edit("**aku pengen transfer data cintaku buat kamu**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"kabar(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"ganteng(?: |$)(.*)"))
 async def _(event):
-    await event.edit(f"** HALLO **")
+    await event.edit("**kamu itu ganteng tapi sayang**")
     sleep(2)
-    await event.edit("**GIMANA KABARNYA?**")
+    await event.edit("**bukan punyaku**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"wala(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"cantik(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**w**")
+    await event.edit("**kamu cantik tapi sayang**")
+    sleep(2)
+    await event.edit("**bukan punyaku**")
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"pocong(?: |$)(.*)"))
+async def _(event):
+    await event.edit("**Kalo nanti malam ada pocong ngintip di jendela**")
     sleep(0.5)
-    await event.edit("**wa**")
+    await event.edit("** jangan takut yah**")
     sleep(0.5)
-    await event.edit("**waa**")
-    sleep(0.5)
-    await event.edit("**waal**")
-    sleep(0.5)
-    await event.edit("**waala**")
-    sleep(0.5)
-    await event.edit("**waalai**")
-    sleep(0.5)
-    await event.edit("**waalaik**")
-    sleep(0.5)
-    await event.edit("**waalaiku**")
-    sleep(0.5)
-    await event.edit("**waalaikum**")
-    sleep(0.5)
-    await event.edit("**waalaikums**")
-    sleep(0.5)
-    await event.edit("**waalaikumsa**")
-    sleep(0.5)
-    await event.edit("**waalaikumsal**")
-    sleep(0.5)
-    await event.edit("**waalaikumsala**")
-    sleep(0.5)
-    await event.edit("**waalaikumsalam**")
+    await event.edit("**dia memang sengaja aku suruh untuk jagain kamu bobo**")
     
     
 
-@bot.on(man_cmd(outgoing=True, pattern=r"cukup(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"empat(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**my happiness?**")
+    await event.edit("**Empat dikali empat sama dengan enam belas**")
     sleep(3)
-    await event.edit("**cukup**")
-    sleep(1)
-    await event.edit("**CUKUP KAU DI SAMPING KU**")
-    sleep(4)
-    await event.edit("**SEMPURNAHKAN LANGKAH KU TUK MENYUSURI WAKTU**")
-    sleep(3)
-    await event.edit("**CUKUP KAU DI SAMPING KU**")
-    sleep(3)
-    await event.edit("**BERJALAN BERSAMA KU PASTIKAN KAU BAHAGIA**")
+    await event.edit("**Cepat atau lambat, cintaku pasti kau balas**")
     
     
 CMD_HELP.update(
     {
-        "lawak": f"**Plugin : **`lawak`\
+        "gombal": f"**Plugin : **`gombalan`\
         \n\n  •  **Syntax :** `{cmd}anda`\
         \n  •  **Function : **mencurigakan\
         \n\n  •  **Syntax :** `{cmd}motor`\
@@ -117,16 +89,16 @@ CMD_HELP.update(
         \n  •  **Function : **untuk lucuan pacar kita juga\
         \n\n  •  **Syntax :** `{cmd}setan`\
         \n  •  **Function : **lawakan tentang setan\
-        \n\n  •  **Syntax :** `{cmd}`\
-        \n  •  **Function : **nMenampilkan sama sama syang\
-        \n\n  •  **Syntax :** `{cmd}makan`\
-        \n  •  **Function : ** `nanyain kabar makan`\
-        \n\n  •  **Syntax :** `{cmd}k`\
-        \n  •  **Function : **nanyain kabar\
-        \n\n  •  **Syntax :** `{cmd}gombalan`\
-        \n  •  **Function : **untuk gombalan\
+        \n\n  •  **Syntax :** `{cmd}ganteng`\
+        \n  •  **Function : **ganteng tapi sayg bukan punyaku\
+        \n\n  •  **Syntax :** `{cmd}empat`\
+        \n  •  **Function : **cantik tapi sayang bukan punyaku\
+        \n\n  •  **Syntax :** `{cmd}pinjem`\
+        \n  •  **Function : **gombalan tentang flashdisk\
+        \n\n  •  **Syntax :** `{cmd}pocong\
+        \n  •  **Function : **gombalan tentang pocong\
         \n\n  •  **Syntax :** `{cmd}cukup`\
-        \n  •  **Function : **nyanyi lagunya rizky febian\
+        \n  •  **Function : **gombalan pantun\
      "
     }
 )
