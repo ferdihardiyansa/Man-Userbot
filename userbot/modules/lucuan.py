@@ -95,7 +95,7 @@ CMD_HELP.update(
         \n  •  **Function : **cantik tapi sayang bukan punyaku\
         \n\n  •  **Syntax :** `{cmd}pinjem`\
         \n  •  **Function : **gombalan tentang flashdisk\
-        \n\n  •  **Syntax :** `{cmd}pocong\
+        \n\n  •  **Syntax :** `{cmd}pocong`\
         \n  •  **Function : **gombalan tentang pocong\
         \n\n  •  **Syntax :** `{cmd}empat`\
         \n  •  **Function : **gombalan pantun\
