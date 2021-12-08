@@ -91,13 +91,13 @@ CMD_HELP.update(
         \n  •  **Function : **lawakan tentang setan\
         \n\n  •  **Syntax :** `{cmd}ganteng`\
         \n  •  **Function : **ganteng tapi sayg bukan punyaku\
-        \n\n  •  **Syntax :** `{cmd}empat`\
+        \n\n  •  **Syntax :** `{cmd}cantik`\
         \n  •  **Function : **cantik tapi sayang bukan punyaku\
         \n\n  •  **Syntax :** `{cmd}pinjem`\
         \n  •  **Function : **gombalan tentang flashdisk\
         \n\n  •  **Syntax :** `{cmd}pocong\
         \n  •  **Function : **gombalan tentang pocong\
-        \n\n  •  **Syntax :** `{cmd}cukup`\
+        \n\n  •  **Syntax :** `{cmd}empat`\
         \n  •  **Function : **gombalan pantun\
      "
     }
