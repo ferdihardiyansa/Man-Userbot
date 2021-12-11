@@ -77,6 +77,28 @@ async def _(event):
     sleep(3)
     await event.edit("**Cepat atau lambat, cintaku pasti kau balas**")
     
+@bot.on(man_cmd(outgoing=True, pattern=r"darat(?: |$)(.*)"))
+async def _(event):
+    await event.edit("KAMU MAU LIHAT BUAYA?")
+    sleep(2.5)
+    await event.edit("INISIAL R 🐊")
+    sleep(2)
+    await event.edit("INISIAL V 🐊")
+    sleep(2)
+    await event.edit("INISIAL I 🐊")
+    sleep(2)
+    await event.edit("INISIAL D 🐊")
+    sleep(2)
+    await event.edit("INISIAL C 🐊")
+    sleep(2)
+    await event.edit("INISIAL B 🐊")
+    sleep(2)
+    await event.edit("INISIAL D 🐊")
+    sleep(2)
+    await event.edit("INISIAL P 🐊")
+    sleep(2)
+    await typew.edit("ITULAH BUAYA BUAYA HATI HATI YA 😁")
+    
     
 CMD_HELP.update(
     {
@@ -99,6 +121,8 @@ CMD_HELP.update(
         \n  •  **Function : **gombalan tentang pocong\
         \n\n  •  **Syntax :** `{cmd}empat`\
         \n  •  **Function : **gombalan pantun\
+        \n\n  •  **Syntax :** `{cmd}darat`\
+        \n  •  **Function : **inisial buaya darat\
      "
     }
 )
