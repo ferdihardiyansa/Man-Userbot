@@ -100,6 +100,19 @@ async def _(event):
     await typew.edit("ITULAH BUAYA BUAYA HATI HATI YA 😁")
     
     
+@bot.on(man_cmd(outgoing=True, pattern=r"love2(?: |$)(.*)"))
+async def _(event):
+    await event.edit("kamu gak punya love yah")
+    sleep(2)
+    await event.edit("\n(\\_/)"
+                     "\n(●_●)"
+                     "\n />💗*Ini Buat Kamu")
+    sleep(2)
+    await event.edit("\n(\\_/)"
+                     "\n(●_●)"
+                     "\n💗<\\  *Tapi Bo'ong Hiyahiyahiya")
+    
+    
 CMD_HELP.update(
     {
         "gombal": f"**Plugin : **`gombalan`\
@@ -123,6 +136,8 @@ CMD_HELP.update(
         \n  •  **Function : **gombalan pantun\
         \n\n  •  **Syntax :** `{cmd}darat`\
         \n  •  **Function : **inisial buaya darat\
+        \n\n  •  **Syntax :** `{cmd}love2`\
+        \n  •  **Function : **ambil love tapi boong\
      "
     }
 )
