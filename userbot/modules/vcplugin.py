@@ -17,9 +17,8 @@ from telethon.tl import types
 from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
 
-from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, call_py
+from userbot import CMD_HELP, call_py, owner
 from userbot.utils import bash, edit_delete, edit_or_reply, man_cmd
 from userbot.utils.queues.queues import (
     QUEUE,
@@ -207,14 +206,14 @@ async def vc_vplay(event):
     ):
         return await edit_or_reply(event, "**Silahkan Masukan Judul Video**")
     if replied and not replied.video and not replied.document:
-        xnxx = await edit_or_reply(event, "`Mencari...`")
+        xnxx = await edit_or_reply(event, "`Searching...`")
         query = event.text.split(maxsplit=1)[1]
         search = ytsearch(query)
         RESOLUSI = 720
         hmmm = HighQualityVideo()
         if search == 0:
             await xnxx.edit(
-                "**Tidak Dapat Menemukan Video** Coba cari dengan Judul yang Lebih jelas dong beb"
+                "**Tidak Dapat Menemukan Video** Coba cari dengan Judul yang Lebih Spesifik"
             )
         else:
             songname = search[0]
@@ -398,7 +397,7 @@ async def vc_volume(event):
     chat_id = event.chat_id
 
     if not admin and not creator:
-        return await edit_delete(event, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**", 30)
+        return await edit_delete(event, f"**Maaf {owner} Bukan Admin 👮**", 30)
 
     if chat_id in QUEUE:
         try:
