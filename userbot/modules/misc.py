@@ -24,14 +24,13 @@ from bs4 import BeautifulSoup
 from heroku3 import from_key
 from PIL import Image
 
-from userbot import ALIVE_NAME, BOT_VER, BOTLOG, BOTLOG_CHATID
+from userbot import BOT_VER, BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import man_cmd
 from userbot.utils import time_formatter
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 HEROKU_APP = from_key(HEROKU_API_KEY).apps()[HEROKU_APP_NAME]
 # ============================================
 
@@ -108,20 +107,6 @@ async def repeat(rep):
         replyText += toBeRepeated + "\n"
 
     await rep.edit(replyText)
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"repo$"))
-async def repo_is_here(wannasee):
-    """For .repo command, just returns the repo URL."""
-    await wannasee.edit(
-        f"**Hey**, __I am using__ 🔥 **fer-ubot** 🔥\n\n"
-        f"      __Thanks For Using me__\n\n"
-        f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
-        f"✣ **Group Support :** [ignityparty](t.me/ignitionparty)\n"
-        f"✣ **Channel Man :** [ignity channel](t.me/ignityparty)\n"
-        f"✣ **Owner Repo :** [callmeferdi](t.me/ferdikoloay)\n"
-        f"✣ **Repo :** [fer-Userbot](https://github.com/ferdihardiyansa/ferubot)\n"
-    )
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"string$"))
@@ -323,9 +308,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "repo": f"**Plugin : **`Repository Man-Userbot`\
-        \n\n  •  **Syntax :** `{cmd}repo`\
-        \n  •  **Function : **Menampilan link Repository Man-Userbot\
+        "repo": f"**Plugin : **`Repository fer-Userbot`\
         \n\n  •  **Syntax :** `{cmd}string`\
         \n  •  **Function : **Menampilan link String Man-Userbot\
     "
