@@ -30,7 +30,7 @@ async def _(event):
 
 @man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, "**Haii Salken Saya {ALIVE_NAME}**")
+    await edit_or_reply(event, "**Haii Salken Saya {owner}**")
     sleep(2)
     await edit_or_reply(event, "**wa'laikumsalam**")
 
