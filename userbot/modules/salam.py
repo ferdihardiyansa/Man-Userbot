@@ -12,7 +12,7 @@ async def _(event):
     await edit_or_reply(event, "**ASSALAMUALAIKUM UKHTI**")
 
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="makan(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**KAMU UDAH MAKAN BELUM**")
     sleep(2)
@@ -21,40 +21,40 @@ async def _(event):
     await edit_or_reply(event, "**BECANDA**")
    
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="pe(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**PUNTEN MAMANG**")
     sleep(2)
     await edit_or_reply(event, "**ASSALAMUALAIKUM**")
 
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="salam(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Haii Salken Saya {owner}**")
     sleep(2)
     await edit_or_reply(event, "**wa'laikumsalam**")
 
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="sama(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**SAMA SAMA SAYANG**")
 
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="gabut(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**IKAN HIU MELAYANG LAYANG**")
     sleep(2)
     await edit_or_reply(event, "**I LOVE YOU SAYANG JIAKHHH**")
 
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="kabar(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**HALLO**")
     sleep(2)
     await edit_or_reply(event, "**GIMANA KABARNYA?**")
 
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="wala(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**w**")
     sleep(0.5)
@@ -86,7 +86,7 @@ async def _(event):
     
     
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@man_cmd(pattern="cukup(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**my happiness?**")
     sleep(3)
@@ -114,6 +114,8 @@ CMD_HELP.update(
         \n  •  **Function : ** `nanyain kabar makan`\
         \n\n  •  **Syntax :** `{cmd}kabar`\
         \n  •  **Function : **nanyain kabar\
+        \n\n  •  **Syntax :** `{cmd}gabut`\
+        \n  •  **Function : **coba aja\
         \n\n  •  **Syntax :** `{cmd}wala`\
         \n  •  **Function : **waalaikumsalam\
         \n\n  •  **Syntax :** `{cmd}cukup`\
