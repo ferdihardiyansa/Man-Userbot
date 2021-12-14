@@ -5,14 +5,14 @@ from userbot import CMD_HELP, owner
 from userbot.utils import edit_or_reply, man_cmd
 
 
-@bot.on(man_cmd(outgoing=True, pattern="p(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**PUNTEN SLURRRR**")
     sleep(2)
     await edit_or_reply(event, "**ASSALAMUALAIKUM UKHTI**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern="makan(?: |$)(.*)"))
+@man_cmd(pattern="makan(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**KAMU UDAH MAKAN BELUM**")
     sleep(2)
@@ -21,40 +21,40 @@ async def _(event):
     await edit_or_reply(event, "**BECANDA**")
    
 
-@bot.on(man_cmd(outgoing=True, pattern=r"pe(?: |$)(.*)"))
+@man_cmd(pattern="pe(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**PUNTEN MAMANG**")
     sleep(2)
     await edit_or_reply(event, "**ASSALAMUALAIKUM**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern="jawab(?: |$)(.*)"))
+@man_cmd(pattern="jawab(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**Haii Salken Saya {ALIVE_NAME}**")
     sleep(2)
     await edit_or_reply(event, "**wa'laikumsalam**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"sama(?: |$)(.*)"))
+@man_cmd(pattern="sama(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**SAMA SAMA SAYANG**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"gombalan(?: |$)(.*)"))
+@man_cmd(pattern="gombalan(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**IKAN HIU MELAYANG LAYANG**")
     sleep(2)
     await edit_or_reply(event, "**I LOVE YOU SAYANG JIAKHHH**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"kabar(?: |$)(.*)"))
+@man_cmd(pattern="kabar(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**HALLO**")
     sleep(2)
     await edit_or_reply(event, "**GIMANA KABARNYA?**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"wala(?: |$)(.*)"))
+@man_cmd(pattern="wala(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**w**")
     sleep(0.5)
@@ -86,7 +86,7 @@ async def _(event):
     
     
 
-@bot.on(man_cmd(outgoing=True, pattern=r"cukup(?: |$)(.*)"))
+@man_cmd(pattern="cukup(?: |$)(.*)"))
 async def _(event):
     await edit_or_reply(event, "**my happiness?**")
     sleep(3)
