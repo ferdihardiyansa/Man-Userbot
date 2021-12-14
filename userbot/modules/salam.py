@@ -5,14 +5,14 @@ from userbot import CMD_HELP, owner
 from userbot.utils import edit_or_reply, man_cmd
 
 
-@man_cmd(pattern="p(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**PUNTEN SLURRRR**")
     sleep(2)
     await edit_or_reply(event, "**ASSALAMUALAIKUM UKHTI**")
 
 
-@man_cmd(pattern="makan(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**KAMU UDAH MAKAN BELUM**")
     sleep(2)
@@ -21,40 +21,40 @@ async def _(event):
     await edit_or_reply(event, "**BECANDA**")
    
 
-@man_cmd(pattern="pe(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**PUNTEN MAMANG**")
     sleep(2)
     await edit_or_reply(event, "**ASSALAMUALAIKUM**")
 
 
-@man_cmd(pattern="jawab(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Haii Salken Saya {ALIVE_NAME}**")
     sleep(2)
     await edit_or_reply(event, "**wa'laikumsalam**")
 
 
-@man_cmd(pattern="sama(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**SAMA SAMA SAYANG**")
 
 
-@man_cmd(pattern="gombalan(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**IKAN HIU MELAYANG LAYANG**")
     sleep(2)
     await edit_or_reply(event, "**I LOVE YOU SAYANG JIAKHHH**")
 
 
-@man_cmd(pattern="kabar(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**HALLO**")
     sleep(2)
     await edit_or_reply(event, "**GIMANA KABARNYA?**")
 
 
-@man_cmd(pattern="wala(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**w**")
     sleep(0.5)
@@ -86,7 +86,7 @@ async def _(event):
     
     
 
-@man_cmd(pattern="cukup(?: |$)(.*)"))
+@man_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**my happiness?**")
     sleep(3)
