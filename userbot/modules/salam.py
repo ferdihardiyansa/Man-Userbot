@@ -7,98 +7,98 @@ from userbot.utils import edit_or_reply, man_cmd
 
 @bot.on(man_cmd(outgoing=True, pattern="p(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**PUNTEN SLURRRR**")
+    await edit_or_reply(event, "**PUNTEN SLURRRR**")
     sleep(2)
-    await event.edit("**ASSALAMUALAIKUM UKHTI**")
+    await edit_or_reply(event, "**ASSALAMUALAIKUM UKHTI**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern="makan(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**KAMU UDAH MAKAN BELUM**")
+    await edit_or_reply(event, "**KAMU UDAH MAKAN BELUM**")
     sleep(2)
-    await event.edit("**KALAU BELUM MATI AJA SEKALIAN**")
+    await edit_or_reply(event, "**KALAU BELUM MATI AJA SEKALIAN**")
     sleep(3)
-    await  event.edit("**BECANDA**")
+    await edit_or_reply(event, "**BECANDA**")
    
 
 @bot.on(man_cmd(outgoing=True, pattern=r"pe(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**PUNTEN MAMANG**")
+    await edit_or_reply(event, "**PUNTEN MAMANG**")
     sleep(2)
-    await event.edit("**ASSALAMUALAIKUM**")
+    await edit_or_reply(event, "**ASSALAMUALAIKUM**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern="jawab(?: |$)(.*)"))
 async def _(event):
-    await event.edit(f"**Haii Salken Saya {ALIVE_NAME}**")
+    await edit_or_reply(event, "**Haii Salken Saya {ALIVE_NAME}**")
     sleep(2)
-    await event.edit("**wa'laikumsalam**")
+    await edit_or_reply(event, "**wa'laikumsalam**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"sama(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**SAMA SAMA SAYANG**")
+    await edit_or_reply(event, "**SAMA SAMA SAYANG**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"gombalan(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**IKAN HIU MELAYANG LAYANG**")
+    await edit_or_reply(event, "**IKAN HIU MELAYANG LAYANG**")
     sleep(2)
-    await event.edit("**I LOVE YOU SAYANG JIAKHHH**")
+    await edit_or_reply(event, "**I LOVE YOU SAYANG JIAKHHH**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"kabar(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**HALLO**")
+    await edit_or_reply(event, "**HALLO**")
     sleep(2)
-    await event.edit("**GIMANA KABARNYA?**")
+    await edit_or_reply(event, "**GIMANA KABARNYA?**")
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"wala(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**w**")
+    await edit_or_reply(event, "**w**")
     sleep(0.5)
-    await event.edit("**wa**")
+    await edit_or_reply(event, "**wa**")
     sleep(0.5)
-    await event.edit("**waa**")
+    await edit_or_reply(event, "**waa**")
     sleep(0.5)
-    await event.edit("**waal**")
+    await edit_or_reply(event, "**waal**")
     sleep(0.5)
-    await event.edit("**waala**")
+    await edit_or_reply(event, "**waala**")
     sleep(0.5)
-    await event.edit("**waalai**")
+    await edit_or_reply(event, "**waalai**")
     sleep(0.5)
-    await event.edit("**waalaik**")
+    await edit_or_reply(event, "**waalaik**")
     sleep(0.5)
-    await event.edit("**waalaiku**")
+    await edit_or_reply(event, "**waalaiku**")
     sleep(0.5)
-    await event.edit("**waalaikum**")
+    await edit_or_reply(event, "**waalaikum**")
     sleep(0.5)
-    await event.edit("**waalaikums**")
+    await edit_or_reply(event, "**waalaikums**")
     sleep(0.5)
-    await event.edit("**waalaikumsa**")
+    await edit_or_reply(event, "**waalaikumsa**")
     sleep(0.5)
-    await event.edit("**waalaikumsal**")
+    await edit_or_reply(event, "**waalaikumsal**")
     sleep(0.5)
-    await event.edit("**waalaikumsala**")
+    await edit_or_reply(event, "**waalaikumsala**")
     sleep(0.5)
-    await event.edit("**waalaikumsalam**")
+    await edit_or_reply(event, "**waalaikumsalam**")
     
     
 
 @bot.on(man_cmd(outgoing=True, pattern=r"cukup(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**my happiness?**")
+    await edit_or_reply(event, "**my happiness?**")
     sleep(3)
-    await event.edit("**cukup**")
+    await edit_or_reply(event, "**cukup**")
     sleep(1)
-    await event.edit("**CUKUP KAU DI SAMPING KU**")
+    await edit_or_reply(event, "**CUKUP KAU DI SAMPING KU**")
     sleep(4)
-    await event.edit("**SEMPURNAHKAN LANGKAH KU TUK MENYUSURI WAKTU**")
+    await edit_or_reply(event, "**SEMPURNAHKAN LANGKAH KU TUK MENYUSURI WAKTU**")
     sleep(3)
-    await event.edit("**CUKUP KAU DI SAMPING KU**")
+    await edit_or_reply(event, "**CUKUP KAU DI SAMPING KU**")
     sleep(3)
-    await event.edit("**BERJALAN BERSAMA KU PASTIKAN KAU BAHAGIA**")
+    await edit_or_reply(event, "**BERJALAN BERSAMA KU PASTIKAN KAU BAHAGIA**")
     
     
 CMD_HELP.update(
