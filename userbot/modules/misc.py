@@ -62,7 +62,7 @@ async def killdabot(event):
         await event.client.send_message(
             BOTLOG_CHATID,
             "**#SHUTDOWN** \n"
-            "**Man-Userbot** telah di matikan!\nJika ingin menghidupkan kembali silahkan buka heroku",
+            "**fer-Userbot** telah di matikan!\nJika ingin menghidupkan kembali silahkan buka heroku",
         )
     await event.edit("`Man-Userbot Berhasil di matikan!`")
     if HEROKU_APP is not None:
@@ -76,23 +76,11 @@ async def killdabot(event):
     await event.edit("**Man-Userbot Berhasil di Restart**")
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#RESTART \n" "**Man-Userbot Berhasil Di Restart**"
+            BOTLOG_CHATID, "#RESTART \n" "**fer-Userbot Berhasil Di Restart**"
         )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"readme$"))
-async def reedme(e):
-    await e.edit(
-        "**Berikut sesuatu untuk kamu baca:**\n"
-        "\n✣ [Userbot Repo](https://github.com/mrismanaziz/Man-Userbot/blob/Man-Userbot/README.md)"
-        "\n✣ [Video Tutorial](https://youtu.be/tTDaPKsGC1I)"
-        "\n✣ [List Variabel Heroku untuk Man-Userbot](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)"
-        "\n✣ [Setup Guide - Basic](https://mrismanaziz.medium.com/cara-memasang-userbot-telegram-repo-man-userbot-deploy-di-heroku-c56d1f8b5537)"
-        "\n✣ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
-    )
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"repeat (.*)"))
