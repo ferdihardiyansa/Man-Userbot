@@ -28,7 +28,7 @@ async def _(event):
     await edit_or_reply(event, "**ASSALAMUALAIKUM**")
 
 
-@man_cmd(pattern="salam(?: |$)(.*)")
+@man_cmd(pattern="jawab(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Haii Salken Saya {owner}**")
     sleep(2)
