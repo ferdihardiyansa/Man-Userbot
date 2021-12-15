@@ -32,7 +32,14 @@ async def _(event):
 async def _(event):
     xx = await edit_or_reply(event, f"**Haii Salken Saya {owner}**")
     sleep(2)
-    await xx.edit("**Assalamualaikum...**")
+    await xx.edit("**waalaikumsalam...**")
+    
+    
+@man_cmd(pattern="salam(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**Haii Salken Saya {owner}**")
+    sleep(2)
+    await xx.edit("**assalamualaikum...**")
 
 
 @man_cmd(pattern="sama(?: |$)(.*)")
@@ -112,6 +119,8 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilkan sama sama syang\
         \n\n  •  **Syntax :** `{cmd}jawab`\
         \n  •  **Function : **menjwab salam orng dengan nama\
+        \n\n  •  **Syntax :** `{cmd}salam`\
+        \n  •  **Function : **salam orng dengan nama\
         \n\n  •  **Syntax :** `{cmd}makan`\
         \n  •  **Function : ** `nanyain kabar makan`\
         \n\n  •  **Syntax :** `{cmd}kabar`\
