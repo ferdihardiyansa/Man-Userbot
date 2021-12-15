@@ -109,7 +109,9 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}pe`\
         \n  •  **Function : **salam Kenal dan salam\
         \n\n  •  **Syntax :** `{cmd}sama`\
-        \n  •  **Function : **nMenampilkan sama sama syang\
+        \n  •  **Function : **Menampilkan sama sama syang\
+        \n\n  •  **Syntax :** `{cmd}jawab`\
+        \n  •  **Function : **menjwab salam orng dengan nama\
         \n\n  •  **Syntax :** `{cmd}makan`\
         \n  •  **Function : ** `nanyain kabar makan`\
         \n\n  •  **Syntax :** `{cmd}kabar`\
