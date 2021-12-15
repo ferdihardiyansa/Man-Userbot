@@ -30,9 +30,9 @@ async def _(event):
 
 @man_cmd(pattern="jawab(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, "**Haii Salken Saya {owner}**")
+    xx = await edit_or_reply(event, f"**Haii Salken Saya {owner}**")
     sleep(2)
-    await edit_or_reply(event, "**wa'laikumsalam**")
+    await xx.edit("**Assalamualaikum...**")
 
 
 @man_cmd(pattern="sama(?: |$)(.*)")
