@@ -11,7 +11,8 @@ async def _(event):
     await event.client.send_message(
         event.chat_id,
         ("**BACOT NGENTOTTT BAPA LU SURUH RIBUT SAMA GUA**")
-    )    
+    )
+    await event.delete()
 
 # Create by myself @localheart
 
@@ -22,6 +23,7 @@ async def _(event):
         event.chat_id,
         ("**GAK USAH SOK KERAS GOBLOK!!KENCING MASIH BERDIRI AJA BELAGU**")
     )
+    await event.delete()
 
 
 # Create by myself @localheart
