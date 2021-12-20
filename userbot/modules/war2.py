@@ -6,79 +6,54 @@ from userbot import CMD_HELP, bot
 from userbot.events import man_cmd
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"sayang(?: |$)(.*)"))
-async def _(event):
-    await event.edit("**Cuma Mau Bilang**")
-    sleep(3)
-    await event.edit("**Aku Sayang Kamu**")
-    sleep(1)
-    await event.edit("**I LOVE YOU 💞**")
-
-
-# Create by myself @localheart
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"semangat(?: |$)(.*)"))
-async def _(event):
-    await event.edit("**Apapun Yang Terjadi**")
-    sleep(3)
-    await event.edit("**Tetaplah Bernapas**")
-    sleep(1)
-    await event.edit("**Dan Selalu Bersyukur**")
-
-
-# Create by myself @localheart
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"ywc(?: |$)(.*)"))
-async def _(event):
-    await event.client.send_message(event.chat_id, "**Ok Sama Sama**")
-    await event.delete()
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"jamet(?: |$)(.*)"))
-async def _(event):
-    await event.edit("**WOII**")
-    sleep(1.5)
-    await event.edit("**JAMET**")
-    sleep(1.5)
-    await event.edit("**CUMA MAU BILANG**")
-    sleep(1.5)
-    await event.edit("**GAUSAH SO ASIK**")
-    sleep(1.5)
-    await event.edit("**EMANG KENAL?**")
-    sleep(1.5)
-    await event.edit("**GAUSAH REPLY**")
-    sleep(1.5)
-    await event.edit("**KITA BUKAN KAWAN**")
-    sleep(1.5)
-    await event.edit("**GASUKA PC ANJING**")
-    sleep(1.5)
-    await event.edit("**BOCAH KAMPUNG**")
-    sleep(1.5)
-    await event.edit("**MENTAL TEMPE**")
-    sleep(1.5)
-    await event.edit("**LEMBEK NGENTOT🔥**")
-
-
-@bot.on(man_cmd(outgoing=True, pattern=r"pp(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"f(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(
         event.chat_id,
-        "**PASANG PP DULU GOBLOK,BIAR ORANG-ORANG PADA TAU BETAPA HINA NYA MUKA LU 😆**",
+        ("**MUKA LU SEMUA KAYA KONTOL HAHAHAHA!!**")
     )
     await event.delete()
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"dp(?: |$)(.*)"))
+# Create by myself @localheart
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"i(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(
-        event.chat_id, "**MUKA LU HINA, GAUSAH SOK KERAS YA ANJENGG!!**"
+        event.chat_id,
+        ("**KONTOL MASIH BENGKOK AJA BANGGA LU HAHAHAHA!!**")
     )
     await event.delete()
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"so(?: |$)(.*)"))
+# Create by myself @localheart
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"q(?: |$)(.*)"))
+async def _(event):
+    await event.client.send_message(event.chat_id, "**EHH GOBLOK LU SEMUA RIBUT SAMA GUA SINI NGENTOT!**")
+    await event.delete()
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"r(?: |$)(.*)"))
+async def _(event):
+    await event.client.send_message(
+        event.chat_id,
+        "**KONTOL KONTOL APA YANG BESAR?KONTOL LU LAH HAHAHAHA!**",
+    )
+    await event.delete()
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"t(?: |$)(.*)"))
+async def _(event):
+    await event.client.send_message(
+        event.chat_id, "**BABI!!KONTOL!!NGENTOT!!**"
+    )
+    await event.delete()
+
+
+@bot.on(man_cmd(outgoing=True, pattern=r"u(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(
         event.chat_id, "**GAUSAH SOKAB SAMA GUA GOBLOK, LU BABU GA LEVEL!!**"
@@ -86,12 +61,12 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"nb(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"w(?: |$)(.*)"))
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
         return await event.edit("**Perintah ini Dilarang digunakan di Group ini**")
     await event.client.send_message(
-        event.chat_id, "**MAEN BOT MULU ALAY NGENTOTT, KESANNYA NORAK GOBLOK!!!**"
+        event.chat_id, "**BABI LU GOBLOK!!CANTIKAN JUGA GUA HAHAHAHA**"
     )
     await event.delete()
 
@@ -215,19 +190,15 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "war": f"**Plugin : **`war`\
-        \n\n  •  **Syntax :** `{cmd}jamet`\
-        \n  •  **Function : **Menghina Jamet telegram\
-        \n\n  •  **Syntax :** `{cmd}pp`\
-        \n  •  **Function : **Menghina Jamet telegram yang ga pake foto profil\
-        \n\n  •  **Syntax :** `{cmd}dp`\
-        \n  •  **Function : **Menghina Jamet muka hina!\
-        \n\n  •  **Syntax :** `{cmd}so`\
-        \n  •  **Function : **Ngeledek orang sokab\
-        \n\n  •  **Syntax :** `{cmd}nb`\
-        \n  •  **Function : **Ngeledek orang norak baru pake bot\
-        \n\n  •  **Syntax :** `{cmd}so`\
-        \n  •  **Function : **Ngeledek orang sokab\
+        "war2": f"**Plugin : **`war2`\
+        \n\n  •  **Syntax :** `{cmd}r`\
+        \n  •  **Function : **Pantun Anjing\
+        \n\n  •  **Syntax :** `{cmd}t`\
+        \n  •  **Function : **Nyebutin Binatang\
+        \n\n  •  **Syntax :** `{cmd}u`\
+        \n  •  **Function : **Biar Dikata Ganteng\
+        \n\n  •  **Syntax :** `{cmd}w`\
+        \n  •  **Function : **Biar Dikata Cantik\
         \n\n  •  **Syntax :** `{cmd}skb`\
         \n  •  **Function : **Ngeledek orang sokab versi 2\
         \n\n  •  **Syntax :** `{cmd}met`\
@@ -252,6 +223,12 @@ CMD_HELP.update(
         \n  •  **Function : **Ngeledek gc sampah\
         \n\n  •  **Syntax :** `{cmd}virtual`\
         \n  •  **Function : **Ngeledek orang pacaran virtual\
+        \n\n  •  **Syntax :** `{cmd}f`\
+        \n  •  **Function : **Ngatain Orang Wkwkkw\
+        \n\n  •  **Syntax :** `{cmd}i`\
+        \n  •  **Function : **Kontol Orang Ngatain\
+        \n\n  •  **Syntax :** `{cmd}q`\
+        \n  •  **Function : **Ngajak Ribut Orang\
         \n\n**Klo mau Req, kosa kata dari lu Bisa pake Module costum. Ketik** `{cmd}help costum`\
     "
     }
