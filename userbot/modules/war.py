@@ -6,25 +6,22 @@ from userbot import CMD_HELP, bot
 from userbot.events import man_cmd
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"sayang(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"d(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Cuma Mau Bilang**")
-    sleep(3)
-    await event.edit("**Aku Sayang Kamu**")
-    sleep(1)
-    await event.edit("**I LOVE YOU 💞**")
-
+    await event.client.send_message(
+        event.chat_id,
+        ("**BACOT NGENTOTTT BAPA LU SURUH RIBUT SAMA GUA**")
+    )    
 
 # Create by myself @localheart
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"semangat(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"e(?: |$)(.*)"))
 async def _(event):
-    await event.edit("**Apapun Yang Terjadi**")
-    sleep(3)
-    await event.edit("**Tetaplah Bernapas**")
-    sleep(1)
-    await event.edit("**Dan Selalu Bersyukur**")
+    await event.client.send_message(
+        event.chat_id,
+        ("**GAK USAH SOK KERAS GOBLOK!!KENCING MASIH BERDIRI AJA BELAGU**")
+    )
 
 
 # Create by myself @localheart
@@ -251,7 +248,11 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}gcs`\
         \n  •  **Function : **Ngeledek gc sampah\
         \n\n  •  **Syntax :** `{cmd}virtual`\
-        \n  •  **Function : **Ngeledek orang pacaran virtual\
+        \n  •  **Function : **ngeled orang pacar virtual\
+        \n\n  •  **Syntax :** `{cmd}d`\
+        \n  •  **Function : **Bacotin Orang\
+        \n\n  •  **Syntax :** `{cmd}e`\
+        \n  •  **Function : **Buat Orang Yang Sok Keras\
         \n\n**Klo mau Req, kosa kata dari lu Bisa pake Module costum. Ketik** `{cmd}help costum`\
     "
     }
