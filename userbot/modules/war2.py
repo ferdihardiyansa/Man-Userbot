@@ -30,7 +30,7 @@ async def _(event):
 # Create by myself @localheart
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"q(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"z(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(event.chat_id, "**EHH GOBLOK LU SEMUA RIBUT SAMA GUA SINI NGENTOT!**")
     await event.delete()
@@ -227,7 +227,7 @@ CMD_HELP.update(
         \n  •  **Function : **Ngatain Orang Wkwkkw\
         \n\n  •  **Syntax :** `{cmd}i`\
         \n  •  **Function : **Kontol Orang Ngatain\
-        \n\n  •  **Syntax :** `{cmd}q`\
+        \n\n  •  **Syntax :** `{cmd}z`\
         \n  •  **Function : **Ngajak Ribut Orang\
         \n\n**Klo mau Req, kosa kata dari lu Bisa pake Module costum. Ketik** `{cmd}help costum`\
     "
