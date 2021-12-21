@@ -6,7 +6,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP, bot, owner
 from userbot.events import man_cmd
 
 
@@ -19,7 +19,7 @@ async def _(event):
     if not text:
         await event.edit("`Give a name too!`")
     else:
-        await event.edit("`Processing`")
+        await event.edit("`memproses`")
     chat = "@tdtapibot"
     async with event.client.conversation(chat) as conv:
         try:
@@ -37,7 +37,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             logo,
-            caption=f"Logo by [{ALIVE_NAME}](tg://user?id={aing.id})",
+            caption=f"Logo by [{owner}](tg://user?id={aing.id})",
         )
         await event.client.delete_messages(conv.chat_id, [msg.id, response.id, logo.id])
         await event.delete()
