@@ -159,10 +159,10 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"skb(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"iklan(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(
-        event.chat_id, "**EMANG KITA KENAL? KAGA GOBLOK SOKAB BANGET LU GOBLOK**"
+        event.chat_id, "**YANG MAU PASANG USERBOT HARGA 5K DOANG SYARAT PUNYA AKUN GMAIL. TIAP MINGGU ADA MODULE BARU MINAT PC AJA @ferdikoloay**"
     )
     await event.delete()
 
@@ -199,8 +199,8 @@ CMD_HELP.update(
         \n  •  **Function : **Biar Dikata Ganteng\
         \n\n  •  **Syntax :** `{cmd}w`\
         \n  •  **Function : **Biar Dikata Cantik\
-        \n\n  •  **Syntax :** `{cmd}skb`\
-        \n  •  **Function : **Ngeledek orang sokab versi 2\
+        \n\n  •  **Syntax :** `{cmd}iklan`\
+        \n  •  **Function : **promote bot fer  userbot\
         \n\n  •  **Syntax :** `{cmd}met`\
         \n  •  **Function : **Ngeledek si jamet caper\
         \n\n  •  **Syntax :** `{cmd}war`\
