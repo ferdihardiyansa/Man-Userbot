@@ -96,11 +96,11 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"kismin(?: |$)(.*)"))
+@bot.on(man_cmd(outgoing=True, pattern=r"keren(?: |$)(.*)"))
 async def _(event):
     await event.client.send_message(
         event.chat_id,
-        "**CUIHHHH, MAKAN AJA MASIH NGEMIS LO GOBLOK, JANGAN SO NINGGI YA KONTOL GA KEREN LU KEK GITU GOBLOK!!**",
+        "**KEREN LU KEK GITU GAK LAH GOBLOK!!**",
     )
     await event.delete()
 
@@ -207,8 +207,8 @@ CMD_HELP.update(
         \n  •  **Function : **Ngeledek orang so keras ngajak war\
         \n\n  •  **Syntax :** `{cmd}wartai`\
         \n  •  **Function : **Ngeledek orang so ketrigger ngajak cod minta sharelok\
-        \n\n  •  **Syntax :** `{cmd}kismin`\
-        \n  •  **Function : **Ngeledek orang kismin so jagoan di tele\
+        \n\n  •  **Syntax :** `{cmd}keren`\
+        \n  •  **Function : **kata kata keren lu kek gitu\
         \n\n  •  **Syntax :** `{cmd}ded`\
         \n  •  **Function : **Nyuruh orang mati aja goblok wkwk\
         \n\n  •  **Syntax :** `{cmd}sokab`\
