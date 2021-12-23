@@ -97,6 +97,21 @@ async def _(event):
     await event.edit("**tapi kalau kamu udah dapetin yg terbaik menurut kamu gpp aku ikut seneng kok😊**")
 
 
+@bot.on(man_cmd(outgoing=True, pattern=r"mksh(?: |$)(.*)"))
+async def _(event):
+    await event.edit("**terima kasih**")
+    sleep(2)
+    await event.edit("**eh gak deh**")
+    sleep(2)
+    await event.edit("**eh serius**")
+    sleep(2)
+    await event.edit("**eh nggk**")
+    sleep(2)
+    await event.edit("**gak tau**")
+    sleep(2)
+    await event.edit("**yang penting makasih deh**")
+
+
 @bot.on(man_cmd(outgoing=True, pattern=r"menua(?: |$)(.*)"))
 async def _(event):
     await event.edit("**kamu mau tau cara putihin rambut secara permanen?**")
@@ -225,6 +240,8 @@ CMD_HELP.update(
         \n  •  **Function : **gombalan heri minggu\
         \n\n  •  **Syntax :** `{cmd}virtual`\
         \n  •  **Function : **Ngeledek orang pacaran virtual\
+        \n\n  •  **Syntax :** `{cmd}mksh`\
+        \n  •  **Function : **berterima kasih\
         \n\n**Klo mau Req, kosa kata dari lu Bisa pake Module costum. Ketik** `{cmd}help costum`\
     "
     }
